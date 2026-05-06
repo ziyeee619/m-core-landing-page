@@ -727,10 +727,22 @@ const App = () => {
               href="https://www.instagram.com/ste_wellness?igsh=MXQ1NG9kZXhocWU5dQ=="
               className="flex items-center space-x-3 hover:text-white transition-colors group font-sans"
             >
-              <Camera
-                size={20}
-                className="group-hover:rotate-12 transition-transform font-sans"
-              />
+              {/* --- 穩定的 Instagram SVG 圖標 --- */}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:rotate-12 transition-transform"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
               <span className="text-xs font-black tracking-[0.2em] font-sans">
                 @stempires_official
               </span>
