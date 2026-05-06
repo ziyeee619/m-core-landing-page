@@ -255,8 +255,8 @@ const App = () => {
             <Reveal scale={0.9} rotate={-3} delay={0.2}>
               <div className="relative z-10 group px-10 lg:px-0 text-center">
                 <img
-                  src="/1.jpg"
-                  alt="M-CORE 產品瓶身"
+                  src="/m-core-liboost-supplement-bottle.jpg"
+                  alt="M-CORE 男性活力補充錠 - 西班牙專利 Liboost 透納葉配方"
                   className="w-full max-w-[300px] lg:max-w-lg mx-auto drop-shadow-[0_0_80px_rgba(255,255,255,0.05)] group-hover:scale-105 transition-transform duration-1000 font-sans"
                 />
               </div>
@@ -278,8 +278,8 @@ const App = () => {
             className="absolute inset-0 z-0"
           >
             <img
-              src="/extracted_assets/mmexport1777799373256.jpg"
-              alt="M-CORE Cinematic Banner"
+              src="/assets/m-core-brand-vision-lifestyle.jpg"
+              alt="M-CORE 品牌願景：專為現代男士打造的核心動能與精力補充"
               className="w-full h-full object-cover"
               onError={(e) => {
                 e.target.src =
@@ -432,8 +432,8 @@ const App = () => {
               <Reveal y={50}>
                 <div className="relative min-h-[500px] lg:h-150 overflow-hidden group rounded-[30px] lg:rounded-[40px] shadow-2xl border border-white/5 font-sans bg-[#050505]">
                   <img
-                    src="/extracted_assets/屏幕截图 2026-05-03 163603.png"
-                    alt="Liboost 透納葉"
+                    src="/assets/liboost-turnera-diffusa-extract-spain.png"
+                    alt="西班牙專利 Liboost 透納葉提取物 - HPLC 驗證高效成分"
                     className="absolute inset-0 w-full h-full object-contain p-12 lg:p-24 transition-all duration-1000 opacity-20 group-hover:opacity-40 font-sans"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent p-8 lg:p-16 flex flex-col justify-end font-sans">
@@ -482,19 +482,19 @@ const App = () => {
                 title: "東革阿里",
                 sub: "TONGKAT ALI",
                 text: "100:1 高效力濃度提取。維護體內游離睾酮水平，提升力量與耐力。",
-                img: "/extracted_assets/image.png",
+                img: "/assets/tongkat-ali-extract-100-1-purity.png",
               },
               {
                 title: "瑪卡提取物",
                 sub: "MACA EXTRACT",
                 text: "源自秘魯，富含多種營養素。優化能量代謝，緩解積累疲勞。",
-                img: "/extracted_assets/extracted_img_54.jpeg",
+                img: "/assets/peruvian-maca-root-extract-energy.jpg",
               },
               {
                 title: "冬蟲夏草",
                 sub: "CORDYCEPS",
                 text: "高原珍稀藥材。增強細胞 ATP 生成，優化氧氣利用，強化心肺表現。",
-                img: "/extracted_assets/extracted_img_57.jpeg",
+                img: "/assets/cordyceps-sinensis-atp-booster.jpg",
               },
             ].map((item, idx) => (
               <Reveal key={item.title} delay={idx * 0.08} y={30}>
@@ -689,8 +689,8 @@ const App = () => {
               <Reveal scale={0.9} delay={0.2}>
                 <div className="relative rounded-[30px] lg:rounded-[50px] overflow-hidden border border-white/10 shadow-2xl font-sans">
                   <img
-                    src="/extracted_assets/extracted_img_70.jpeg"
-                    alt="M-CORE 精裝"
+                    src="/assets/m-core-premium-packaging-60-tablets.jpg"
+                    alt="M-CORE 尊榮版 60 片裝 - 30 天男士健康活力週期方案"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 font-sans"
                     onError={(e) => {
                       e.target.src =
