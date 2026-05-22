@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "vision": "Visi",
+    "s7r": "Sistem 7R",
+    "ingredients": "Bahan",
+    "science": "Sains",
+    "usage": "Panduan"
+  },
+  "hero": {
+    "edition": "Edisi Titanium ・ 2026",
+    "sub": "Kuasa Teras Lelaki.",
+    "desc": "Melangkaui sempadan keletihan dengan teknologi # paten Sepanyol.",
+
+    "cta": "AKTIFKAN"
+  },
+  "vision": {
+    "label": "Visi Jenama",
+    "p1": "Apabila rentak hidup tidak terkawal,",
+    "p2": "KEHILANGAN TENAGA",
+    "p3": "adalah lebih pantas daripada yang anda bayangkan.",
+    "p4": "Kami menolak suplemen biasa,",
+    "p5": "Kami dilahirkan untuk",
+    "p6": "KECEMERLANGAN",
+    "p7": ""
+  },
+  "usage": {
+    "label": "Rutin Harian",
+    "usage": "Panduan",
+    "guide": "Penggunaan",
+    "dose": "Pengambilan Harian",
+    "doseDesc": "Ambil secara konsisten untuk mengekalkan kestabilan dinamik teras.",
+    "pkg": "Pakej Premium",
+    "pkgDesc": "Mengandungi 60 tablet, dibina untuk kitaran 30 hari elit moden."
+  }
+}

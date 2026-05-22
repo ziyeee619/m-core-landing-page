@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "vision": "Vision",
+    "s7r": "7R System",
+    "ingredients": "Ingredients",
+    "science": "Science",
+    "usage": "Usage"
+  },
+  "hero": {
+    "edition": "Titanium Edition ・ 2026",
+    "sub": "Titanium Silver, Man's Core Power.",
+    "desc": "Breaking boundaries with # technology.",
+
+    "cta": "ACTIVATE PEAK"
+  },
+  "vision": {
+    "label": "Brand Vision",
+    "p1": "When life's pace spins out of control,",
+    "p2": "ENERGY DRAIN",
+    "p3": "is faster than you imagine.",
+    "p4": "We refuse mediocre supplements,",
+    "p5": "We are born for",
+    "p6": "EXCELLENCE",
+    "p7": ""
+  },
+  "usage": {
+    "label": "Daily Routine",
+    "usage": "Usage",
+    "guide": "Guide",
+    "dose": "Daily Dosage",
+    "doseDesc": "Consume consistently for long-term stability of core dynamics.",
+    "pkg": "Premium Package",
+    "pkgDesc": "Contains 60 tablets, designed for the 30-day cycle of modern elites."
+  }
+}
