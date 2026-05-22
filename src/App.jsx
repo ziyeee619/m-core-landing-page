@@ -26,7 +26,29 @@ import {
   ChevronUp,
 } from "lucide-react";
 
-// --- 進階動態組件 (已設為重複觸發：once: false) ---
+// 在你的 import 區塊下面加入這一行
+const IS_MAINTENANCE = true; 
+
+function App() {
+  // 1. 插入維護蓋板邏輯
+  if (IS_MAINTENANCE) {
+    return (
+      <div className="h-screen w-screen bg-neutral-950 flex flex-col items-center justify-center text-white font-sans">
+        <h1 className="text-4xl font-bold tracking-widest mb-4">M-CORE</h1>
+        <p className="text-neutral-400 tracking-wider">COMING SOON · 巔峰動能 即將啟動</p>
+      </div>
+    );
+  }
+
+  // 2. 底下原本那 800 多行的完美代碼「完全不動」
+  return (
+    <div>
+      {/* 你原本的所有動畫、組件內容 */}
+    </div>
+  );
+}
+
+export default App;// --- 進階動態組件 (已設為重複觸發：once: false) ---
 const Reveal = ({
   children,
   delay = 0,
