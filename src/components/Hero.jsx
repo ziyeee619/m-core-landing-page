@@ -29,7 +29,7 @@ const Hero = ({ heroOpacity, heroScale }) => {
                 {/* ST Logo 圖片空間 */}
                 <div className="w-25 h-25 lg:w-30 lg:h-30 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl flex items-center justify-center p-2 mb-3 shadow-2xl group hover:border-white/30 transition-all duration-500">
                   <img
-                    src="/public/STLogo.png"
+                    src="/STLogo.png"
                     alt="ST Empires Wellness Malaysia Official Logo - Premium Men's Health Brand"
                     className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                   />

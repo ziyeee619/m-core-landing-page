@@ -106,7 +106,7 @@ const Ingredients = () => {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    openLightbox("public/HPLC.png");
+                    openLightbox("/HPLC.png");
                   }}
                   className="flex items-center gap-1.5 text-[11px] text-[#86868b] hover:text-white transition-colors bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-full font-bold"
                 >
@@ -132,7 +132,7 @@ const Ingredients = () => {
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
-                      openLightbox("/public/assets/NO-Release.jpeg");
+                      openLightbox("/assets/NO-Release.jpeg");
                     }}
                     className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative"
                   >
@@ -154,7 +154,7 @@ const Ingredients = () => {
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
-                      openLightbox("/public/assets/PDE-5-Inhibition.jpeg");
+                      openLightbox("/assets/PDE-5-Inhibition.jpeg");
                     }}
                     className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative"
                   >
