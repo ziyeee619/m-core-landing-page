@@ -1,3 +1,4 @@
+// src/components/ScrollToTop.jsx
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp } from "lucide-react";
@@ -23,7 +24,10 @@ const ScrollToTop = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 lg:bottom-10 lg:right-10 z-[150] bg-white/10 backdrop-blur-lg border border-white/20 text-white p-4 rounded-full shadow-2xl hover:bg-white hover:text-black transition-all duration-300 group font-sans"
+          /* 🚀 核心修正：
+             1. 手機版 bottom-6 -> bottom-28 (往上推避開 Shopify 泡泡)
+             2. 電腦版 lg:bottom-10 -> lg:bottom-32 (完美疊在 Chat 上方) */
+          className="fixed bottom-28 right-6 lg:bottom-32 lg:right-10 z-[150] bg-white/10 backdrop-blur-lg border border-white/20 text-white p-4 rounded-full shadow-2xl hover:bg-white hover:text-black transition-all duration-300 group font-sans"
         >
           <ChevronUp
             size={24}

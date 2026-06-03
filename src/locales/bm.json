@@ -1,10 +1,9 @@
 {
   "nav": {
-    "vision": "Visi",
-    "s7r": "Sistem 7R",
-    "ingredients": "Bahan",
+    "home": "Utama",
+    "product": "Produk",
     "science": "Sains",
-    "usage": "Panduan"
+    "support": "Sokongan"
   },
   "hero": {
     "edition": "Edisi Titanium ・ 2026",
@@ -23,13 +22,214 @@
     "p6": "KECEMERLANGAN",
     "p7": ""
   },
+  "preview": {
+    "sec1": {
+      "sub": "JEJAKAN KLINIKAL BERDASARKAN 4 MINGGU",
+      "title": "TERBUKTI SECARA SAINTIFIK. PRESTASI MAKSIMUM.",
+      "card1": {
+        "title": "Mekanisme Pelepasan NO",
+        "desc": "Merangsang pelepasan nitrik oksida endotelial dengan ketara, merehatkan otot licin vaskular untuk ketegangan maksimum."
+      },
+      "card2": {
+        "title": "Kepuasan Wanita (FSFI)",
+        "desc": "Terbukti secara klinikal oleh paten Sepanyol Liboost® untuk meningkatkan keinginan, pelinciran, dan kepuasan keseluruhan."
+      },
+      "card3": {
+        "title": "Prestasi Lelaki (IIEF)",
+        "desc": "Menghalang aktiviti PDE-5 secara berkesan, menstabilkan ketahanan dan penunjuk fungsi erektil secara menyeluruh."
+      }
+    },
+    "sec2": {
+      "imgHover": "Terokai Formula",
+      "sub": "FORMULA PRESTASI UTAMA",
+      "title1": "M-CORE Premium",
+      "title2": "Formula Tenaga",
+      "desc": "Gabungan paten Sepanyol Liboost®, Tongkat Ali Malaysia, dan Cordyceps dataran tinggi, direka untuk golongan elit yang mencari prestasi puncak. 100% semula jadi, selamat, dan sokongan endogenus tanpa kebergantungan.",
+      "check1": "100% Bebas Sildenafil",
+      "check2": "Penggalak Tenaga ATP",
+      "btn": "Terokai M-CORE Sekarang"
+    }
+  },
   "usage": {
-    "label": "Rutin Harian",
-    "usage": "Panduan",
-    "guide": "Penggunaan",
-    "dose": "Pengambilan Harian",
-    "doseDesc": "Ambil secara konsisten untuk mengekalkan kestabilan dinamik teras.",
-    "pkg": "Pakej Premium",
-    "pkgDesc": "Mengandungi 60 tablet, dibina untuk kitaran 30 hari elit moden."
+    "label": "PROTOKOL HARIAN",
+    "usage": "DOS OPTIMUM",
+    "guide": "PANDUAN SIFAT SAINTIFIK",
+    "doseTitle": "Protokol Harian",
+    "dose": "Ambil Setiap Hari",
+    "doseNum": "2 TABLET",
+    "doseDesc": "Mengikut spesifikasi produk, ambil 2 tablet setiap hari. Simpan di tempat kering pada suhu bilik (< 25°C). Elakkan produk daripada sinaran matahari langsung, kelembapan, atau sumber haba.",
+    "pkgTitle": "Pakej Premium",
+    "pkgSub": "PROTOKOL 30 HARI",
+    "pkgDesc": "Setiap botol mengandungi 60 tablet premium 1g, dihasilkan secara teliti di bawah parameter klinikal Malaysia yang ketat untuk memastikan kitaran prestasi lelaki 30 hari yang tepat.",
+    "certTitle": "Pengiktirafan Makmal & Pengeluaran",
+    "certs": {
+      "gmp": {
+        "name": "GMP MALAYSIA",
+        "desc": "Amalan Pengilangan Baik KKM"
+      },
+      "haccp": {
+        "name": "DIKTIRAF HACCP",
+        "desc": "Sistem Jaminan Keselamatan Makanan"
+      },
+      "mesti": {
+        "name": "SKIM MeSTI",
+        "desc": "Makanan Selamat Tanggungjawab Industri"
+      }
+    }
+  },
+
+  "purchase": {
+    "addCartBtn": "TAMBAH KE TROLI",
+    "tagline": "PRESTASI PUNCAK",
+    "name": "Formula Tenaga Premium M-CORE",
+    "features": {
+      "f1": "100% Formulasi Saintifik",
+      "f2": "Tenaga Berterusan Tanpa Lesu",
+      "f3": "Bahan Import Premium"
+    },
+    "save": "Jimat RM {{amount}}",
+    "shipping": "💡 Kos penghantaran dikira semasa daftar keluar · Penghantaran percuma ke Semenanjung Malaysia",
+    "cartTitle": "Troli Anda",
+    "checkoutBtn": "Daftar Keluar (FPX / Kad)"
+  },
+
+  "ingredients": {
+    "headerSub": "BAHAN KLINIKAL",
+    "headerTitle": "Kandungan Utama",
+    "desc1": "Pilihan paten global dan herba nadir, disahkan oleh ",
+    "descHighlight": "Kromatografi HPLC",
+    "desc2": " untuk pati berkesan tinggi, bebas sepenuhnya daripada bahan kimia haram.",
+    "liboost": {
+      "badge1": "PATEN SEPANYOL Dari Mexico",
+      "badge2": "100% BEBAS SILDENAFIL",
+      "btn": "Lihat Laporan HPLC",
+      "title1": "Liboost®",
+      "title2": "Ekstrak Turnera Diffusa Berpaten",
+      "desc": "Daun Turnera diffusa tulen dari Mexico, menjalani pengekstrakan berpaten di fasiliti GMP Sepanyol. Kaya dengan bioflavonoid, ia memberikan kesan anti-aromatase yang cemerlang, menghalang degradasi androgen dan membangkitkan tenaga lelaki primitif secara menyeluruh.",
+      "card1Title": "Pelepasan NO & Vasodilatasi",
+      "card1Desc": "Merangsang pelepasan Nitrik Oksida (NO) secara aktif dalam tisu endotelial korpus kavernosum, merehatkan otot licin vaskular untuk ketegangan puncak. Klik untuk data.",
+      "card2Title": "Perencatan PDE-5",
+      "card2Desc": "Menghalang secara fizikal enzim PDE-5 yang menyebabkan kelonggaran vaskular, mencegah hidrolisis faktor ketegangan, memanjangkan kekerasan ke tahap maksimum. Klik untuk carta."
+    },
+    "items": {
+      "tongkat": {
+        "title": "Ekstrak Tongkat Ali",
+        "sub": "TONGKAT ALI (1:100)",
+        "text": "Khazanah negara Malaysia. Berkepekatan tinggi 1:100, ia mengurangkan pengikatan SHBG dan merangsang sel testis untuk merembeskan testosteron bebas secara autonomi, meningkatkan hormon endogenus lelaki."
+      },
+      "maca": {
+        "title": "Maca Hitam Peru",
+        "sub": "EKSTRAK MACA",
+        "text": "Pati Amerika Selatan. Menggunakan mekanisme penyesuaian bukan hormon untuk membangkitkan keinginan primitif, membantu badan mengatasi keletihan kronik dan disfungsi erektil (ED) sementara."
+      },
+      "cordyceps": {
+        "title": "Cordyceps Sinensis",
+        "sub": "CORDYCEPS SINENSIS",
+        "text": "Ekstrak nadir Tibet. Terbukti secara saintifik meningkatkan kadar sintesis ATP dalam mitokondria sel dengan ketara, memberikan kuasa letupan dan ketahanan anti-lesu sepanjang hari."
+      },
+      "guarana": {
+        "title": "Ekstrak Guarana",
+        "sub": "EKSTRAK GUARANA",
+        "text": "Mengandungi kafein semula jadi yang lembut pada perut, meningkatkan tumpuan otak dengan pantas, mengelakkan degupan jantung laju akibat kafein tradisional."
+      },
+      "bilberry": {
+        "title": "Ekstrak Bilberi",
+        "sub": "EKSTRAK BILBERRY",
+        "text": "Antioksidan Nordik yang kuat. Menstabilkan struktur mikrovaskular, menggalakkan peredaran mikro yang sihat, dan membantu menjamin ereksi yang tahan lama dan keras."
+      }
+    },
+    "lightboxText": "Lembaran data ketulenan kromatografi berketepatan tinggi (Klik di mana-mana ruang kosong untuk tutup)"
+  },
+
+  "sciencePage": {
+    "bannerSub": "MAKMAL INOVASI R&D",
+    "bannerTitle1": "SAINS",
+    "bannerTitle2": "KLINIKAL",
+    "bannerDesc": "M-CORE menolak sebarang formula yang tidak terbukti. Semua bahan kami melalui ujian klinikal dan pengesahan saintifik yang ketat, direka untuk memberikan sokongan tenaga endogenus yang paling tulen dan stabil untuk golongan elit.",
+    "pledge1Title": "100% BEBAS SILDENAFIL",
+    "pledge1Desc": "Mematuhi piawaian keselamatan antarabangsa yang ketat, bebas daripada ubat sintetik, dijamin selamat tanpa kebergantungan.",
+    "pledge2Title": "BIOKETERSEDIAAN DIPERTINGKATKAN",
+    "pledge2Desc": "Teknologi penyerapan kecekapan tinggi eksklusif untuk meningkatkan kadar penukaran nutrien badan secara menyeluruh.",
+    "pledge3Title": "SUMBER PREMIUM",
+    "pledge3Desc": "Semua bahan mentah berpaten teras diimport dari makmal global teratas untuk memastikan ketulenan dan potensi yang maksimum."
+  },
+
+  "sevenR": {
+    "titleSystem": "Sistem",
+    "dashboardTitle": "BEYOND TENAGA",
+    "dashboardDesc1": "Menolak lonjakan sementara. Kami menyediakan kuasa mampan ",
+    "dashboardHighlight": "dari tahap selular",
+    "dashboardDesc2": " ke atas.",
+    "items": {
+      "r1Title": "RESTORE",
+      "r1": "Pulihkan Tenaga",
+      "r2Title": "RELIEVE",
+      "r2": "Pelepasan Tekanan",
+      "r3Title": "REBUILD",
+      "r3": "Bina Semula",
+      "r4Title": "REIGNITE",
+      "r4": "Cetus Puncak",
+      "r5Title": "REVITALIZE",
+      "r5": "Kekal Bertahan",
+      "r6Title": "REINFORCE",
+      "r6": "Kukuh Imuniti",
+      "r7Title": "REFOCUS",
+      "r7": "Kembalikan Fokus"
+    }
+  },
+
+  "scienceCmp": {
+    "badge": "DATA MAKMAL KLINIKAL SEPANYOL",
+    "title1": "KLINIKAL",
+    "title2": "TERBUKTI",
+    "metrics": {
+      "m1": {
+        "label": "Kadar Pelepasan NO (Nitrik Oksida)",
+        "sub": "Kadar Pelepasan Pemangkin Autonomi NO Endotelial Vaskular"
+      },
+      "m2": {
+        "label": "Aktiviti Perencatan Enzim PDE-5",
+        "sub": "Kadar Sekatan Fizikal Enzim Pemangkin Kelemahan Kavernosum"
+      },
+      "m3": {
+        "label": "Tahap Perlindungan Testosteron Bebas",
+        "sub": "Kadar Keseimbangan Anti-Aromatase Testosteron Bebas"
+      }
+    },
+    "mechTitle": "Bukti Mekanisme",
+    "mechSub": "Evidence of Mechanism",
+    "mechList": {
+      "l1": { "label": "Vasodilatasi Pelepasan NO", "value": "Signifikan" },
+      "l2": { "label": "Perencatan PDE-5", "value": "Kecekapan Tinggi" },
+      "l3": {
+        "label": "Perlindungan Anti-Aromatase",
+        "value": "Keseimbangan Ideal"
+      },
+      "l4": { "label": "Ketulenan Kromatografi HPLC", "value": "100% Disahkan" }
+    }
+  },
+
+  "support": {
+    "badge": "Pengesahan Produk & Keselamatan",
+    "title1": "TEKNIKAL & SAINTIFIK",
+    "title2": "PUSAT SOKONGAN",
+    "desc": "Maklumat klinikal yang disahkan, asal-usul bahan, dan panduan penggunaan produk yang diekstrak terus daripada spesifikasi makmal rasmi dan laporan paten Sepanyol.",
+    "trust1Title": "100% HPLC Berbilang Standard",
+    "trust1Desc": "Ketulenan bahan aktif botani terjamin melalui kromatografi cecair berprestasi tinggi. Sifar pencemaran haram.",
+    "trust2Title": "Label Bersih & Bebas Doping",
+    "trust2Desc": "Bebas daripada sebatian sildenafil preskripsi, perangsang kimia berat, dan bahan yang dilarang dalam sukan profesional.",
+    "faq1Q": "Apakah bahan aktif utama dalam M-CORE dan dari mana asalnya?",
+    "faq1A": "M-CORE menampilkan campuran premium ekstrak botani global. Bahan aktif utama ialah Ekstrak Liboost® Damiana (botani mentah dari Mexico, diekstrak melalui proses berpaten di Sepanyol). Ia digabungkan secara sinergi dengan Ekstrak Tongkat Ali Malaysia (kepekatan 1:100), Ekstrak Maca Peru, Ekstrak Cordyceps Sinensis Tibet, Ekstrak Guarana Brazil, Ekstrak Bilberry Eropah Utara, serta nutrien penting seperti Zink Glukonat dan Vitamin B6.",
+    "faq2Q": "Bagaimanakah cara untuk mengambil M-CORE dan apakah keperluan penyimpanannya?",
+    "faq2A": "Menurut spesifikasi produk, dos yang disyorkan adalah 2 tablet sehari. Untuk jangka hayat dan potensi optimum, simpan M-CORE pada suhu bilik (< 25°C) di tempat yang kering. Jauhkan produk daripada sinaran matahari langsung, kelembapan, atau sumber haba.",
+    "faq3Q": "Adakah terdapat sebarang langkah berjaga-jaga atau had umur untuk mengambil M-CORE?",
+    "faq3A": "Ya. M-CORE dirumus khas untuk penjagaan kecergasan orang dewasa dan tidak sesuai untuk individu berumur di bawah 18 tahun. Disebabkan kekurangan data klinikal, wanita hamil dan ibu yang menyusu harus mengelakkan penggunaan. Jika anda sedang menerima rawatan perubatan, sila berunding dengan doktor sebelum pengambilan.",
+    "faq4Q": "Berapa lamakah masa yang diambil untuk melihat hasil yang ketara?",
+    "faq4A": "Tindak balas individu mungkin berbeza bergantung kepada keadaan fizikal dan tahap tekanan; ada yang melihat perubahan positif dalam 1 hingga 2 minggu, manakala yang lain menyedari perbezaan dalam 1 hingga 2 bulan. Walau bagaimanapun, pengesanan klinikal untuk bahan premium kami, Liboost®, menunjukkan peningkatan yang signifikan secara statistik dalam pelepasan nitrik oksida (NO), metrik erektil, dan kebangkitan libido dalam garis masa susulan 4 minggu (1 bulan).",
+    "faq5Q": "Adakah M-CORE selamat dan bebas daripada pemalsuan farmaseutikal atau bahan doping?",
+    "faq5A": "Pasti. Walaupun suplemen untuk peningkatan seksual sering menghadapi risiko pemalsuan kimia, M-CORE menguatkuasakan kawalan kualiti yang ketat. Setiap kelompok ekstrak Liboost® premium kami melalui ujian HPLC untuk memastikan kehomogenan dan menjamin rumusan 100% bebas sildenafil. Ia bebas daripada bahan terlarang dan perangsang kimia, serta mematuhi piawaian sukan dan label bersih moden.",
+    "footerHint": "💡 Perlukan bantuan langsung? Klik ikon sembang di bahagian bawah kanan untuk bercakap dengan pasukan kami.",
+    "footerEmail": "support@m-core.com",
+    "footerHours": "Isn - Jum: 9AM - 6PM"
   }
 }

@@ -1,3 +1,4 @@
+// src/components/Ingredients.jsx
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,26 +9,41 @@ const Ingredients = () => {
   const { t } = useTranslation();
   const [activeReportImg, setActiveReportImg] = useState(null);
 
+  // 🚀 將資料陣列與 JSON i18n 系統完美對齊
   const secondaryIngredients = [
     {
-      title: "東革阿里",
-      sub: "TONGKAT ALI (100:1)",
-      text: "嚴選全球原材，經由 HPLC 驗證的高效精華。",
+      title: t("ingredients.items.tongkat.title"),
+      sub: t("ingredients.items.tongkat.sub"),
+      text: t("ingredients.items.tongkat.text"),
       img: "/assets/tongkat-ali-extract-100-1-purity.png",
       tier: "gold",
     },
     {
-      title: "瑪卡提取物",
-      sub: "MACA EXTRACT",
-      text: "嚴選全球原材，經由 HPLC 驗證的高效精華。",
+      title: t("ingredients.items.maca.title"),
+      sub: t("ingredients.items.maca.sub"),
+      text: t("ingredients.items.maca.text"),
       img: "/assets/peruvian-maca-root-extract-energy.jpg",
       tier: "regular",
     },
     {
-      title: "冬蟲夏草",
-      sub: "CORDYCEPS SINENSIS",
-      text: "嚴選全球原材，經由 HPLC 驗證的高效精華。",
+      title: t("ingredients.items.cordyceps.title"),
+      sub: t("ingredients.items.cordyceps.sub"),
+      text: t("ingredients.items.cordyceps.text"),
       img: "/assets/cordyceps-sinensis-atp-booster.jpg",
+      tier: "regular",
+    },
+    {
+      title: t("ingredients.items.guarana.title"),
+      sub: t("ingredients.items.guarana.sub"),
+      text: t("ingredients.items.guarana.text"),
+      img: "/public/guarana-extract.webp",
+      tier: "regular",
+    },
+    {
+      title: t("ingredients.items.bilberry.title"),
+      sub: t("ingredients.items.bilberry.sub"),
+      text: t("ingredients.items.bilberry.text"),
+      img: "/public/bilberry-extract.webp",
       tier: "regular",
     },
   ];
@@ -46,16 +62,19 @@ const Ingredients = () => {
         <Reveal y={30}>
           <div className="text-center mb-16 lg:mb-28">
             <span className="text-xs tracking-[0.6em] text-[#86868b] uppercase font-black block mb-4">
-              CLINICAL INGREDIENTS
+              {t("ingredients.headerSub")}
             </span>
             <h2 className="text-4xl lg:text-7xl font-black tracking-tighter italic uppercase text-white">
-              Core Ingredients
+              {t("ingredients.headerTitle")}
             </h2>
             <div className="h-[2px] w-16 bg-white mx-auto mt-6 mb-4"></div>
+            {/* 🚀 動態切割高亮文字區塊 */}
             <p className="text-[#86868b] max-w-2xl mx-auto text-base lg:text-lg font-light italic">
-              嚴選全球原材，經由{" "}
-              <span className="text-white font-bold not-italic">HPLC 驗證</span>{" "}
-              的高效精華。
+              {t("ingredients.desc1")}
+              <span className="text-white font-bold not-italic">
+                {t("ingredients.descHighlight")}
+              </span>
+              {t("ingredients.desc2")}
             </p>
           </div>
         </Reveal>
@@ -64,36 +83,34 @@ const Ingredients = () => {
         <div className="mb-12 font-sans">
           <Reveal y={40}>
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-[#050505] shadow-2xl p-6 lg:p-12 group cursor-pointer">
-              {/* 背景圖片優化：手機版(預設)直接彩色，桌機端(md:)才走黑白懸停；整體亮度調高，遮罩調輕 */}
               <div className="absolute inset-0 z-0 opacity-35 group-hover:opacity-55 group-hover:scale-105 transition-all duration-1000">
                 <img
                   src="/assets/liboost-turnera-diffusa-extract-spain.png"
                   alt="Spain Patent Liboost Extract Premium Selection"
                   className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
-                {/* 輕量化的漸層塗層，確保黃花清晰可見，同時不影響文字閱讀 */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/90 via-[#080808]/40 to-transparent"></div>
               </div>
 
               <div className="relative z-10 flex flex-wrap gap-3 mb-8 justify-between items-start">
                 <div className="flex gap-2">
                   <span className="px-3 py-1 bg-white text-black text-[10px] font-black tracking-widest uppercase italic rounded-sm shadow-lg">
-                    GLOBAL PATENT
+                    {t("ingredients.liboost.badge1")}
                   </span>
                   <span className="px-3 py-1 border border-white/10 bg-white/5 text-[#86868b] text-[10px] font-black tracking-widest uppercase rounded-sm flex items-center gap-1">
-                    <ShieldCheck size={12} className="text-green-500" /> HPLC
-                    VERIFIED
+                    <ShieldCheck size={12} className="text-green-500" />{" "}
+                    {t("ingredients.liboost.badge2")}
                   </span>
                 </div>
 
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    openLightbox("/assets/liboost-hplc-report-data.jpg");
+                    openLightbox("public/HPLC.png");
                   }}
                   className="flex items-center gap-1.5 text-[11px] text-[#86868b] hover:text-white transition-colors bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-full font-bold"
                 >
-                  <FileText size={12} /> {t("檢視 HPLC 驗證報告")}{" "}
+                  <FileText size={12} /> {t("ingredients.liboost.btn")}{" "}
                   <Maximize2 size={10} />
                 </button>
               </div>
@@ -101,13 +118,13 @@ const Ingredients = () => {
               <div className="relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-6 space-y-6">
                   <h3 className="text-4xl lg:text-6xl font-black text-white italic uppercase tracking-tighter leading-none">
-                    Liboost™ <br />
+                    {t("ingredients.liboost.title1")} <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 font-sans not-italic">
-                      透納葉精華
+                      {t("ingredients.liboost.title2")}
                     </span>
                   </h3>
                   <p className="text-[#86868b] text-base lg:text-lg font-light leading-relaxed italic">
-                    嚴選全球原材，經由 HPLC 驗證的高效精華。
+                    {t("ingredients.liboost.desc")}
                   </p>
                 </div>
 
@@ -115,7 +132,7 @@ const Ingredients = () => {
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
-                      openLightbox("/assets/no-release-clinical-chart.jpg");
+                      openLightbox("/public/assets/NO-Release.jpeg");
                     }}
                     className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative"
                   >
@@ -127,19 +144,17 @@ const Ingredients = () => {
                       +15.13%
                     </div>
                     <div className="text-[11px] text-white font-black tracking-[0.1em] uppercase mt-2">
-                      NO Release 核心機制
+                      {t("ingredients.liboost.card1Title")}
                     </div>
                     <p className="text-[11px] text-[#86868b] mt-1 font-light leading-snug">
-                      顯著提升一氧化氮釋放，優化核心管道循環，點擊查看臨床數據圖。
+                      {t("ingredients.liboost.card1Desc")}
                     </p>
                   </div>
 
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
-                      openLightbox(
-                        "/assets/pde5-inhibition-clinical-chart.jpg",
-                      );
+                      openLightbox("/public/assets/PDE-5-Inhibition.jpeg");
                     }}
                     className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative"
                   >
@@ -151,10 +166,10 @@ const Ingredients = () => {
                       -42.41%
                     </div>
                     <div className="text-[11px] text-white font-black tracking-[0.1em] uppercase mt-2">
-                      PDE-5 Inhibition 活性
+                      {t("ingredients.liboost.card2Title")}
                     </div>
                     <p className="text-[11px] text-[#86868b] mt-1 font-light leading-snug">
-                      強效阻斷舒緩因子流失，延長巔峰持久表現，點擊查看臨床對照圖。
+                      {t("ingredients.liboost.card2Desc")}
                     </p>
                   </div>
                 </div>
@@ -163,15 +178,14 @@ const Ingredients = () => {
           </Reveal>
         </div>
 
-        {/* ===================== 第二與第三梯隊 (修復懸停滑鼠變色 Bug，移除標籤) ===================== */}
+        {/* ===================== 第二與第三梯隊 (1+5 完美對齊排版) ===================== */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 font-sans">
           {secondaryIngredients.map((item, idx) => (
             <div
-              key={item.title}
+              key={idx}
               className={`${item.tier === "gold" ? "md:col-span-12 lg:col-span-6" : "md:col-span-6 lg:col-span-3"}`}
             >
               <Reveal delay={idx * 0.08} y={30}>
-                {/* 加上 group 關鍵字，修復懸停變色問題 */}
                 <motion.div
                   whileHover={{ y: -6 }}
                   className="bg-[#121212] border border-white/5 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col transition-all group cursor-pointer"
@@ -180,15 +194,14 @@ const Ingredients = () => {
                   <div
                     className={`${item.tier === "gold" ? "h-56 lg:h-64" : "h-40 lg:h-48"} relative overflow-hidden`}
                   >
-                    {/* 這裡的 group-hover: 判定現在能正常觸發了 */}
                     <img
                       src={item.img}
-                      alt={`${item.title} ST Empires Premium Selection`}
+                      alt={`${item.title} M-CORE Premium Selection`}
                       className="w-full h-full object-cover transition-all duration-700 lg:grayscale lg:opacity-40 lg:group-hover:grayscale-0 lg:group-hover:opacity-100 lg:group-hover:scale-105"
                     />
                   </div>
 
-                  {/* 文字介紹區：統一為你指定的精簡字句 */}
+                  {/* 文字介紹區 */}
                   <div className="p-6 lg:p-8 flex-1 flex flex-col justify-between">
                     <div>
                       <h4 className="text-xl lg:text-2xl font-black italic uppercase tracking-tighter text-white">
@@ -197,7 +210,7 @@ const Ingredients = () => {
                       <div className="text-[9px] text-[#86868b] tracking-[0.3em] uppercase mb-4 font-bold font-mono">
                         {item.sub}
                       </div>
-                      <p className="text-[#86868b] text-xs lg:text-sm font-medium leading-relaxed italic font-sans">
+                      <p className="text-[#86868b] text-xs lg:text-sm font-medium leading-relaxed font-sans">
                         {item.text}
                       </p>
                     </div>
@@ -236,7 +249,7 @@ const Ingredients = () => {
             >
               <img
                 src={activeReportImg}
-                alt="ST Empires HPLC Verified Report Full Size"
+                alt="M-CORE Laboratory Verified Report Full Size"
                 className="w-full h-full max-h-[78vh] object-contain rounded-xl"
                 onError={(e) => {
                   e.target.src =
@@ -245,7 +258,7 @@ const Ingredients = () => {
               />
             </motion.div>
             <p className="text-[#86868b] text-xs font-medium tracking-widest mt-6 uppercase text-center max-w-md">
-              高精準色譜純度數據表（點擊任意空白處即可關閉預覽）
+              {t("ingredients.lightboxText")}
             </p>
           </motion.div>
         )}

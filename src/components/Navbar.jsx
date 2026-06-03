@@ -1,11 +1,13 @@
 // --- 導航欄 ---
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom"; // 引入 React Router 工具
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const location = useLocation(); // 獲取當前網址路徑
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -22,12 +24,12 @@ const Navbar = () => {
     { code: "bm", label: "BM" },
   ];
 
+  // 配合全新四個多頁面規劃，將 href 改為實體路由 path
   const navLinks = [
-    { name: t("nav.vision"), href: "#vision" },
-    { name: t("nav.s7r"), href: "#7r" },
-    { name: t("nav.ingredients"), href: "#ingredients" },
-    { name: t("nav.science"), href: "#science" },
-    { name: t("nav.usage"), href: "#usage" },
+    { name: t("nav.home") || "Home", path: "/" },
+    { name: t("nav.product") || "The M-CORE", path: "/product" },
+    { name: t("nav.science") || "Science", path: "/science" },
+    { name: t("nav.support") || "Support", path: "/support" },
   ];
 
   return (
@@ -41,29 +43,40 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-6 lg:px-8 flex justify-between items-center">
-          {/* 1. Logo 區域 */}
-          <div className="flex items-center space-x-2">
+          {/* 1. Logo 區域 - 改為 Link 點擊回首頁 */}
+          <Link
+            to="/"
+            className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
+          >
             <div className="text-xl font-bold tracking-[0.2em] text-white uppercase italic font-sans">
               ST{" "}
               <span className="text-[#86868b] font-light uppercase font-sans">
                 Empires
               </span>
             </div>
-          </div>
+          </Link>
 
           {/* 2. 桌面端選單與語言切換 */}
           <div className="hidden lg:flex items-center space-x-12">
             <div className="flex space-x-12 text-[14px] tracking-[0.3em] uppercase font-bold text-[#86868b] font-sans">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="hover:text-white transition-colors font-sans"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                // 檢查當前網址是否與選單路徑相符
+                const isActive = location.pathname === link.path;
+
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`transition-colors font-sans ${
+                      isActive ? "text-white" : "hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
+
             {/* 語言切換按鈕 */}
             <div className="flex items-center space-x-4 border-l border-white/10 pl-8 ml-4">
               {langs.map((l) => (
@@ -82,7 +95,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* 3. 手機版漢堡選單按鈕 (應獨立於 lg:flex 之外) */}
+          {/* 3. 手機版漢堡選單按鈕 */}
           <div className="flex items-center lg:hidden">
             <button
               className="text-white p-2"
@@ -91,8 +104,7 @@ const Navbar = () => {
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
-        </div>{" "}
-        {/* 這是 container 的閉合標籤 */}
+        </div>
       </nav>
 
       {/* Mobile Menu */}
@@ -112,19 +124,31 @@ const Navbar = () => {
               <X size={32} />
             </button>
             <div className="flex flex-col space-y-8 text-center font-sans">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-black italic text-white uppercase tracking-widest font-sans"
-                >
-                  {link.name}
-                </motion.a>
-              ))}
+              {navLinks.map((link, i) => {
+                const isActive = location.pathname === link.path;
+
+                return (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <Link
+                      to={link.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-2xl font-black italic uppercase tracking-widest font-sans ${
+                        isActive
+                          ? "text-white"
+                          : "text-[#86868b] hover:text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+
               <div className="flex space-x-6 pt-10 justify-center">
                 {langs.map((l) => (
                   <button

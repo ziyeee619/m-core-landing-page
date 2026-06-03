@@ -1,10 +1,9 @@
 {
   "nav": {
-    "vision": "Vision",
-    "s7r": "7R System",
-    "ingredients": "Ingredients",
+    "home": "Home",
+    "product": "Product",
     "science": "Science",
-    "usage": "Usage"
+    "support": "Support"
   },
   "hero": {
     "edition": "Titanium Edition ・ 2026",
@@ -23,13 +22,211 @@
     "p6": "EXCELLENCE",
     "p7": ""
   },
+  "preview": {
+    "sec1": {
+      "sub": "CLINICAL TRACING BASED ON 4-WEEK FOLLOW-UP",
+      "title": "PROVEN BY SCIENCE. DRIVEN BY PERFORMANCE.",
+      "card1": {
+        "title": "NO Release Mechanism",
+        "desc": "Significantly stimulates endothelial nitric oxide release, relaxing vascular smooth muscle for peak engorgement."
+      },
+      "card2": {
+        "title": "Female Satisfaction (FSFI)",
+        "desc": "Clinically proven by Spanish patent Liboost® to comprehensively enhance desire, lubrication, and overall satisfaction."
+      },
+      "card3": {
+        "title": "Male Performance (IIEF)",
+        "desc": "Effectively blocks PDE-5 activity, fully stabilizing endurance and erectile function indicators."
+      }
+    },
+    "sec2": {
+      "imgHover": "Explore Formula",
+      "sub": "FLAGSHIP PERFORMANCE FORMULA",
+      "title1": "M-CORE Premium",
+      "title2": "Energy Formula",
+      "desc": "Combining Spanish patented Liboost®, Malaysian Tongkat Ali, and high-altitude Cordyceps, designed for elites seeking peak performance. Breaking away from chemical stimulants to provide 100% natural, safe, and dependency-free endogenous support.",
+      "check1": "100% Sildenafil-Free",
+      "check2": "ATP Energy Booster",
+      "btn": "Discover M-CORE Now"
+    }
+  },
   "usage": {
-    "label": "Daily Routine",
-    "usage": "Usage",
-    "guide": "Guide",
-    "dose": "Daily Dosage",
-    "doseDesc": "Consume consistently for long-term stability of core dynamics.",
-    "pkg": "Premium Package",
-    "pkgDesc": "Contains 60 tablets, designed for the 30-day cycle of modern elites."
+    "label": "DAILY PROTOCOL",
+    "usage": "OPTIMAL DOSAGE",
+    "guide": "SCIENTIFIC GUIDE",
+    "doseTitle": "Daily Protocol",
+    "dose": "Take Daily",
+    "doseNum": "2 TABLETS",
+    "doseDesc": "According to product specifications, consume 2 tablets per day. Store M-CORE at room temperature (< 25°C) in a dry place. Keep the product sheltered from direct sunlight, moisture, or heat sources.",
+    "pkgTitle": "Premium Package",
+    "pkgSub": "30-DAY PROTOCOL",
+    "pkgDesc": "Each bottle contains 60 premium 1g tablets, precision-manufactured under rigid Malaysian clinical parameters to ensure an exact 30-day male performance cycle.",
+    "certTitle": "Laboratory & Production Certifications",
+    "certs": {
+      "gmp": {
+        "name": "GMP MALAYSIA",
+        "desc": "Good Manufacturing Practice Certified"
+      },
+      "haccp": {
+        "name": "HACCP CERTIFIED",
+        "desc": "Food Safety Assurance Standard"
+      },
+      "mesti": {
+        "name": "MeSTI PROGRAM",
+        "desc": "Food Safety Responsibility Industry"
+      }
+    }
+  },
+
+  "purchase": {
+    "addCartBtn": "ADD TO CART",
+    "tagline": "PEAK PERFORMANCE",
+    "name": "M-CORE Premium Energy Formula",
+    "features": {
+      "f1": "100% Scientific Formulation",
+      "f2": "Sustained Energy Without Crash",
+      "f3": "Premium Imported Ingredients"
+    },
+    "save": "Save RM {{amount}}",
+    "shipping": "💡 Shipping calculated at checkout · Free delivery within West Malaysia",
+    "cartTitle": "Your Cart",
+    "checkoutBtn": "Checkout (FPX / Card)"
+  },
+
+  "ingredients": {
+    "headerSub": "CLINICAL INGREDIENTS",
+    "headerTitle": "Core Ingredients",
+    "desc1": "Strictly selected global patents and rare herbs, verified by ",
+    "descHighlight": "HPLC Chromatography",
+    "desc2": " for high-efficiency essence, absolutely free of illegal chemical drugs.",
+    "liboost": {
+      "badge1": "SPAIN PATENT Raw From Mexico",
+      "badge2": "100% SILDENAFIL-FREE",
+      "btn": "View HPLC Report",
+      "title1": "Liboost®",
+      "title2": "Patented Damiana Extract",
+      "desc": "Pure Turnera diffusa leaves sourced from Mexico, undergoing patented extraction at a GMP facility in Spain. Rich in total bioflavonoids (dopamine synthesis catalysts), it exerts excellent anti-aromatase effects, strongly inhibiting androgen degradation and comprehensively awakening primal male energy.",
+      "card1Title": "NO Release & Vasodilation",
+      "card1Desc": "Actively stimulates the release of Nitric Oxide (NO) in the endothelial tissue of the corpus cavernosum, relaxing vascular smooth muscles to achieve peak engorgement. Click to view clinical data.",
+      "card2Title": "PDE-5 Inhibition",
+      "card2Desc": "Physically blocks the PDE-5 enzyme that causes vascular flaccidity, effectively preventing the hydrolysis of engorgement factors, prolonging combat hardness to the maximum. Click to view chart."
+    },
+    "items": {
+      "tongkat": {
+        "title": "Tongkat Ali Extract",
+        "sub": "TONGKAT ALI (1:100)",
+        "text": "Malaysia's national treasure. Concentrated at 1:100 high purity, it reduces SHBG binding and stimulates testicular cells to autonomously secrete free testosterone, fundamentally improving endogenous male hormones, sperm quality, and motility."
+      },
+      "maca": {
+        "title": "Peruvian Black Maca",
+        "sub": "MACA EXTRACT",
+        "text": "South American essence. Uses a non-hormonal conditioning mechanism to awaken primal desire, helping the body cope with daily chronic fatigue, significantly reducing mental anxiety and temporary erectile dysfunction (ED)."
+      },
+      "cordyceps": {
+        "title": "Cordyceps Sinensis",
+        "sub": "CORDYCEPS SINENSIS",
+        "text": "Rare Tibetan plateau extract. Scientifically proven to significantly increase the synthesis rate of ATP in cell mitochondria, providing endless explosive power and all-day anti-fatigue endurance."
+      },
+      "guarana": {
+        "title": "Guarana Extract",
+        "sub": "GUARANA EXTRACT",
+        "text": "Amazonian natural awakening vine. Contains mild, stomach-friendly natural caffeine that rapidly enhances brain focus and sharpness, avoiding palpitations and crashes caused by traditional caffeine."
+      },
+      "bilberry": {
+        "title": "Bilberry Extract",
+        "sub": "BILBERRY EXTRACT",
+        "text": "Potent Nordic antioxidant. Highly stabilizes microvascular structures, maintains vascular integrity, promotes healthy microcirculation in the corpus cavernosum, and helps secure long-lasting, high-hardness erections."
+      }
+    },
+    "lightboxText": "High-precision chromatographic purity data sheet (Click anywhere to close preview)"
+  },
+
+  "sciencePage": {
+    "bannerSub": "R&D INNOVATION LAB",
+    "bannerTitle1": "THE CLINICAL",
+    "bannerTitle2": "SCIENCE",
+    "bannerDesc": "M-CORE rejects any unproven formulas. All our ingredients undergo rigorous clinical trials and scientific validation, designed to provide elites with the purest and most stable endogenous energy support.",
+    "pledge1Title": "100% SILDENAFIL-FREE",
+    "pledge1Desc": "Complies with strict international safety standards, free from synthetic drugs, ensuring peace of mind without dependency.",
+    "pledge2Title": "BIOAVAILABILITY ENHANCED",
+    "pledge2Desc": "Exclusive high-efficiency absorption technology to comprehensively increase the body's conversion rate of nutrients.",
+    "pledge3Title": "PREMIUM SOURCED",
+    "pledge3Desc": "All core patented raw materials are imported from top global laboratories to ensure ultimate purity and potency."
+  },
+
+  "sevenR": {
+    "titleSystem": "System",
+    "dashboardTitle": "BEYOND ENERGY",
+    "dashboardDesc1": "Rejecting temporary spikes. We provide sustained power ",
+    "dashboardHighlight": "from the cellular level",
+    "dashboardDesc2": " upward.",
+    "items": {
+      "r1Title": "RESTORE",
+      "r1": "Restore Energy",
+      "r2Title": "RELIEVE",
+      "r2": "Relieve Stress",
+      "r3Title": "REBUILD",
+      "r3": "Rebuild Health",
+      "r4Title": "REIGNITE",
+      "r4": "Reignite Peak",
+      "r5Title": "REVITALIZE",
+      "r5": "Revitalize Endurance",
+      "r6Title": "REINFORCE",
+      "r6": "Reinforce Immunity",
+      "r7Title": "REFOCUS",
+      "r7": "Regain Focus"
+    }
+  },
+
+  "scienceCmp": {
+    "badge": "SPAIN CLINICAL LABORATORY DATA",
+    "title1": "CLINICAL",
+    "title2": "PROVEN",
+    "metrics": {
+      "m1": {
+        "label": "NO (Nitric Oxide) Release Rate",
+        "sub": "Vascular Endothelial NO Autonomous Catalytic Release Rate"
+      },
+      "m2": {
+        "label": "PDE-5 Enzyme Inhibition Activity",
+        "sub": "Cavernosal Flaccidity Enzyme Physical Blockage Rate"
+      },
+      "m3": {
+        "label": "Free Testosterone Protection Level",
+        "sub": "Free Testosterone Anti-Aromatase Balance Rate"
+      }
+    },
+    "mechTitle": "Mechanism Evidence",
+    "mechSub": "Evidence of Mechanism",
+    "mechList": {
+      "l1": { "label": "NO Release Vasodilation", "value": "Significant" },
+      "l2": { "label": "PDE-5 Inhibition", "value": "High Efficiency" },
+      "l3": { "label": "Anti-Aromatase Protection", "value": "Ideal Balance" },
+      "l4": { "label": "HPLC Chromatography Purity", "value": "100% Certified" }
+    }
+  },
+
+  "support": {
+    "badge": "Product Verification & Safety",
+    "title1": "TECHNICAL & SCIENTIFIC",
+    "title2": "SUPPORT CENTER",
+    "desc": "Verified clinical insights, ingredient origins, and product usage guidance extracted directly from official laboratory specifications and Spanish patented reports.",
+    "trust1Title": "100% HPLC Multi-Standardized",
+    "trust1Desc": "Guaranteed purity of botanical actives via high-performance liquid chromatography. Zero illegal adulteration.",
+    "trust2Title": "Clean-Label & Doping Free",
+    "trust2Desc": "Free from prescription sildenafil compounds, heavy chemical stimulants, and substances banned in professional sports.",
+    "faq1Q": "What are the core active ingredients in M-CORE and where do they originate?",
+    "faq1A": "M-CORE features a premium blend of global botanical extracts. The core active is Liboost® Damiana Extract (raw botanical from Mexico, extracted via a patented process in Spain). This is synergistically combined with Malaysian Tongkat Ali Extract (1:100 concentration), Peruvian Maca Extract, Tibetan Cordyceps Sinensis Extract, Brazilian Guarana Extract, Northern European Bilberry Extract, and essential nutrients like Zinc Gluconate and Vitamin B6.",
+    "faq2Q": "How should I consume M-CORE and what are the storage requirements?",
+    "faq2A": "According to product specifications, the recommended dosage is to take 2 tablets per day. For optimal shelf-life and potency, store M-CORE at room temperature (< 25°C) in a dry place. Keep the product sheltered from direct sunlight, moisture, or heat sources.",
+    "faq3Q": "Are there any precautions or age restrictions for taking M-CORE?",
+    "faq3A": "Yes. M-CORE is formulated strictly for adult vitality maintenance and is not suitable for individuals under 18 years old. Due to insufficient clinical data for certain demographics, pregnant women and lactating mothers should avoid use. If you are currently on prescribed medical treatment, please consult with your physician or dietician before consumption.",
+    "faq4Q": "How long does it take to see noticeable results?",
+    "faq4A": "Individual responses may vary depending on personal physical and stress conditions; some may observe positive changes within 1 to 2 weeks, while others notice differences within 1 to 2 months. However, clinical tracing for our premium ingredient, Liboost®, demonstrates statistically significant improvements in localized nitric oxide (NO) release, erectile metrics, and libido arousal within a structured 4-week (1 month) follow-up timeline.",
+    "faq5Q": "Is M-CORE safe and free from pharmaceutical adulteration or doping substances?",
+    "faq5A": "Absolutely. While dietary supplements for sexual enhancement frequently face chemical adulteration risks globally, M-CORE strictly enforces rigid quality control. Every batch of our premium Liboost® extract undergoes robust High-Performance Liquid Chromatography (HPLC) testing to ensure homogeneity and guarantees a 100% sildenafil-free (Viagra-free) formulation. It is free from banned substances, heavy chemical stimulants, and complies safely with modern athletic and clean-label standards.",
+    "footerHint": "💡 Need live assistance? Click the chat bubble on the bottom right to talk to our team.",
+    "footerEmail": "support@m-core.com",
+    "footerHours": "Mon - Fri: 9AM - 6PM"
   }
 }
