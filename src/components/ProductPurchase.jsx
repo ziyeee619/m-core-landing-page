@@ -7,15 +7,12 @@ import { Zap } from "lucide-react";
 const ProductPurchase = () => {
   const { t, i18n } = useTranslation();
 
-  // 實時同步的 Shopify 價格狀態
   const [currentPrice, setCurrentPrice] = useState("RM 288.00");
   const [compareAtPrice, setCompareAtPrice] = useState("RM 300.00");
   const [savedAmount, setSavedAmount] = useState(12);
 
-  // 母容器
   const wrapperRef = useRef(null);
 
-  // 🚀 動態提取 JSON 中的特點清單
   const productFeatures = [
     t("purchase.features.f1"),
     t("purchase.features.f2"),
@@ -27,13 +24,14 @@ const ProductPurchase = () => {
     const scriptId = "shopify-buy-button-script-global";
     let shopifyScript = document.getElementById(scriptId);
 
-    // 動態創造子容器
     const freshContainer = document.createElement("div");
+    // 🚀 核心修正 1：使用 w-fit 緊緊包住 Shopify，並用 mx-auto 完美置中，桌機則用 lg:mx-0 靠左
+    freshContainer.className = "w-fit mx-auto lg:mx-0";
+
     if (wrapperRef.current) {
       wrapperRef.current.appendChild(freshContainer);
     }
 
-    // Promise 等待機制的 SDK 載入器
     const loadShopifySDK = () => {
       return new Promise((resolve) => {
         if (window.ShopifyBuy && window.ShopifyBuy.UI) {
@@ -55,7 +53,6 @@ const ProductPurchase = () => {
       });
     };
 
-    // 開始執行載入與渲染
     loadShopifySDK().then(() => {
       if (!isMounted) return;
 
@@ -88,9 +85,14 @@ const ProductPurchase = () => {
                 button: true,
               },
               styles: {
+                // 🚀 核心修正 2：確保 iframe 內部的文字預設置中
                 product: {
                   width: "100%",
                   "max-width": "100%",
+                  "text-align": "center !important",
+                  "@media (min-width: 1024px)": {
+                    "text-align": "left !important",
+                  },
                 },
                 button: {
                   "background-color": "#ffffff !important",
@@ -138,10 +140,15 @@ const ProductPurchase = () => {
                     "background-color": "rgba(255,255,255,0.05) !important",
                   },
                 },
+                // 🚀 核心修正 3：控制加減器的 Flex 排版
                 quantity: {
                   "margin-bottom": "20px !important",
                   display: "flex !important",
                   "align-items": "center !important",
+                  "justify-content": "center !important", // 手機版強制置中
+                  "@media (min-width: 1024px)": {
+                    "justify-content": "flex-start !important", // 桌機版靠左對齊
+                  },
                 },
                 variantTitle: {
                   color: "#86868b !important",
@@ -149,6 +156,10 @@ const ProductPurchase = () => {
                   "font-weight": "800 !important",
                   "text-transform": "uppercase !important",
                   "margin-bottom": "8px !important",
+                  "text-align": "center !important",
+                  "@media (min-width: 1024px)": {
+                    "text-align": "left !important",
+                  },
                 },
                 quantityLabel: {
                   color: "#86868b !important",
@@ -156,14 +167,26 @@ const ProductPurchase = () => {
                   "font-weight": "800 !important",
                   "text-transform": "uppercase !important",
                   "margin-bottom": "8px !important",
+                  "text-align": "center !important",
+                  "@media (min-width: 1024px)": {
+                    "text-align": "left !important",
+                  },
                 },
               },
             },
             cart: {
               iframe: true,
-              // 🚀 讓 Shopify 的購物車介面也能完美跟隨 i18n 語系切換
               title: t("purchase.cartTitle"),
               buttonText: t("purchase.checkoutBtn"),
+              popup: true,
+              styles: {
+                cart: {
+                  "z-index": "2147483647 !important",
+                },
+                overlay: {
+                  "z-index": "2147483646 !important",
+                },
+              },
             },
           },
           success: (component) => {
@@ -193,7 +216,6 @@ const ProductPurchase = () => {
         wrapperRef.current.removeChild(freshContainer);
       }
     };
-    // 🚀 核心正義：加入 i18n.language，確保切換語言時 Shopify 腳本會被銷毀並重新掛載翻譯
   }, [t, i18n.language]);
 
   return (
@@ -220,7 +242,7 @@ const ProductPurchase = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="flex flex-col space-y-8"
       >
-        <div>
+        <div className="text-center lg:text-left">
           <span className="text-xs font-black tracking-[0.3em] text-[#86868b] uppercase block mb-2">
             {t("purchase.tagline")}
           </span>
@@ -230,7 +252,7 @@ const ProductPurchase = () => {
         </div>
 
         {/* 實時同步價格區間 */}
-        <div className="border-t border-b border-white/5 py-6 flex items-baseline space-x-4">
+        <div className="border-t border-b border-white/5 py-6 flex items-baseline justify-center lg:justify-start space-x-4">
           <span className="text-3xl font-black tracking-widest text-white">
             {currentPrice}
           </span>
@@ -241,17 +263,16 @@ const ProductPurchase = () => {
           )}
           {compareAtPrice && savedAmount > 0 && (
             <span className="text-[10px] font-bold tracking-widest text-amber-500 border border-amber-500/20 bg-amber-500/5 px-2 py-1 rounded-md uppercase">
-              {/* 🚀 動態載入省下金額 */}
               {t("purchase.save", { amount: savedAmount })}
             </span>
           )}
         </div>
-        <span className="text-xs text-[#86868b] block -mt-4">
+        <span className="text-xs text-[#86868b] block -mt-4 text-center lg:text-left">
           {t("purchase.shipping")}
         </span>
 
         {/* 產品特點清單 */}
-        <ul className="space-y-3 text-sm text-neutral-400 font-medium tracking-wide">
+        <ul className="space-y-3 text-sm text-neutral-400 font-medium tracking-wide flex flex-col items-center lg:items-start">
           {productFeatures.map((feature, i) => (
             <li key={i} className="flex items-center space-x-3">
               <Zap size={14} className="text-amber-500" />
@@ -260,8 +281,8 @@ const ProductPurchase = () => {
           ))}
         </ul>
 
-        {/* Shopify 購買核心注入點 */}
-        <div className="pt-4 border-t border-white/5">
+        {/* 🚀 核心修正 4：把這裡的外層干擾全部拿掉，交給 freshContainer 控制 */}
+        <div className="pt-4 border-t border-white/5 w-full">
           <div ref={wrapperRef}></div>
         </div>
       </motion.div>

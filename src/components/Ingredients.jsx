@@ -36,14 +36,14 @@ const Ingredients = () => {
       title: t("ingredients.items.guarana.title"),
       sub: t("ingredients.items.guarana.sub"),
       text: t("ingredients.items.guarana.text"),
-      img: "/public/guarana-extract.webp",
+      img: "/guarana-extract.webp",
       tier: "regular",
     },
     {
       title: t("ingredients.items.bilberry.title"),
       sub: t("ingredients.items.bilberry.sub"),
       text: t("ingredients.items.bilberry.text"),
-      img: "/public/bilberry-extract.webp",
+      img: "/bilberry-extract.webp",
       tier: "regular",
     },
   ];
@@ -83,13 +83,16 @@ const Ingredients = () => {
         <div className="mb-12 font-sans">
           <Reveal y={40}>
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-[#050505] shadow-2xl p-6 lg:p-12 group cursor-pointer">
+              {/* 背景圖片優化區塊 */}
               <div className="absolute inset-0 z-0 opacity-35 group-hover:opacity-55 group-hover:scale-105 transition-all duration-1000">
                 <img
                   src="/assets/liboost-turnera-diffusa-extract-spain.png"
                   alt="Spain Patent Liboost Extract Premium Selection"
-                  className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 transition-all duration-1000"
+                  // 🚀 關鍵修正：手機版使用 max-md:object-contain 與 max-md:object-right-top 確保圖片比例正常且靠右上顯示
+                  className="w-full h-full object-cover max-md:object-contain max-md:object-right-top md:grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/90 via-[#080808]/40 to-transparent"></div>
+                {/* 🚀 遮罩修正：手機版改為由下往上的漸層 (bg-gradient-to-t)，讓下方文字區變暗，桌機版保持左右漸層 */}
+                <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080808]/90 via-[#080808]/40 to-transparent"></div>
               </div>
 
               <div className="relative z-10 flex flex-wrap gap-3 mb-8 justify-between items-start">

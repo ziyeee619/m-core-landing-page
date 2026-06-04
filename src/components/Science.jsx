@@ -87,7 +87,7 @@ const Science = () => {
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: metric.width }}
-                          viewport={{ once: true }}
+                          viewport={{ once: false }}
                           transition={{
                             duration: 1.8,
                             delay: index * 0.1,

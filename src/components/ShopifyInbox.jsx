@@ -1,23 +1,73 @@
 // src/components/ShopifyInbox.jsx
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const ShopifyInbox = () => {
+  const { t } = useTranslation();
+
   useEffect(() => {
-    // 如果是在本地開發環境 (localhost)，Shopify 必定會噴 401 錯誤並顯示技術限制
-    // 提示開發者這是正常現象，不需要慌張
     if (
       window.location.hostname === "localhost" ||
       window.location.hostname === "127.0.0.1"
     ) {
       console.log(
-        "💡 M-CORE 提示：目前處於 localhost 環境，Shopify Inbox 觸發安全網域限制 (401) 為正常現象。部署至正式網域後即可正常開啟對話。",
+        "💡 M-CORE Dev Hint: Currently in localhost environment. Shopify Inbox 401 error is normal.",
       );
     }
 
+    // 1. 🚀【終極黑魔法】動態監聽 Shopify 購物車是否被打開
+    const handleCartVisibility = () => {
+      // 抓取 Shopify 購物車滑出時會產生的外層 iframe 容器（通常帶有特定 class 或屬性）
+      // Shopify Buy Button SDK 的購物車容器 class 通常叫 .shopify-buy-frame--cart
+      const cartFrame = document.querySelector(".shopify-buy-frame--cart");
+
+      // 抓取 Shopify Inbox 的聊天按鈕外層節點
+      const chatWidget =
+        document.getElementById("shopify-chat") ||
+        document.querySelector(".shopify-chat-container") ||
+        document.querySelector("iframe#dummy-chat-button-iframe");
+
+      if (chatWidget && cartFrame) {
+        // 檢查購物車目前是不是處於「打開/滑出」的狀態
+        // Shopify 購物車打開時，容器會被加上 .is-active 或 .is-visible 等 class
+        const isCartOpen =
+          cartFrame.classList.contains("is-active") ||
+          cartFrame.classList.contains("is-visible") ||
+          (window.getComputedStyle(cartFrame).display !== "none" &&
+            window.getComputedStyle(cartFrame).visibility !== "hidden" &&
+            parseInt(window.getComputedStyle(cartFrame).width, 10) > 0);
+
+        if (isCartOpen) {
+          // 🛒 購物車打開了 -> 強制把聊天按鈕藏起來，絕對不會再穿透！
+          chatWidget.style.setProperty("display", "none", "important");
+          chatWidget.style.setProperty("visibility", "hidden", "important");
+          chatWidget.style.setProperty("opacity", "0", "important");
+        } else {
+          // 閉合狀態 -> 讓聊天按鈕恢復顯示
+          chatWidget.style.display = "";
+          chatWidget.style.visibility = "";
+          chatWidget.style.opacity = "";
+        }
+      }
+    };
+
+    // 2. 建立 DOM 監聽器 (MutationObserver)，只要網頁節點有變動（例如購物車滑出來），就觸發檢查
+    const observer = new MutationObserver((mutations) => {
+      handleCartVisibility();
+    });
+
+    // 開始監聽整個 <body> 的子節點與屬性變化
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class", "style"],
+    });
+
+    // 3. 載入原有的 Shopify Inbox 官方腳本
     const scriptId = "shopify-inbox-script-global";
     let script = document.getElementById(scriptId);
 
-    // 🚀 頂級安全加載機制：確保全站生命週期中，不管怎麼切換路由，永遠只會有一份腳本活著
     if (!script) {
       script = document.createElement("script");
       script.id = scriptId;
@@ -27,13 +77,13 @@ const ShopifyInbox = () => {
       document.body.appendChild(script);
     }
 
-    // 清理機制 (Cleanup)：當元件完全被銷毀時（通常不需要，因為我們掛在 App.jsx 最外層）
+    // 清理機制：當元件解構時停止監聽，防止記憶體洩漏
     return () => {
-      // 保持全站單一實例存活
+      observer.disconnect();
     };
-  }, []);
+  }, [t]);
 
-  return null; // 純邏輯腳本元件，不破壞全站任何 CSS 佈局
+  return null;
 };
 
 export default ShopifyInbox;

@@ -190,13 +190,10 @@
     "mechTitle": "機制證明",
     "mechSub": "Evidence of Mechanism",
     "mechList": {
-      "l1": { "label": "NO Release 核心血管擴張", "value": "Significant" },
-      "l2": {
-        "label": "PDE-5 Inhibition 延時阻斷",
-        "value": "High Efficiency"
-      },
-      "l3": { "label": "Anti-Aromatase 雄激素防護", "value": "Ideal Balance" },
-      "l4": { "label": "HPLC Chromatography Purity", "value": "100% Certified" }
+      "l1": { "label": "NO Release 核心血管擴張", "value": "顯著提升" },
+      "l2": { "label": "PDE-5 Inhibition 延時阻斷", "value": "強效阻斷" },
+      "l3": { "label": "Anti-Aromatase 雄激素防護", "value": "理想平衡" },
+      "l4": { "label": "HPLC 色譜高純度萃取", "value": "100% 官方驗證" }
     }
   },
 

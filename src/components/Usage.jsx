@@ -43,7 +43,6 @@ const Usage = () => {
                     <Clock className="text-white w-6 h-6 lg:w-8 lg:h-8" />
                   </div>
                   <div>
-                    {/* 🚀 核心修正：將原本寫死的 Prescription 改由 JSON 全方位控管 */}
                     <h4 className="text-[#86868b] text-[10px] tracking-widest uppercase mb-2 font-bold font-mono">
                       {t("usage.doseTitle")}
                     </h4>
@@ -59,7 +58,7 @@ const Usage = () => {
                   </div>
                 </div>
 
-                {/* 認證標章渲染區 */}
+                {/* 認證標章渲染區：保留右側文字，只隱藏格子內的 KEY */}
                 <div className="pt-8 lg:pt-10 border-t border-white/5 space-y-4">
                   <div className="text-[10px] font-black tracking-widest text-neutral-500 uppercase flex items-center gap-2 mb-2 justify-center lg:justify-start">
                     <ShieldCheck size={12} className="text-green-500" />
@@ -72,7 +71,8 @@ const Usage = () => {
                         key={cert.key}
                         className="p-3.5 bg-[#111] border border-white/5 rounded-xl flex items-center space-x-3.5 hover:border-white/10 transition-colors group overflow-hidden"
                       >
-                        <div className="w-11 h-11 bg-white/5 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center p-1 shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-900">
+                        {/* 左側徽章方塊 (移除了裡面的 span 文字，並稍微調整了 padding 讓圖片更完美置中) */}
+                        <div className="w-11 h-11 bg-white/5 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center p-1.5 shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-900">
                           <img
                             src={cert.img}
                             alt={`${t(`usage.certs.${cert.key}.name`)}`}
@@ -81,11 +81,9 @@ const Usage = () => {
                               e.target.style.display = "none";
                             }}
                           />
-                          <span className="text-[9px] font-black text-center leading-none text-neutral-400 group-hover:text-white transition-colors block font-mono">
-                            {cert.key.toUpperCase()}
-                          </span>
                         </div>
 
+                        {/* 右側說明文字 (完整保留) */}
                         <div className="flex-1 min-w-0 flex flex-col text-left">
                           <span className="text-[10px] lg:text-[11px] font-black tracking-wider text-white uppercase group-hover:text-amber-500 transition-colors truncate">
                             {t(`usage.certs.${cert.key}.name`)}
@@ -112,15 +110,12 @@ const Usage = () => {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 lg:p-16 flex flex-col justify-end">
-                  {/* 🚀 這裡改用 JSON 動態翻譯標題，大寫、斜體、帥氣的 leading-none */}
-                  <h3 className="text-3xl lg:text-5xl font-black italic text-white uppercase tracking-tighter leading-none mb-1">
+                  <h3 className="text-2xl lg:text-5xl font-black italic text-white uppercase tracking-tighter leading-none mb-1">
                     {t("usage.pkgTitle")}
                   </h3>
-                  {/* 小小的副標點綴 */}
                   <div className="text-[10px] text-amber-500 font-mono tracking-[0.2em] uppercase mb-4 font-black">
                     {t("usage.pkgSub")}
                   </div>
-
                   <p className="text-[#86868b] max-w-xs text-xs lg:text-sm font-light italic leading-relaxed">
                     {t("usage.pkgDesc")}
                   </p>
