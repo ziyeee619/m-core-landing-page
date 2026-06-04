@@ -7,6 +7,7 @@ import { Zap } from "lucide-react";
 const ProductPurchase = () => {
   const { t, i18n } = useTranslation();
 
+  // 🚀 資管動態狀態：實時響應數量折扣
   const [currentPrice, setCurrentPrice] = useState("RM 288.00");
   const [compareAtPrice, setCompareAtPrice] = useState("RM 300.00");
   const [savedAmount, setSavedAmount] = useState(12);
@@ -22,10 +23,8 @@ const ProductPurchase = () => {
   useEffect(() => {
     let isMounted = true;
     const scriptId = "shopify-buy-button-script-global";
-    let shopifyScript = document.getElementById(scriptId);
 
     const freshContainer = document.createElement("div");
-    // 🚀 核心修正 1：使用 w-fit 緊緊包住 Shopify，並用 mx-auto 完美置中，桌機則用 lg:mx-0 靠左
     freshContainer.className = "w-fit mx-auto lg:mx-0";
 
     if (wrapperRef.current) {
@@ -85,7 +84,6 @@ const ProductPurchase = () => {
                 button: true,
               },
               styles: {
-                // 🚀 核心修正 2：確保 iframe 內部的文字預設置中
                 product: {
                   width: "100%",
                   "max-width": "100%",
@@ -140,14 +138,13 @@ const ProductPurchase = () => {
                     "background-color": "rgba(255,255,255,0.05) !important",
                   },
                 },
-                // 🚀 核心修正 3：控制加減器的 Flex 排版
                 quantity: {
                   "margin-bottom": "20px !important",
                   display: "flex !important",
                   "align-items": "center !important",
-                  "justify-content": "center !important", // 手機版強制置中
+                  "justify-content": "center !important",
                   "@media (min-width: 1024px)": {
-                    "justify-content": "flex-start !important", // 桌機版靠左對齊
+                    "justify-content": "flex-start !important",
                   },
                 },
                 variantTitle: {
@@ -189,22 +186,60 @@ const ProductPurchase = () => {
               },
             },
           },
+          // SDK Data Model 輪詢對齊機制
           success: (component) => {
             if (!isMounted) return;
-            const selectedVariant = component.model.selectedVariant;
-            if (selectedVariant) {
-              const price = parseFloat(selectedVariant.price.amount);
-              setCurrentPrice(`RM ${price.toFixed(2)}`);
-              if (selectedVariant.compareAtPrice) {
-                const comparePrice = parseFloat(
-                  selectedVariant.compareAtPrice.amount,
-                );
-                setCompareAtPrice(`RM ${comparePrice.toFixed(2)}`);
-                setSavedAmount(Math.round(comparePrice - price));
-              } else {
-                setCompareAtPrice(null);
+
+            // 1. 核心價格演算法
+            const updateUIPrice = (qty) => {
+              const selectedVariant = component.model.selectedVariant;
+              if (!selectedVariant) return;
+
+              // 1 件 = 288 RM，2 件以上 = 每件 255 RM
+              const basePrice =
+                qty >= 2 ? 255.0 : parseFloat(selectedVariant.price.amount);
+
+              // 假設原價固定為每件 300 RM
+              const baseComparePrice = selectedVariant.compareAtPrice
+                ? parseFloat(selectedVariant.compareAtPrice.amount)
+                : 300.0;
+
+              // 這裡要乘上數量（qty），這樣客人按到 3 件時，畫面才會顯示總價！
+              // 或者是顯示單件特價（看你的設計，這邊先改成顯示總價，最符合買多變便宜的直覺）
+              const totalCurrentPrice = basePrice * qty;
+              const totalComparePrice = baseComparePrice * qty;
+
+              setCurrentPrice(`RM ${totalCurrentPrice.toFixed(2)}`);
+              setCompareAtPrice(`RM ${totalComparePrice.toFixed(2)}`);
+              setSavedAmount(Math.round(totalComparePrice - totalCurrentPrice));
+            };
+
+            // 2. 初始化先同步一次
+            updateUIPrice(component.model.quantity);
+
+            // 3. 🛸【核心修復】主動出擊！每 200 毫秒死死盯着 SDK 內部的真實數量模型
+            let lastQty = component.model.quantity;
+
+            const modelObserverInterval = setInterval(() => {
+              if (!isMounted) {
+                clearInterval(modelObserverInterval);
+                return;
               }
-            }
+
+              if (component && component.model) {
+                const currentQty = component.model.quantity;
+                // 只要發現 SDK 模型裡的數量跟上一次記錄的不一樣，立刻強制刷面板價格！
+                if (currentQty !== lastQty) {
+                  lastQty = currentQty;
+                  updateUIPrice(currentQty);
+                }
+              }
+            }, 200);
+
+            // 保留原本的事件監聽作為雙重保險
+            component.on("updateQuantity", (prod) => {
+              if (prod) updateUIPrice(prod.quantity);
+            });
           },
         });
       });
@@ -251,22 +286,29 @@ const ProductPurchase = () => {
           </h1>
         </div>
 
-        {/* 實時同步價格區間 */}
-        <div className="border-t border-b border-white/5 py-6 flex items-baseline justify-center lg:justify-start space-x-4">
-          <span className="text-3xl font-black tracking-widest text-white">
-            {currentPrice}
-          </span>
-          {compareAtPrice && (
+        {/* 靜態價格與明示促銷區塊 */}
+        <div className="border-t border-b border-white/5 py-6 flex flex-col space-y-3">
+          {/* 原價與特價 */}
+          <div className="flex items-baseline justify-center lg:justify-start space-x-4">
+            <span className="text-3xl font-black tracking-widest text-white">
+              RM 288.00
+            </span>
             <span className="text-sm font-medium tracking-wide text-neutral-500 line-through decoration-neutral-600">
-              {compareAtPrice}
+              RM 300.00
             </span>
-          )}
-          {compareAtPrice && savedAmount > 0 && (
             <span className="text-[10px] font-bold tracking-widest text-amber-500 border border-amber-500/20 bg-amber-500/5 px-2 py-1 rounded-md uppercase">
-              {t("purchase.save", { amount: savedAmount })}
+              {t("purchase.save", { amount: 12 })}
             </span>
-          )}
+          </div>
+
+          {/* 🚀 多語言動態促銷標籤 */}
+          <div className="flex justify-center lg:justify-start">
+            <span className="text-xs font-bold tracking-wider text-amber-400 bg-amber-400/10 border border-amber-400/20 px-3 py-1.5 rounded">
+              {t("purchase.volumeDiscount")}
+            </span>
+          </div>
         </div>
+
         <span className="text-xs text-[#86868b] block -mt-4 text-center lg:text-left">
           {t("purchase.shipping")}
         </span>
@@ -281,7 +323,7 @@ const ProductPurchase = () => {
           ))}
         </ul>
 
-        {/* 🚀 核心修正 4：把這裡的外層干擾全部拿掉，交給 freshContainer 控制 */}
+        {/* Shopify 按鈕容器 */}
         <div className="pt-4 border-t border-white/5 w-full">
           <div ref={wrapperRef}></div>
         </div>

@@ -59,9 +59,10 @@
       "f3": "严选多国顶级进口专利成分"
     },
     "save": "现省 RM {{amount}}",
-    "shipping": "💡 运费将于结帐时计算 · 西马地区享免运费",
+    "shipping": "💡 运费将于结帐时计算",
     "cartTitle": "您的购物车",
-    "checkoutBtn": "前往结帐 (FPX / 信用卡)"
+    "checkoutBtn": "前往结帐 (FPX / 信用卡)",
+    "volumeDiscount": "🔥 多件优惠：买 2 件以上，享尊荣特价 RM 255.00 / 件"
   },
   "ingredients": {
     "headerSub": "CLINICAL INGREDIENTS",

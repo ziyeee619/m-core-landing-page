@@ -87,10 +87,11 @@
       "f2": "Tenaga Berterusan Tanpa Lesu",
       "f3": "Bahan Import Premium"
     },
-    "save": "Jimat RM {{amount}}",
-    "shipping": "💡 Kos penghantaran dikira semasa daftar keluar · Penghantaran percuma ke Semenanjung Malaysia",
-    "cartTitle": "Troli Anda",
-    "checkoutBtn": "Daftar Keluar (FPX / Kad)"
+    "save": "JIMAT RM {{amount}}",
+    "shipping": "💡 Kos penghantaran dikira semasa pembayaran",
+    "cartTitle": "Troli Membeli-belah Anda",
+    "checkoutBtn": "Teruskan ke Pembayaran (FPX / Kad Kredit)",
+    "volumeDiscount": "🔥 Tawaran Kombo: Beli 2 ke atas dengan hanya RM 255.00 / botol"
   },
 
   "ingredients": {

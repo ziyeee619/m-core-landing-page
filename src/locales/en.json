@@ -87,10 +87,11 @@
       "f2": "Sustained Energy Without Crash",
       "f3": "Premium Imported Ingredients"
     },
-    "save": "Save RM {{amount}}",
-    "shipping": "💡 Shipping calculated at checkout · Free delivery within West Malaysia",
+    "save": "SAVE RM {{amount}}",
+    "shipping": "💡 Shipping calculated at checkout",
     "cartTitle": "Your Cart",
-    "checkoutBtn": "Checkout (FPX / Card)"
+    "checkoutBtn": "Checkout (FPX / Credit Card)",
+    "volumeDiscount": "🔥 Bundle Offer: Buy 2+ at only RM 255.00 / bottle"
   },
 
   "ingredients": {
