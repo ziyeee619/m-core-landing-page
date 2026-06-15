@@ -21,6 +21,22 @@
     "p6": "卓越",
     "p7": "而生"
   },
+
+  "home": {
+    "heroTitle": "不是为短暂见效而生",
+    "heroSubtitle": "而是为真实、长期的平衡而建立。",
+    "insightText1": "有些疲惫，不是睡一觉就能消失的。",
+    "insightText2": "因为身体的消耗，总是在不知不觉中长期累积。",
+    "aboutTag": "品牌核心",
+    "aboutTitle": "健康来自长期调理，而不是短暂刺激。",
+    "aboutDesc1": "在现代高压与快节奏的生活中，市面上的解决方案多半主打「快速见效」，却未必真正解决根本问题。",
+    "aboutDesc2": "ST EMPIRES 相信真正的健康需要慢慢建立。我们不追求刺激，我们提供系统性的支持，作为你长期陪伴的盟友。",
+    "scienceTag": "科学引领",
+    "scienceTitle": "科学萃取，严谨制造",
+    "scienceDesc": "以植物配方为基底，结合现代科学的严谨态度，为身体系统提供长期且安全的稳固支撑。",
+    "discoverBtn": "探索 M-CORE 尊荣版"
+  },
+
   "preview": {
     "sec1": {
       "sub": "基于 4 周临床追踪测试",
@@ -62,11 +78,11 @@
     "shipping": "💡 运费将于结帐时计算",
     "cartTitle": "您的购物车",
     "checkoutBtn": "前往结帐 (FPX / 信用卡)",
-    "volumeDiscount": "🔥 多件优惠：买 2 件以上，享尊荣特价 RM 255.00 / 件"
+    "volumeDiscount": "🔥 多件优惠：买 2 件以上，享尊荣特价 RM 255.00 / 件 (立省 15%)"
   },
   "ingredients": {
-    "headerSub": "CLINICAL INGREDIENTS",
-    "headerTitle": "Core Ingredients",
+    "headerSub": "临床级配方",
+    "headerTitle": "核心成分",
     "desc1": "严选全球专利与珍稀草本，经由 ",
     "descHighlight": "HPLC 色谱纯度验证",
     "desc2": " 的高效精华，绝不含非法化学药物。",
@@ -138,6 +154,21 @@
       }
     }
   },
+
+  "productInfo": {
+    "ctaTitle": "准备好解锁巅峰效能了嗎？",
+    "ctaDesc": "立即启动全天候极致专注与源源不绝的顶级动能",
+    "ctaBtn": "前往官方商城"
+  },
+
+  "nav": {
+    "home": "首页",
+    "product": "探索 M-CORE",
+    "shop": "官方商城",
+    "science": "科学原理",
+    "support": "客户服务"
+  },
+
   "sciencePage": {
     "bannerSub": "研发创新实验室",
     "bannerTitle1": "临床实证",
@@ -152,31 +183,40 @@
   },
   "sevenR": {
     "titleSystem": "系统",
-    "dashboardTitle": "BEYOND ENERGY",
-    "dashboardDesc1": "拒绝短暂兴奋，",
-    "dashboardHighlight": "从细胞底层",
-    "dashboardDesc2": "提供持久稳定动力。",
+    "dashboardTitle": "科技感半透明仪表盘",
+    "dashboardDesc1": "超越传统的能量补给，",
+    "dashboardHighlight": "M-CORE 7R 科学细胞修复系统",
+    "dashboardDesc2": "從根本重塑男性的體能與精力巔峰。",
     "items": {
-      "r1Title": "RESTORE",
+      "r1Title": "Restore",
       "r1": "能量回血",
-      "r2Title": "RELIEVE",
+      "r2Title": "Relieve",
       "r2": "释放压力",
-      "r3Title": "REBUILD",
+      "r3Title": "Rebuild",
       "r3": "重建健康",
-      "r4Title": "REIGNITE",
+      "r4Title": "Reignite",
       "r4": "重燃巅峰",
-      "r5Title": "REVITALIZE",
+      "r5Title": "Revitalize",
       "r5": "焕活持久",
-      "r6Title": "REINFORCE",
+      "r6Title": "Reinforce",
       "r6": "免疫加固",
-      "r7Title": "REFOCUS",
-      "r7": "恢复专注"
+      "r7Title": "Restore",
+      "r7": "恢复专注",
+      "details": {
+        "r1Text": "以核心成分 Liboost™透纳叶领衔，协同瓜拿那果、冬虫夏草、东革阿里及玛卡提取物，为身体注入源源不断的自然能量。区别于传统咖啡因带来的透支与崩盘感，此配方能温和促进 ATP 合成，从根源瓦解长期的身心疲惫与易倦体质。加速劳累与运动后的体力回血，助您真正实现 Restore 能量回血的充沛状态。",
+        "r2Text": "汇聚东革阿里、玛卡提取物与维他命B6的舒缓力量，精准狙击现代男性的高压痛点。通过显著降低体内皮质醇(压力荷尔蒙)并促进多巴胺分泌，有效化解因焦虑导致的“半路软车”与欲望低迷。卸下精神重担，维持情绪的稳健平衡，带来 Relieve 释放压力的从容与轻松。",
+        "r3Text": "由 Liboost™透纳叶强力驱动，联合东革阿里、玛卡提取物与葡萄糖酸锌，科学重塑男性生殖基础。拒绝依赖外源性补充，配方致力于激发睾丸细胞内源性睾酮分泌并防止其流失，同时全面提升精液的质量与活力。由内而外守护核心荷尔蒙平衡，助您稳步 Rebuild 重建健康。",
+        "r4Text": "依托 Liboost™透纳叶的强大血管扩张力，配合东革阿里、玛卡与欧洲蓝莓，彻底释放游离睾酮与一氧化氮。不仅能有效阻断PDE-5酶、改善微血管弹性，更直击“硬度欠佳”与“兴致缺缺”的难言之隐。以非激素的安全方式，深度唤醒沉睡的身体渴望，助您 Reignite 重燃巅峰，找回私密生活的绝对自信。",
+        "r5Text": "专为突破体能瓶颈而生，Liboost™透纳叶 携手冬虫夏草与东革阿里，大幅增强机体 ATP 爆发力。全面拉升身体耐力上限，让勃起状态坚挺持久，并显著缩短两次战斗间的休息间隔。彻底打破“一次就累”的力不从心，带来 Revitalize 焕活持久的极致表现。",
+        "r6Text": "甄选葡萄糖酸锌、欧洲蓝莓与冬虫夏草，为男性核心器官构建强大的抗氧化与抗炎屏障。为睾丸与精子细胞穿上“防护甲”，有效抵御氧化应激伤害，并长效维持前列腺液的抗菌防线。从底层强化机体免疫机制，悉心保养，实现全面的 Reinforce 免疫加固。",
+        "r7Text": "汲取瓜拿那果提取物中的天然咖啡因精粹，带来温和且不刺激的醒神体验。迅速扫除工作与生活积压的精神阴霾，大幅拔高大脑的认知清晰度与敏锐触觉。让您在任何关键时刻都能摒弃杂念，保持 Restore 恢复专注的高效运作状态。"
+      }
     }
   },
   "scienceCmp": {
     "badge": "西班牙官方实验室数据",
-    "title1": "CLINICAL",
-    "title2": "PROVEN",
+    "title1": "经临床",
+    "title2": "医学实证",
     "metrics": {
       "m1": {
         "label": "NO (Nitric Oxide) Release Rate",
@@ -210,12 +250,23 @@
         "label": "HPLC 色谱高纯度萃取",
         "value": "100% 官方验证"
       }
+    },
+    "references": {
+      "ref1": "东革阿里 (Eurycoma longifolia) 萃取物对改善男性勃起功能之疗效分析 (2015)",
+      "ref2": "达米阿那 (Turnera diffusa) 改善睾丸类固醇生成与精子发生之研究. 民族药理学杂志",
+      "ref3": "玛卡 (Maca Gelatinizada) 提升性欲之 12 周双盲、安慰剂对照随机临床试验",
+      "ref4": "冬虫夏草 (Cordyceps sinensis) 刺激体内睾酮生成之活体实验研究 (2004)"
     }
+  },
+
+  "store": {
+    "title": "STEMPIRES 商城",
+    "badge": "官方正品保证 · 快速发货"
   },
   "support": {
     "badge": "产品验证与安全指南",
-    "title1": "TECHNICAL & SCIENTIFIC",
-    "title2": "SUPPORT CENTER",
+    "title1": "技术与科学专研",
+    "title2": "客户服务支援中心",
     "desc": "所有临床数据、成分来源与产品服用指南，皆直接取自官方实验室规格书与西班牙专利报告，绝无虚假宣传。",
     "trust1Title": "100% HPLC 色谱纯度验证",
     "trust1Desc": "透过高效液相色谱法（HPLC）严格确保植物活性精华的绝对纯度。零非法化学添加。",

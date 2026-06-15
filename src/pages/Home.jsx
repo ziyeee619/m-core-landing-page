@@ -1,13 +1,12 @@
 // src/pages/Home.jsx
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useTransform } from "framer-motion";
 
 // 引入首頁專用的區塊組件
 import Hero from "../components/Hero";
 import Vision from "../components/Vision";
+import BrandStory from "../components/BrandStory"; // 🚀 引入全新的品牌故事區塊
 import ScrollToTop from "../components/ScrollToTop";
-
-// 🚀 乾淨引入全新解耦的產品櫥窗導流元件
 import ProductPreview from "../components/ProductPreview";
 
 const Home = ({ scrollYProgress }) => {
@@ -17,13 +16,20 @@ const Home = ({ scrollYProgress }) => {
 
   return (
     <>
-      {/* 將數值傳入 Hero 組件 */}
+      {/* 1. 首屏視覺與鉤子 (Hook) */}
       <Hero heroOpacity={heroOpacity} heroScale={heroScale} />
 
+      {/* 2. 痛點共鳴 */}
       <Vision />
 
-      {/* 🚀 引入獨立元件：完美填補首頁長度、建立科學信任感並精準進行跳轉導流 */}
+      {/* 3. 🚀 品牌理念與製程信任感建立 (About Us & Science) */}
+      <BrandStory />
+
+      {/* 4. 終極導流入口 (Final CTA)：
+          顧客看完故事產生信任後，正好在這裡看到 M-CORE 並跳轉至商品/商城頁 */}
       <ProductPreview />
+
+      <ScrollToTop />
     </>
   );
 };

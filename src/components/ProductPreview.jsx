@@ -196,7 +196,7 @@ const ProductPreview = () => {
             <motion.div variants={textItemVariants} className="pt-2">
               <button
                 onClick={() => navigate("/product")}
-                className="w-full sm:w-auto bg-white text-black text-xs font-black tracking-[0.2em] uppercase px-8 py-5 rounded-xl hover:bg-neutral-200 transition-all duration-300 flex items-center justify-center space-x-3 group shadow-xl"
+                className="w-full sm:w-auto bg-white text-black text-xs font-black tracking-[0.2em] uppercase px-8 py-5 rounded-xl hover:bg-neutral-200 transition-all duration-300 flex items-center justify-center space-x-3 group shadow-xl cursor-pointer"
               >
                 <span>{t("preview.sec2.btn")}</span>
                 <ArrowRight

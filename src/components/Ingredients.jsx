@@ -82,13 +82,13 @@ const Ingredients = () => {
         {/* ===================== 第一梯隊：頂級地王 Liboost™ ===================== */}
         <div className="mb-12 font-sans">
           <Reveal y={40}>
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-[#050505] shadow-2xl p-6 lg:p-12 group cursor-pointer">
+            {/* 🚀 修正：移除大卡片最外層的 cursor-pointer */}
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-[#050505] shadow-2xl p-6 lg:p-12 group">
               {/* 背景圖片優化區塊 */}
               <div className="absolute inset-0 z-0 opacity-35 group-hover:opacity-55 group-hover:scale-105 transition-all duration-1000">
                 <img
                   src="/assets/liboost-turnera-diffusa-extract-spain.png"
                   alt="Spain Patent Liboost Extract Premium Selection"
-                  // 🚀 關鍵修正：手機版使用 max-md:object-contain 與 max-md:object-right-top 確保圖片比例正常且靠右上顯示
                   className="w-full h-full object-cover max-md:object-contain max-md:object-right-top md:grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
                 {/* 🚀 遮罩修正：手機版改為由下往上的漸層 (bg-gradient-to-t)，讓下方文字區變暗，桌機版保持左右漸層 */}
@@ -106,12 +106,13 @@ const Ingredients = () => {
                   </span>
                 </div>
 
+                {/* 🚀 保持：這個按鈕有綁 onClick，所以維持 cursor-pointer（預設在 button 元素上即是，或可用 className 補強） */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     openLightbox("/HPLC.png");
                   }}
-                  className="flex items-center gap-1.5 text-[11px] text-[#86868b] hover:text-white transition-colors bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-full font-bold"
+                  className="flex items-center gap-1.5 text-[11px] text-[#86868b] hover:text-white transition-colors bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-full font-bold cursor-pointer"
                 >
                   <FileText size={12} /> {t("ingredients.liboost.btn")}{" "}
                   <Maximize2 size={10} />
@@ -132,12 +133,13 @@ const Ingredients = () => {
                 </div>
 
                 <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+                  {/* 🚀 保持：小數據卡片點擊會打開 Lightbox，維持 cursor-pointer */}
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
                       openLightbox("/assets/NO-Release.jpeg");
                     }}
-                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative"
+                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative cursor-pointer"
                   >
                     <BarChart3
                       size={14}
@@ -154,12 +156,13 @@ const Ingredients = () => {
                     </p>
                   </div>
 
+                  {/* 🚀 保持：小數據卡片點擊會打開 Lightbox，維持 cursor-pointer */}
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
                       openLightbox("/assets/PDE-5-Inhibition.jpeg");
                     }}
-                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative"
+                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative cursor-pointer"
                   >
                     <BarChart3
                       size={14}
@@ -189,9 +192,10 @@ const Ingredients = () => {
               className={`${item.tier === "gold" ? "md:col-span-12 lg:col-span-6" : "md:col-span-6 lg:col-span-3"}`}
             >
               <Reveal delay={idx * 0.08} y={30}>
+                {/* 🚀 修正：將原本的 cursor-pointer 移除，避免無法點選的卡片誤導使用者 */}
                 <motion.div
                   whileHover={{ y: -6 }}
-                  className="bg-[#121212] border border-white/5 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col transition-all group cursor-pointer"
+                  className="bg-[#121212] border border-white/5 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col transition-all group"
                 >
                   {/* 圖片展示區 */}
                   <div
@@ -237,7 +241,7 @@ const Ingredients = () => {
           >
             <button
               onClick={() => setActiveReportImg(null)}
-              className="absolute top-6 right-6 text-white/60 hover:text-white p-3 bg-white/5 rounded-full border border-white/10 transition-colors"
+              className="absolute top-6 right-6 text-white/60 hover:text-white p-3 bg-white/5 rounded-full border border-white/10 transition-colors cursor-pointer"
             >
               <X size={24} />
             </button>

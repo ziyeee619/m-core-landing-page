@@ -12,11 +12,13 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Science from "./pages/Science.jsx";
 import Support from "./pages/Support";
+import Shop from "./pages/Shop";
 
-//  引入兩個全局控制組件
+//  引入全局控制組件
 import ShopifyInbox from "./components/ShopifyInbox"; //  引入動態客服元件
 import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate"; // 1. 引入置頂器
 import ScrollToTop from "./components/ScrollToTop"; // 1. 迎回全站返回頂部按鈕
+import ChattyWidget from "./components/ChattyWidget";
 const App = () => {
   // 保持全局滾動監聽，並傳遞給 Home 使用
   const { scrollYProgress } = useScroll();
@@ -26,7 +28,7 @@ const App = () => {
       <ScrollToTopOnNavigate />
       <ScrollToTop />
 
-      <div className="bg-black text-white font-sans selection:bg-white selection:text-black overflow-x-hidden min-h-screen flex flex-col">
+      <div className="relative min-h-screen flex flex-col bg-black text-white selection:bg-white selection:text-black overflow-x-hidden">
         {/* 全站共用導航欄 */}
         <Navbar />
 
@@ -42,6 +44,9 @@ const App = () => {
             {/* 旗艦單品頁 */}
             <Route path="/product" element={<Product />} />
 
+            {/* 商城頁 */}
+            <Route path="/shop" element={<Shop />} />
+
             {/* 科學專頁 */}
             <Route path="/science" element={<Science />} />
 
@@ -52,7 +57,7 @@ const App = () => {
 
         {/* 🚀 正確位置：移到 Routes 外面！
             這樣做可以確保它不受路由干擾，完美在全站右下角穩定初始化 */}
-        <ShopifyInbox />
+        <ChattyWidget />
 
         {/* 全站共用頁尾 */}
         <Footer />

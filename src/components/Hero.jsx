@@ -129,7 +129,7 @@ const Hero = ({ heroOpacity, heroScale }) => {
                         .getElementById("vision")
                         .scrollIntoView({ behavior: "smooth" })
                     }
-                    className="w-full bg-white text-black py-5 text-[11px] font-black tracking-[0.4em] uppercase hover:bg-gray-200 transition-all flex items-center justify-center group shadow-2xl font-sans"
+                    className="w-full bg-white text-black py-5 text-[11px] font-black tracking-[0.4em] uppercase hover:bg-gray-200 transition-all flex items-center justify-center group shadow-2xl font-sans cursor-pointer"
                   >
                     {t("hero.cta")}{" "}
                     <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-2 transition-transform" />

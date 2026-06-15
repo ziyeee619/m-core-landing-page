@@ -22,6 +22,22 @@
     "p6": "EXCELLENCE",
     "p7": ""
   },
+
+  "home": {
+    "heroTitle": "Not built for quick fixes",
+    "heroSubtitle": "Built for real, lasting balance.",
+    "insightText1": "Some exhaustion doesn't disappear with rest.",
+    "insightText2": "Because depletion builds quietly over time.",
+    "aboutTag": "OUR BRAND CORE",
+    "aboutTitle": "We don't stimulate. We support.",
+    "aboutDesc1": "While most solutions focus on temporary relief and symptom management, ST EMPIRES believes real wellness should be built slowly, safely, and consistently.",
+    "aboutDesc2": "We exist as a trusted system and long-term ally to support the body through sustainable stability, not short-term stimulation.",
+    "scienceTag": "SCIENCE-LED",
+    "scienceTitle": "Botanical Formulation",
+    "scienceDesc": "Formulated with botanical ingredients and a long-term approach to body system support. Designed for consistency and safety.",
+    "discoverBtn": "DISCOVER M-CORE"
+  },
+
   "preview": {
     "sec1": {
       "sub": "CLINICAL TRACING BASED ON 4-WEEK FOLLOW-UP",
@@ -91,7 +107,7 @@
     "shipping": "💡 Shipping calculated at checkout",
     "cartTitle": "Your Cart",
     "checkoutBtn": "Checkout (FPX / Credit Card)",
-    "volumeDiscount": "🔥 Bundle Offer: Buy 2+ at only RM 255.00 / bottle"
+    "volumeDiscount": "🔥 Bulk Discount: Buy 2 or more, enjoy premium special price at RM 255.00 / pc (Save 15%)"
   },
 
   "ingredients": {
@@ -142,6 +158,20 @@
     "lightboxText": "High-precision chromatographic purity data sheet (Click anywhere to close preview)"
   },
 
+  "productInfo": {
+    "ctaTitle": "Ready to Unlock Peak Performance?",
+    "ctaDesc": "Activate all-day ultimate focus and an endless stream of premium vital energy.",
+    "ctaBtn": "Shop Now"
+  },
+
+  "nav": {
+    "home": "Home",
+    "product": "The M-CORE",
+    "shop": "Store",
+    "science": "Science",
+    "support": "Support"
+  },
+
   "sciencePage": {
     "bannerSub": "R&D INNOVATION LAB",
     "bannerTitle1": "THE CLINICAL",
@@ -156,26 +186,35 @@
   },
 
   "sevenR": {
-    "titleSystem": "System",
-    "dashboardTitle": "BEYOND ENERGY",
-    "dashboardDesc1": "Rejecting temporary spikes. We provide sustained power ",
-    "dashboardHighlight": "from the cellular level",
-    "dashboardDesc2": " upward.",
+    "titleSystem": "SYSTEM",
+    "dashboardTitle": "METRIC DASHBOARD",
+    "dashboardDesc1": "Beyond traditional energy, ",
+    "dashboardHighlight": "M-CORE 7R Scientific System",
+    "dashboardDesc2": " reconstructs male physical and mental peaks from the cellular level.",
     "items": {
-      "r1Title": "RESTORE",
-      "r1": "Restore Energy",
-      "r2Title": "RELIEVE",
-      "r2": "Relieve Stress",
-      "r3Title": "REBUILD",
+      "r1Title": "Restore",
+      "r1": "Energy Recovery",
+      "r2Title": "Relieve",
+      "r2": "Stress Relief",
+      "r3Title": "Rebuild",
       "r3": "Rebuild Health",
-      "r4Title": "REIGNITE",
+      "r4Title": "Reignite",
       "r4": "Reignite Peak",
-      "r5Title": "REVITALIZE",
+      "r5Title": "Revitalize",
       "r5": "Revitalize Endurance",
-      "r6Title": "REINFORCE",
-      "r6": "Reinforce Immunity",
-      "r7Title": "REFOCUS",
-      "r7": "Regain Focus"
+      "r6Title": "Reinforce",
+      "r6": "Immune Shield",
+      "r7Title": "Restore",
+      "r7": "Restore Focus",
+      "details": {
+        "r1Text": "Led by Liboost™, blended with Tongkat Ali, Maca, and Cordyceps to gently boost ATP synthesis without crashes, wiping out long-term fatigue.",
+        "r2Text": "Combines Tongkat Ali and Vitamin B6 to reduce cortisol, eliminating stress-induced low libido and maintaining emotional balance.",
+        "r3Text": "Driven by Liboost™ and Zinc to stimulate endogenous testosterone secretion naturally, supporting fundamental male reproductive health.",
+        "r4Text": "Leverages Liboost™'s nitric oxide activation to block PDE-5 and improve microvascular elasticity, safely rebuilding absolute intimacy confidence.",
+        "r5Text": "Enhances physical endurance limits and shortens refractory periods, completely overcoming performance bottlenecks.",
+        "r6Text": "Formulated with Zinc and Bilberry to shield sperm cells from oxidative stress and reinforce the prostate's natural antibacterial defense line.",
+        "r7Text": "Utilizes premium Guarana extract for a clean, non-jittery brain boost, sharply upgrading cognitive clarity and filtering out daily distractions."
+      }
     }
   },
 
@@ -204,7 +243,18 @@
       "l2": { "label": "PDE-5 Inhibition", "value": "High Efficiency" },
       "l3": { "label": "Anti-Aromatase Protection", "value": "Ideal Balance" },
       "l4": { "label": "HPLC Chromatography Purity", "value": "100% Certified" }
+    },
+    "references": {
+      "ref1": "Efficacy of Tongkat Ali (Eurycoma longifolia) extract on erectile function improvement: A systematic review and meta-analysis. (2015)",
+      "ref2": "Turnera diffusa ameliorates the impairment in testicular steroidogenesis and spermatogenesis. Journal of Ethnopharmacology.",
+      "ref3": "A 12-week double-blind placebo-controlled, randomized trial of Maca Gelatinizada on subjective report of sexual desire.",
+      "ref4": "In vivo stimulatory effect of Cordyceps sinensis and its fractions on testosterone production. (2004)"
     }
+  },
+
+  "store": {
+    "title": "STEMPIRES STORE",
+    "badge": "Official Authenticity Guaranteed · Fast Shipping"
   },
 
   "support": {

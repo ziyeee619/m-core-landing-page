@@ -195,3 +195,26 @@
 [id^="shopify-container-"] > *:first-child {
   display: block !important;
 }
+/* 🚨 強制把 Chatty 的主容器逼出畫面 */
+#chatty-widget-container,
+#chatty-live-chat,
+.chatty-main-wrapper,
+iframe#dummy-chat-button-iframe {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 999999 !important; /* 確保它在最上層，不被任何 bg-black 擋住 */
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-width: 60px !important;
+  min-height: 60px !important;
+}
+/* 暴力解除任何可能被設定為隱形的 Avada 視窗 */
+div[class*="avada"],
+div[id*="avada"],
+.chatty-main-wrapper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

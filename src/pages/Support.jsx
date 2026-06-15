@@ -64,7 +64,7 @@ const Support = () => {
           <div className="bg-neutral-900/40 border border-white/5 p-5 rounded-2xl flex items-start space-x-4">
             <ShieldCheck className="text-amber-500 shrink-0 mt-0.5" size={18} />
             <div>
-              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-1">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-white mb-1 ">
                 {t("support.trust2Title")}
               </h4>
               <p className="text-[11px] text-neutral-400 leading-relaxed font-medium">
@@ -79,18 +79,18 @@ const Support = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="space-y-2 pt-4"
+          className="space-y-2 pt-4 "
         >
           {faqs.map((faq, index) => {
             const isOpen = activeFaq === index;
             return (
               <div
                 key={index}
-                className="border-b border-white/5 pb-4 transition-all duration-300"
+                className="border-b border-white/5 pb-4 transition-all duration-300 "
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full flex justify-between items-center text-left py-4 group"
+                  className="w-full flex justify-between items-center text-left py-4 group cursor-pointer"
                 >
                   <span
                     className={`text-sm lg:text-base font-bold tracking-wide transition-colors duration-300 ${isOpen ? "text-amber-500" : "text-neutral-200 group-hover:text-white"}`}

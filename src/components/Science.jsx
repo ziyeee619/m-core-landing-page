@@ -1,49 +1,54 @@
 // src/components/Science.jsx
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { FlaskConical, ShieldCheck, Award, Activity } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FlaskConical,
+  ShieldCheck,
+  Award,
+  Activity,
+  BookOpen,
+  X,
+  ZoomIn,
+} from "lucide-react";
 import Reveal from "./Reveal";
 
 const Science = () => {
   const { t } = useTranslation();
 
-  // 🚀 西班牙官方實驗室臨床數據：結合寫死的進度條數值與動態 i18n 文字
+  // 🚀 關鍵修改 1：這裡改為儲存「被選中的整個 ref 物件」，不只是圖片 URL
+  const [selectedRef, setSelectedRef] = useState(null);
+
   const coreMetrics = [
-    {
-      id: "m1",
-      value: "+15.13%",
-      width: "55%",
-    },
-    {
-      id: "m2",
-      value: "-42.41%",
-      width: "85%",
-    },
-    {
-      id: "m3",
-      value: "Optimal",
-      width: "100%",
-    },
+    { id: "m1", value: "+15.13%", width: "55%" },
+    { id: "m2", value: "-42.41%", width: "85%" },
+    { id: "m3", value: "Optimal", width: "100%" },
   ];
 
-  // 🚀 將機制證明的清單陣列化，並加上 showShield 標籤來精準控制綠色盾牌的渲染
+  // 🚀 機制證明：科學邏輯完美對應版
   const mechItems = [
-    { id: "l1", showShield: false },
-    { id: "l2", showShield: false },
-    { id: "l3", showShield: false },
-    { id: "l4", showShield: true },
+    { id: "l1", showShield: false, refs: "1" }, // [1] 東革阿里 -> 對應：NO 與 PDE-5 血管擴張
+    { id: "l2", showShield: false, refs: "2" }, // [2] 達米阿那 -> 對應：抗芳香化 (雄激素防護)
+    { id: "l3", showShield: false, refs: "3, 4" }, // [3, 4] 瑪卡+冬蟲夏草 -> 對應：睪酮促生與性慾喚醒
+    { id: "l4", showShield: true, refs: "" }, // HPLC 是檢驗技術，留空不加文獻標籤，只保留綠色盾牌
+  ];
+
+  const references = [
+    { id: "1", imgUrl: "/ref-1.png" },
+    { id: "2", imgUrl: "/ref-2.png" },
+    { id: "3", imgUrl: "/ref-3.png" },
+    { id: "4", imgUrl: "/ref-4.png" },
   ];
 
   return (
     <>
       <section
         id="science"
-        className="py-40 lg:py-52 bg-black text-white overflow-hidden px-6 font-sans min-h-screen"
+        className="py-40 lg:py-52 bg-black text-white overflow-hidden px-6 font-sans min-h-screen relative"
       >
-        <div className="container mx-auto max-w-6xl font-sans">
+        <div className="container mx-auto max-w-6xl font-sans relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center font-sans">
-            {/* 左側欄：硬核專利動態能量進度條 (佔 7 格) */}
+            {/* 左側欄：硬核專利動態能量進度條 (維持不變) */}
             <div className="lg:col-span-7 space-y-10">
               <Reveal x={-40}>
                 <div className="space-y-2 mb-12 text-center lg:text-left font-sans">
@@ -56,7 +61,6 @@ const Science = () => {
 
                   <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter italic uppercase leading-[0.9] text-white">
                     {t("scienceCmp.title1")} <br />
-                    {/* 🚀 關鍵修復：加入 pr-4，防止斜體的最後一個字母被背景裁切吃掉 */}
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-500 pr-4">
                       {t("scienceCmp.title2")}
                     </span>
@@ -64,7 +68,6 @@ const Science = () => {
                 </div>
               </Reveal>
 
-              {/* 循環渲染真實數據進度條 */}
               <div className="space-y-10 font-sans">
                 {coreMetrics.map((metric, index) => (
                   <Reveal x={-40} delay={index * 0.1} key={metric.id}>
@@ -82,7 +85,6 @@ const Science = () => {
                           {metric.value}
                         </span>
                       </div>
-                      {/* 精緻高光動態進度條 */}
                       <div className="h-[3px] w-full bg-white/5 overflow-hidden rounded-full">
                         <motion.div
                           initial={{ width: 0 }}
@@ -102,10 +104,10 @@ const Science = () => {
               </div>
             </div>
 
-            {/* 右側欄：分子生物學機制看板 (佔 5 格) */}
+            {/* 右側欄：分子生物學機制看板 */}
             <div className="lg:col-span-5 w-full">
               <Reveal x={40} delay={0.2}>
-                <div className="p-8 lg:p-12 bg-neutral-900/30 border border-white/5 rounded-[30px] shadow-2xl backdrop-blur-sm font-sans">
+                <div className="p-8 lg:p-12 bg-neutral-900/30 border border-white/5 rounded-[30px] shadow-2xl backdrop-blur-sm font-sans flex flex-col h-full">
                   <div className="flex items-center space-x-4 mb-10 border-b border-white/5 pb-6 font-sans">
                     <div className="w-12 h-12 lg:w-14 lg:h-14 bg-white text-black flex items-center justify-center rounded-2xl shadow-xl shrink-0">
                       <FlaskConical size={24} />
@@ -120,18 +122,22 @@ const Science = () => {
                     </div>
                   </div>
 
-                  {/* 🚀 機制證明清單動態渲染 */}
-                  <ul className="space-y-6 font-sans">
+                  {/* 機制證明清單 */}
+                  <ul className="space-y-6 font-sans flex-grow">
                     {mechItems.map((item) => (
                       <li
                         key={item.id}
                         className="flex justify-between items-center border-b border-white/5 pb-4 last:border-0 last:pb-0 font-sans"
                       >
-                        <span className="text-[10px] lg:text-xs font-semibold text-neutral-400 uppercase tracking-wider italic">
+                        <span className="flex items-start text-[10px] lg:text-xs font-semibold text-neutral-400 uppercase tracking-wider italic">
                           {t(`scienceCmp.mechList.${item.id}.label`)}
+                          {item.refs && (
+                            <sup className="text-[8px] text-neutral-600 ml-0.5 mt-0.5 font-sans">
+                              [{item.refs}]
+                            </sup>
+                          )}
                         </span>
 
-                        {/* 🚀 修復 Bug：精確判斷是否要顯示綠色盾牌 */}
                         <span className="text-[11px] lg:text-xs font-black italic text-amber-500 tracking-widest uppercase">
                           {item.showShield ? (
                             <span className="text-green-400 flex items-center gap-1">
@@ -145,6 +151,42 @@ const Science = () => {
                       </li>
                     ))}
                   </ul>
+
+                  {/* 底部文獻縮圖區 */}
+                  <div className="mt-10 pt-6 border-t border-white/5">
+                    <div className="flex items-center gap-1.5 mb-4 text-neutral-500">
+                      <BookOpen size={10} />
+                      <span className="text-[9px] uppercase tracking-widest font-bold">
+                        Clinical References
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-4 gap-3">
+                      {references.map((ref) => (
+                        <div
+                          key={ref.id}
+                          onClick={() => setSelectedRef(ref)} // 🚀 關鍵修改 2：傳入整個 ref 物件
+                          className="group cursor-pointer relative aspect-[3/4] rounded-lg overflow-hidden border border-white/10 bg-white/5"
+                        >
+                          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-300 z-10" />
+                          <img
+                            src={ref.imgUrl}
+                            alt={`Reference ${ref.id}`}
+                            className="w-full h-full object-cover brightness-90 contrast-125 transition-transform duration-500 group-hover:scale-110"
+                          />
+                          <div className="absolute top-1.5 left-1.5 bg-black/80 backdrop-blur-md text-[#CCCCCC] text-[8px] font-bold px-1.5 py-0.5 rounded z-20">
+                            [{ref.id}]
+                          </div>
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300">
+                            <ZoomIn
+                              size={16}
+                              className="text-white drop-shadow-md"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -152,7 +194,55 @@ const Science = () => {
         </div>
       </section>
 
-      {/* ===================== 植入的底部品質承諾標章 ===================== */}
+      {/* 🚀 全螢幕燈箱 Modal (點擊縮圖後彈出) */}
+      <AnimatePresence>
+        {selectedRef && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedRef(null)} // 點擊背景關閉
+            className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-black/95 backdrop-blur-md p-4 lg:p-10 cursor-zoom-out"
+          >
+            {/* 關閉按鈕 */}
+            <button
+              className="absolute top-6 right-6 lg:top-10 lg:right-10 text-white/50 hover:text-white transition-colors p-2 z-50"
+              onClick={() => setSelectedRef(null)}
+            >
+              <X size={36} strokeWidth={1.5} />
+            </button>
+
+            {/* 放大後的截圖與文字容器 */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              onClick={(e) => e.stopPropagation()} // 防止點擊圖片/文字本身時關閉
+              className="flex flex-col items-center max-w-4xl max-h-full cursor-default"
+            >
+              {/* 圖片本體 */}
+              <img
+                src={selectedRef.imgUrl}
+                alt="Expanded Reference"
+                className="max-w-full max-h-[70vh] lg:max-h-[80vh] object-contain rounded-xl border border-white/10 shadow-2xl mb-6"
+              />
+
+              {/* 🚀 關鍵修改 3：在這裡精準呼叫 JSON 裡的文獻標題 */}
+              <div className="text-center px-4">
+                <p className="text-amber-500 font-bold text-sm lg:text-base mb-1 tracking-widest uppercase">
+                  Reference [{selectedRef.id}]
+                </p>
+                <p className="text-neutral-300 text-sm lg:text-lg font-medium leading-relaxed max-w-2xl">
+                  {t(`scienceCmp.references.ref${selectedRef.id}`)}
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* 底部品質承諾標章 */}
       <section className="py-20 border-t border-white/5 bg-neutral-950/40 backdrop-blur-sm">
         <div className="container mx-auto px-6 lg:px-8 max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -165,7 +255,6 @@ const Science = () => {
                 {t("sciencePage.pledge1Desc")}
               </p>
             </div>
-
             <div className="flex flex-col items-center p-6 bg-neutral-900/20 border border-white/5 rounded-2xl">
               <Activity size={32} className="text-amber-500 mb-4" />
               <h3 className="text-sm font-bold tracking-widest uppercase mb-2">
@@ -175,7 +264,6 @@ const Science = () => {
                 {t("sciencePage.pledge2Desc")}
               </p>
             </div>
-
             <div className="flex flex-col items-center p-6 bg-neutral-900/20 border border-white/5 rounded-2xl">
               <FlaskConical size={32} className="text-amber-500 mb-4" />
               <h3 className="text-sm font-bold tracking-widest uppercase mb-2">

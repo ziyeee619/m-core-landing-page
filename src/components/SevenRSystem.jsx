@@ -1,7 +1,7 @@
 // src/components/SevenRSystem.jsx
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Battery,
   Wind,
@@ -12,61 +12,99 @@ import {
   FlaskConical,
   ShieldCheck,
   Activity,
+  X,
 } from "lucide-react";
 import Reveal from "./Reveal";
 
 const SevenRSystem = () => {
   const { t } = useTranslation();
+  const [activeItem, setActiveItem] = useState(null);
+  const scrollContainerRef = useRef(null);
 
-  // 🚀 完全動態抽離的 7R 系統文字，並修復了第 7 個 R 的品牌邏輯 (Refocus)
+  // 🚀 關鍵修正：使用 useEffect 綁定非被動監聽器，徹底鎖死上下滾動
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleWheelNative = (e) => {
+      // 檢查是否還有可滾動的空間（防止卡死整頁滾動）
+      const { scrollLeft, scrollWidth, clientWidth } = container;
+      const isScrollingLeft = e.deltaY < 0;
+      const isScrollingRight = e.deltaY > 0;
+
+      // 如果卡片還能往右滾，或還能往左滾，就攔截瀏覽器行為，只做左右移動
+      if (
+        (isScrollingRight && scrollLeft < scrollWidth - clientWidth - 1) ||
+        (isScrollingLeft && scrollLeft > 0)
+      ) {
+        e.preventDefault(); // 🛑 鎖死網頁上下動
+        container.scrollLeft += e.deltaY * 1.2;
+      }
+    };
+
+    // 關鍵：必須用 { passive: false } 瀏覽器才允許我們使用 preventDefault()
+    container.addEventListener("wheel", handleWheelNative, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheelNative);
+    };
+  }, []);
+
   const systemItems = [
     {
       id: "01",
       r: t("sevenR.items.r1Title"),
       sub: t("sevenR.items.r1"),
+      fullText: t("sevenR.items.details.r1Text"),
       icon: <Battery />,
     },
     {
       id: "02",
       r: t("sevenR.items.r2Title"),
       sub: t("sevenR.items.r2"),
+      fullText: t("sevenR.items.details.r2Text"),
       icon: <Wind />,
     },
     {
       id: "03",
       r: t("sevenR.items.r3Title"),
       sub: t("sevenR.items.r3"),
+      fullText: t("sevenR.items.details.r3Text"),
       icon: <Dna />,
     },
     {
       id: "04",
       r: t("sevenR.items.r4Title"),
       sub: t("sevenR.items.r4"),
+      fullText: t("sevenR.items.details.r4Text"),
       icon: <Flame />,
     },
     {
       id: "05",
       r: t("sevenR.items.r5Title"),
       sub: t("sevenR.items.r5"),
+      fullText: t("sevenR.items.details.r5Text"),
       icon: <Zap />,
     },
     {
       id: "06",
       r: t("sevenR.items.r6Title"),
       sub: t("sevenR.items.r6"),
+      fullText: t("sevenR.items.details.r6Text"),
       icon: <ShieldCheck />,
     },
     {
       id: "07",
       r: t("sevenR.items.r7Title"),
       sub: t("sevenR.items.r7"),
+      fullText: t("sevenR.items.details.r7Text"),
       icon: <Target />,
     },
   ];
 
   return (
     <>
-      {/* ===================== 植入的頂部震撼 Banner 區 ===================== */}
+      {/* ===================== 頂部 Banner 區 ===================== */}
       <section className="relative pt-40 pb-20 lg:pt-48 lg:pb-28 border-b border-white/5 bg-gradient-to-b from-neutral-900/20 to-transparent">
         <div className="container mx-auto px-6 lg:px-8 text-center max-w-4xl">
           <motion.div
@@ -104,11 +142,10 @@ const SevenRSystem = () => {
         </div>
       </section>
 
-      {/* ===================== 接續 7R 系統的程式碼 ===================== */}
+      {/* ===================== 7R 系統卡片區 ===================== */}
       <section id="7r" className="py-24 lg:py-40 bg-[#0d0d0d] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
-            {/* M-CORE 7R 主標題：突出 7R 字體 */}
             <div className="lg:col-span-5 text-center lg:text-left">
               <Reveal x={-30}>
                 <h2 className="text-4xl md:text-6xl lg:text-[70px] font-black tracking-tighter italic uppercase leading-[0.9] text-white">
@@ -116,20 +153,16 @@ const SevenRSystem = () => {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-400 to-gray-700 text-5xl md:text-7xl lg:text-[95px] font-black not-italic tracking-normal drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
                     7R
                   </span>{" "}
-                  {/* 🚀 修正：將 System 綁定多語系 */}
                   {t("sevenR.titleSystem")}
                 </h2>
               </Reveal>
             </div>
 
-            {/* 強化後的 Beyond Energy 區塊：科技感半透明儀表板 */}
             <div className="lg:col-span-7 w-full">
               <Reveal x={30} delay={0.1}>
-                <div className="relative p-6 lg:p-10 border border-white/10 bg-gradient-to-br from-[#161616] to-[#0a0a0a] backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden group">
-                  <div className="absolute -top-24 -right-24 w-48 h-48 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors duration-700"></div>
-
+                <div className="relative p-6 lg:p-10 border border-white/10 bg-gradient-to-br from-[#161616] to-[#0a0a0a] backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 relative z-10">
-                    <div className="w-14 h-14 bg-white text-black flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] shrink-0 animate-pulse">
+                    <div className="w-14 h-14 bg-white text-black flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] shrink-0">
                       <Activity size={28} strokeWidth={2} />
                     </div>
 
@@ -152,25 +185,31 @@ const SevenRSystem = () => {
             </div>
           </div>
 
-          {/* ===================== 下半部：精簡集中呈現的 1-7 卡片 ===================== */}
+          {/* ===================== 7R 卡片列表 ===================== */}
           <div className="relative">
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#0d0d0d] to-transparent z-20 lg:hidden" />
 
-            <div className="flex lg:grid lg:grid-cols-4 gap-4 overflow-x-auto lg:overflow-x-visible pb-6 lg:pb-0 scrollbar-none snap-x snap-mandatory px-2 lg:px-0">
+            {/* 🚀 移除原本 JSX 上的 onWheel，改用 useEffect 中的原生監聽器 */}
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-4 overflow-x-auto pb-6 lg:pb-4 scrollbar-none px-2 lg:px-0"
+              style={{ contentVisibility: "auto" }}
+            >
               {systemItems.map((item, idx) => (
                 <div
                   key={item.id}
-                  className="min-w-[260px] sm:min-w-[280px] lg:min-w-0 snap-center shrink-0 lg:shrink font-sans"
+                  className="min-w-[260px] sm:min-w-[280px] lg:min-w-0 snap-center shrink-0 font-sans"
                 >
                   <Reveal delay={idx * 0.03} y={20}>
                     <motion.div
+                      onClick={() => setActiveItem(item)}
                       whileHover={{
                         y: -6,
                         backgroundColor: "#ffffff",
                         color: "#000000",
                         borderColor: "#ffffff",
                       }}
-                      className="group p-8 bg-[#141414] border border-white/5 transition-all duration-300 h-48 lg:h-52 flex flex-col justify-between rounded-xl shadow-lg cursor-pointer"
+                      className="group p-6 lg:p-8 bg-[#141414] border border-white/5 transition-all duration-300 h-48 lg:h-52 flex flex-col justify-between rounded-xl shadow-lg cursor-pointer"
                     >
                       <div className="flex justify-between items-center">
                         <span className="text-xs font-black tracking-widest text-[#444] group-hover:text-black/30 transition-colors font-mono">
@@ -178,17 +217,17 @@ const SevenRSystem = () => {
                         </span>
                         <div className="text-[#86868b] group-hover:text-black group-hover:scale-110 transition-all duration-300">
                           {React.cloneElement(item.icon, {
-                            size: 26,
+                            size: 24,
                             strokeWidth: 1.5,
                           })}
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="text-2xl lg:text-3xl font-black uppercase italic tracking-tighter text-white group-hover:text-black transition-colors">
+                        <h4 className="text-xl lg:text-2xl font-black uppercase italic tracking-tighter text-white group-hover:text-black transition-colors leading-tight">
                           {item.r}
                         </h4>
-                        <p className="text-[#86868b] text-[11px] font-bold tracking-[0.2em] group-hover:text-black/70 transition-colors mt-1">
+                        <p className="text-[#86868b] text-[10px] font-bold tracking-[0.15em] group-hover:text-black/70 transition-colors mt-1 whitespace-nowrap">
                           {item.sub}
                         </p>
                       </div>
@@ -200,6 +239,63 @@ const SevenRSystem = () => {
           </div>
         </div>
       </section>
+
+      {/* ===================== 全域 7R 實驗室報告彈出視窗 ===================== */}
+      <AnimatePresence>
+        {activeItem && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveItem(null)}
+            className="fixed inset-0 z-[9999] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 cursor-zoom-out"
+          >
+            <button
+              onClick={() => setActiveItem(null)}
+              className="absolute top-6 right-6 text-white/60 hover:text-white p-3 bg-white/5 rounded-full border border-white/10 transition-colors cursor-pointer"
+            >
+              <X size={20} />
+            </button>
+
+            <motion.div
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 250 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-xl w-full bg-[#111] border border-white/15 p-8 lg:p-10 rounded-2xl shadow-2xl relative overflow-hidden cursor-default"
+            >
+              <div className="absolute -top-20 -left-20 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
+
+              <div className="flex justify-between items-start mb-6">
+                <div>
+                  <span className="text-xs font-black font-mono tracking-widest text-neutral-600 block mb-1">
+                    M-CORE SYSTEM MODULE // {activeItem.id}
+                  </span>
+                  <h3 className="text-4xl font-black uppercase italic tracking-tighter text-white">
+                    {activeItem.r}
+                  </h3>
+                  <p className="text-sm text-neutral-400 font-bold tracking-widest uppercase mt-1">
+                    {activeItem.sub}
+                  </p>
+                </div>
+                <div className="text-white bg-white/5 border border-white/10 p-3 rounded-xl shadow-inner">
+                  {React.cloneElement(activeItem.icon, {
+                    size: 32,
+                    strokeWidth: 1.5,
+                  })}
+                </div>
+              </div>
+
+              <div className="w-full h-[1px] bg-white/10 mb-6"></div>
+
+              <p className="text-neutral-300 text-sm lg:text-base leading-relaxed font-light text-justify tracking-wide whitespace-pre-line">
+                {activeItem.fullText}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

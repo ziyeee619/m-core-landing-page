@@ -22,6 +22,22 @@
     "p6": "KECEMERLANGAN",
     "p7": ""
   },
+
+  "home": {
+    "heroTitle": "Bukan untuk kesan sementara",
+    "heroSubtitle": "Dibina untuk keseimbangan yang sebenar dan berkekalan.",
+    "insightText1": "Ada keletihan yang tidak hilang dengan rehat.",
+    "insightText2": "Kerana penyusutan tenaga terkumpul secara senyap.",
+    "aboutTag": "TERAS JENAMA KAMI",
+    "aboutTitle": "Kesihatan dibina dari penjagaan konsisten, bukan stimulasi singkat.",
+    "aboutDesc1": "Walaupun banyak produk menjanjikan kelegaan pantas, ST EMPIRES percaya kesihatan sebenar harus dibina secara perlahan, selamat, dan berterusan.",
+    "aboutDesc2": "Kami bukan sekadar jenama kesihatan, tetapi rakan sokongan jangka panjang untuk memastikan badan anda kekal stabil, bukannya bergantung kepada stimulasi sementara.",
+    "scienceTag": "BERTERASKAN SAINS",
+    "scienceTitle": "Formulasi Botanikal & Pengeluaran Teliti",
+    "scienceDesc": "Dirumus khas dengan bahan botanikal premium dan pendekatan saintifik untuk menyokong sistem badan anda secara berterusan dan selamat.",
+    "discoverBtn": "TEROKA M-CORE"
+  },
+
   "preview": {
     "sec1": {
       "sub": "JEJAKAN KLINIKAL BERDASARKAN 4 MINGGU",
@@ -77,6 +93,19 @@
       }
     }
   },
+  "productInfo": {
+    "ctaTitle": "Bersedia untuk Mengunci Prestasi Puncak?",
+    "ctaDesc": "Aktifkan fokus mutlak sepanjang hari dan tenaga bertenaga tinggi tanpa had sekarang.",
+    "ctaBtn": "Beli Sekarang"
+  },
+
+  "nav": {
+    "home": "Utama",
+    "product": "Eksplorasi M-CORE",
+    "shop": "Kedai Rasmi",
+    "science": "Sains",
+    "support": "Sokongan"
+  },
 
   "purchase": {
     "addCartBtn": "TAMBAH KE TROLI",
@@ -91,7 +120,7 @@
     "shipping": "💡 Kos penghantaran dikira semasa pembayaran",
     "cartTitle": "Troli Membeli-belah Anda",
     "checkoutBtn": "Teruskan ke Pembayaran (FPX / Kad Kredit)",
-    "volumeDiscount": "🔥 Tawaran Kombo: Beli 2 ke atas dengan hanya RM 255.00 / botol"
+    "volumeDiscount": "🔥 Diskaun Pukal: Beli 2 atau lebih, nikmati harga istimewa premium pada RM 255.00 / PCS (Jimat 15%)"
   },
 
   "ingredients": {
@@ -156,26 +185,35 @@
   },
 
   "sevenR": {
-    "titleSystem": "Sistem",
-    "dashboardTitle": "BEYOND TENAGA",
-    "dashboardDesc1": "Menolak lonjakan sementara. Kami menyediakan kuasa mampan ",
-    "dashboardHighlight": "dari tahap selular",
-    "dashboardDesc2": " ke atas.",
+    "titleSystem": "SISTEM",
+    "dashboardTitle": "PAPAN METRIK TECH",
+    "dashboardDesc1": "Melangkaui tenaga biasa, ",
+    "dashboardHighlight": "Sistem Saintifik M-CORE 7R",
+    "dashboardDesc2": " membina semula puncak fizikal dan mental lelaki dari tahap selular.",
     "items": {
-      "r1Title": "RESTORE",
+      "r1Title": "Restore",
       "r1": "Pulihkan Tenaga",
-      "r2Title": "RELIEVE",
-      "r2": "Pelepasan Tekanan",
-      "r3Title": "REBUILD",
-      "r3": "Bina Semula",
-      "r4Title": "REIGNITE",
-      "r4": "Cetus Puncak",
-      "r5Title": "REVITALIZE",
-      "r5": "Kekal Bertahan",
-      "r6Title": "REINFORCE",
-      "r6": "Kukuh Imuniti",
-      "r7Title": "REFOCUS",
-      "r7": "Kembalikan Fokus"
+      "r2Title": "Relieve",
+      "r2": "Melegakan Stres",
+      "r3Title": "Rebuild",
+      "r3": "Bina Semula Kesihatan",
+      "r4Title": "Reignite",
+      "r4": "Semarakkan Puncak",
+      "r5Title": "Revitalize",
+      "r5": "Revitalisasi Ketahanan",
+      "r6Title": "Reinforce",
+      "r6": "Perisai Imun",
+      "r7Title": "Restore",
+      "r7": "Kembalikan Fokus",
+      "details": {
+        "r1Text": "Diterajui oleh Liboost™, digabungkan dengan Tongkat Ali, Maca, dan Cordyceps untuk merangsang sintesis ATP secara lembut tanpa keletihan susulan.",
+        "r2Text": "Menggabungkan Tongkat Ali dan Vitamin B6 untuk mengurangkan kortisol, menghapuskan penurunan libido akibat tekanan mental.",
+        "r3Text": "Didorong oleh Liboost™ dan Zink untuk merangsang rembesan testosteron endogenus secara semula jadi, menyokong kesihatan reproduktif lelaki.",
+        "r4Text": "Memanfaatkan pengaktifan nitrik oksida Liboost™ untuk menyekat PDE-5 dan meningkatkan keanjalan mikrovaskular, membina keyakinan intim.",
+        "r5Text": "Meningkatkan had ketahanan fizikal dan memendekkan tempoh pemulihan, mengatasi segala halangan prestasi dengan berkesan.",
+        "r6Text": "Diformulasikan dengan Zink dan Bilberi untuk melindungi sel sperma daripada tekanan oksidatif dan memperkukuh sistem pertahanan prostat.",
+        "r7Text": "Menggunakan ekstrak Guarana premium untuk rangsangan otak yang bersih tanpa gementar, meningkatkan kejelasan kognitif dengan mendadak."
+      }
     }
   },
 
@@ -207,7 +245,17 @@
         "value": "Keseimbangan Ideal"
       },
       "l4": { "label": "Ketulenan Kromatografi HPLC", "value": "100% Disahkan" }
+    },
+    "references": {
+      "ref1": "Keberkesanan ekstrak Tongkat Ali (Eurycoma longifolia) dalam peningkatan fungsi erektil. (2015)",
+      "ref2": "Turnera diffusa memulihkan kerosakan dalam steroidogenesis testis dan spermatogenesis. Journal of Ethnopharmacology.",
+      "ref3": "Kajian klinikal rawak, dua-buta dan terkawal plasebo 12 minggu ke atas kesan Maca terhadap keinginan seksual.",
+      "ref4": "Kesan rangsangan in vivo Cordyceps sinensis ke atas penghasilan testosteron. (2004)"
     }
+  },
+  "store": {
+    "title": "KEDAI STEMPIRES",
+    "badge": "Ketulenan Rasmi Dijamin · Penghantaran Pantas"
   },
 
   "support": {

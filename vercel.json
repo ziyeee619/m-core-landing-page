@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/apps/chatty-tracking/:path*",
+      "destination": "https://jmqykt-hr.myshopify.com/apps/chatty-tracking/:path*"
+    }
+  ]
+}
