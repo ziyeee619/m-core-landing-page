@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { Zap, ArrowRight, ShieldCheck } from "lucide-react";
+import { Zap, ArrowRight, ShieldCheck, ShoppingCart } from "lucide-react"; // 🚀 新增了 ShoppingCart 圖示
 
 const ProductPreview = () => {
   const navigate = useNavigate();
@@ -192,8 +192,12 @@ const ProductPreview = () => {
               </div>
             </motion.div>
 
-            {/* 核心導流跳轉點 */}
-            <motion.div variants={textItemVariants} className="pt-2">
+            {/* 🚀 核心導流跳轉點 (改為雙按鈕排版) */}
+            <motion.div
+              variants={textItemVariants}
+              className="pt-2 flex flex-col sm:flex-row gap-4"
+            >
+              {/* 原本的：了解詳情 */}
               <button
                 onClick={() => navigate("/product")}
                 className="w-full sm:w-auto bg-white text-black text-xs font-black tracking-[0.2em] uppercase px-8 py-5 rounded-xl hover:bg-neutral-200 transition-all duration-300 flex items-center justify-center space-x-3 group shadow-xl cursor-pointer"
@@ -202,6 +206,19 @@ const ProductPreview = () => {
                 <ArrowRight
                   size={14}
                   className="group-hover:translate-x-1 transition-transform"
+                />
+              </button>
+
+              {/* 新增的：直接前往商城購買 */}
+              <button
+                onClick={() => navigate("/shop")}
+                className="w-full sm:w-auto bg-transparent border border-white/20 text-white text-xs font-black tracking-[0.2em] uppercase px-8 py-5 rounded-xl hover:bg-white/10 hover:border-white/50 transition-all duration-300 flex items-center justify-center space-x-3 group cursor-pointer"
+              >
+                {/* 備用文字: 如果 i18n JSON 沒設定 buyBtn 鍵值，先以字串保底 */}
+                <span>{t("preview.sec2.buyBtn", "SHOP NOW")}</span>
+                <ShoppingCart
+                  size={14}
+                  className="group-hover:scale-110 transition-transform text-white"
                 />
               </button>
             </motion.div>

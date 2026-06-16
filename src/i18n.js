@@ -7,22 +7,25 @@ import zh from "./locales/zh.json";
 import en from "./locales/en.json";
 import bm from "./locales/bm.json";
 
-const savedLanguage = localStorage.getItem("i18nextLng") || "en"; // 預設為英文
-
 i18n
-  .use(LanguageDetector) // 自動偵測瀏覽器語言
-  .use(initReactI18next) // 綁定 react-i18next
+  .use(LanguageDetector) // 讓它全權自動處理瀏覽器偵測與 localStorage
+  .use(initReactI18next)
   .init({
     resources: {
       zh: { translation: zh },
       en: { translation: en },
       bm: { translation: bm },
     },
-    lng: "en", // 預設語言
-    lng: savedLanguage, // 儲存使用者選擇的語言
-    fallbackLng: "zh", // 如果找不到對應語言，預設為簡中
+    // 🚀 關鍵修改：直接刪除 lng 屬性！不要寫死它，交給 LanguageDetector 決定
+    fallbackLng: "en", // 萬一使用者的瀏覽器是法文，系統找不到法文，就會退回這個預設語言
     interpolation: {
-      escapeValue: false, // React 已經防禦 XSS，不需要額外轉義
+      escapeValue: false,
+    },
+    detection: {
+      // 告訴偵測器：先看 localStorage 裡有沒有舊紀錄，沒有的話再去抓瀏覽器目前的語言
+      order: ["localStorage", "navigator"],
+      // 告訴偵測器：當使用者透過 i18n.changeLanguage() 切換語言時，自動幫我存進 localStorage
+      caches: ["localStorage"],
     },
   });
 
