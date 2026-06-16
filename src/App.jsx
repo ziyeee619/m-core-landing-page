@@ -15,10 +15,9 @@ import Support from "./pages/Support";
 import Shop from "./pages/Shop";
 
 //  引入全局控制組件
-import ShopifyInbox from "./components/ShopifyInbox"; //  引入動態客服元件
 import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate"; // 1. 引入置頂器
 import ScrollToTop from "./components/ScrollToTop"; // 1. 迎回全站返回頂部按鈕
-import ChattyWidget from "./components/ChattyWidget";
+import ContactFloatingButton from "./components/STAssistantWidget.jsx";
 const App = () => {
   // 保持全局滾動監聽，並傳遞給 Home 使用
   const { scrollYProgress } = useScroll();
@@ -57,7 +56,8 @@ const App = () => {
 
         {/* 🚀 正確位置：移到 Routes 外面！
             這樣做可以確保它不受路由干擾，完美在全站右下角穩定初始化 */}
-        <ChattyWidget />
+
+        <ContactFloatingButton />
 
         {/* 全站共用頁尾 */}
         <Footer />

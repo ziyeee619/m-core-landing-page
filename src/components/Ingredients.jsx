@@ -68,7 +68,6 @@ const Ingredients = () => {
               {t("ingredients.headerTitle")}
             </h2>
             <div className="h-[2px] w-16 bg-white mx-auto mt-6 mb-4"></div>
-            {/* 🚀 動態切割高亮文字區塊 */}
             <p className="text-[#86868b] max-w-2xl mx-auto text-base lg:text-lg font-light italic">
               {t("ingredients.desc1")}
               <span className="text-white font-bold not-italic">
@@ -82,19 +81,18 @@ const Ingredients = () => {
         {/* ===================== 第一梯隊：頂級地王 Liboost™ ===================== */}
         <div className="mb-12 font-sans">
           <Reveal y={40}>
-            {/* 🚀 修正：移除大卡片最外層的 cursor-pointer */}
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-[#050505] shadow-2xl p-6 lg:p-12 group">
-              {/* 背景圖片優化區塊 */}
+              {/* 背景層 (z-0)：植物大圖 */}
               <div className="absolute inset-0 z-0 opacity-35 group-hover:opacity-55 group-hover:scale-105 transition-all duration-1000">
                 <img
                   src="/assets/liboost-turnera-diffusa-extract-spain.png"
                   alt="Spain Patent Liboost Extract Premium Selection"
                   className="w-full h-full object-cover max-md:object-contain max-md:object-right-top md:grayscale group-hover:grayscale-0 transition-all duration-1000"
                 />
-                {/* 🚀 遮罩修正：手機版改為由下往上的漸層 (bg-gradient-to-t)，讓下方文字區變暗，桌機版保持左右漸層 */}
                 <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080808]/90 via-[#080808]/40 to-transparent"></div>
               </div>
 
+              {/* 前景層 (z-10)：徽章與按鈕 */}
               <div className="relative z-10 flex flex-wrap gap-3 mb-8 justify-between items-start">
                 <div className="flex gap-2">
                   <span className="px-3 py-1 bg-white text-black text-[10px] font-black tracking-widest uppercase italic rounded-sm shadow-lg">
@@ -106,7 +104,6 @@ const Ingredients = () => {
                   </span>
                 </div>
 
-                {/* 🚀 保持：這個按鈕有綁 onClick，所以維持 cursor-pointer（預設在 button 元素上即是，或可用 className 補強） */}
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -119,21 +116,31 @@ const Ingredients = () => {
                 </button>
               </div>
 
+              {/* 前景層 (z-10)：Logo 圖與文案 */}
               <div className="relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 <div className="lg:col-span-6 space-y-6">
-                  <h3 className="text-4xl lg:text-6xl font-black text-white italic uppercase tracking-tighter leading-none">
-                    {t("ingredients.liboost.title1")} <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 font-sans not-italic">
-                      {t("ingredients.liboost.title2")}
-                    </span>
-                  </h3>
+                  {/* 🚀 雙圖疊加效果核心區塊 */}
+                  <div>
+                    {/* 這裡換成你的 Liboost Logo 圖片路徑 */}
+                    <img
+                      src="/liboost-logo.png"
+                      alt={t("ingredients.liboost.title1")}
+                      className="h-12 md:h-16 lg:h-20 w-auto object-contain drop-shadow-[0_0_25px_rgba(255,255,255,0.15)] mb-4"
+                      // 如果你的 logo 是黑色的，可以加上 className="invert" 讓它變成白色
+                    />
+                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-black leading-none tracking-tighter">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 font-sans not-italic">
+                        {t("ingredients.liboost.title2")}
+                      </span>
+                    </h3>
+                  </div>
+
                   <p className="text-[#86868b] text-base lg:text-lg font-light leading-relaxed italic">
                     {t("ingredients.liboost.desc")}
                   </p>
                 </div>
 
                 <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
-                  {/* 🚀 保持：小數據卡片點擊會打開 Lightbox，維持 cursor-pointer */}
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
@@ -156,7 +163,6 @@ const Ingredients = () => {
                     </p>
                   </div>
 
-                  {/* 🚀 保持：小數據卡片點擊會打開 Lightbox，維持 cursor-pointer */}
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
@@ -184,7 +190,7 @@ const Ingredients = () => {
           </Reveal>
         </div>
 
-        {/* ===================== 第二與第三梯隊 (1+5 完美對齊排版) ===================== */}
+        {/* ===================== 第二與第三梯隊 ===================== */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 font-sans">
           {secondaryIngredients.map((item, idx) => (
             <div
@@ -192,12 +198,10 @@ const Ingredients = () => {
               className={`${item.tier === "gold" ? "md:col-span-12 lg:col-span-6" : "md:col-span-6 lg:col-span-3"}`}
             >
               <Reveal delay={idx * 0.08} y={30}>
-                {/* 🚀 修正：將原本的 cursor-pointer 移除，避免無法點選的卡片誤導使用者 */}
                 <motion.div
                   whileHover={{ y: -6 }}
                   className="bg-[#121212] border border-white/5 rounded-2xl overflow-hidden shadow-lg h-full flex flex-col transition-all group"
                 >
-                  {/* 圖片展示區 */}
                   <div
                     className={`${item.tier === "gold" ? "h-56 lg:h-64" : "h-40 lg:h-48"} relative overflow-hidden`}
                   >
@@ -208,7 +212,6 @@ const Ingredients = () => {
                     />
                   </div>
 
-                  {/* 文字介紹區 */}
                   <div className="p-6 lg:p-8 flex-1 flex flex-col justify-between">
                     <div>
                       <h4 className="text-xl lg:text-2xl font-black italic uppercase tracking-tighter text-white">
