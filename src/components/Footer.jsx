@@ -43,7 +43,7 @@ const Footer = () => {
 
           {/* --- 2. Facebook --- */}
           <a
-            href="https://www.facebook.com/share/1LjYnQ5sQx/?mibextid=wwXIfr" // 記得在這裡換成你的 FB 連結
+            href="https://www.facebook.com/share/1LjYnQ5sQx/?mibextid=wwXIfr"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-3 hover:text-white transition-colors group font-sans"
@@ -106,10 +106,17 @@ const Footer = () => {
           </a>
         </div>
 
-        <p className="text-[9px] lg:text-[10px] tracking-[0.4em] lg:tracking-[0.6em] text-[#86868b] uppercase font-black leading-relaxed font-sans">
-          © 2026 ST EMPIRES MALAYSIA. <br className="sm:hidden" /> ALL RIGHTS
-          RESERVED.
-        </p>
+        {/* --- 法律聲明 & 版權 --- */}
+        <div className="flex flex-col items-center space-y-4">
+          <p className="text-[8px] lg:text-[9px] tracking-[0.15em] text-[#86868b]/70 uppercase font-semibold font-sans">
+            Liboost™️is a registered trademark of Pharmactive Biotech Products,
+            S.L.U.
+          </p>
+          <p className="text-[9px] lg:text-[10px] tracking-[0.4em] lg:tracking-[0.6em] text-[#86868b] uppercase font-black leading-relaxed font-sans">
+            © 2026 ST EMPIRES MALAYSIA. <br className="sm:hidden" /> ALL RIGHTS
+            RESERVED.
+          </p>
+        </div>
       </div>
     </footer>
   );

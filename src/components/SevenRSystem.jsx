@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Activity,
   X,
+  MoveRight,
 } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -186,13 +187,32 @@ const SevenRSystem = () => {
           </div>
 
           {/* ===================== 7R 卡片列表 ===================== */}
-          <div className="relative">
+          <div className="relative mt-8 lg:mt-0">
+            {/* 🚀 新增：手機版專屬滑動提示 */}
+            <div className="flex items-center justify-end mb-4 pr-2 lg:hidden">
+              <motion.div
+                animate={{ x: [0, 6, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.5,
+                  ease: "easeInOut",
+                }}
+                className="flex items-center gap-1.5 text-[#86868b]/80"
+              >
+                <span className="text-[9px] font-black tracking-[0.2em] uppercase">
+                  Swipe
+                </span>
+                <MoveRight size={12} strokeWidth={2.5} />
+              </motion.div>
+            </div>
+
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#0d0d0d] to-transparent z-20 lg:hidden" />
 
-            {/* 🚀 移除原本 JSX 上的 onWheel，改用 useEffect 中的原生監聽器 */}
+            {/* 移除原本 JSX 上的 onWheel，改用 useEffect 中的原生監聽器 */}
             <div
               ref={scrollContainerRef}
-              className="flex gap-4 overflow-x-auto pb-6 lg:pb-4 scrollbar-none px-2 lg:px-0"
+              /* 🚀 修正：加入 overflow-y-hidden 彻底杀掉竖向滑条，并补上 pt-4 确保往上浮动时不会被切掉 */
+              className="flex gap-4 overflow-x-auto overflow-y-hidden pt-4 pb-6 lg:pb-4 scrollbar-none px-2 lg:px-0"
               style={{ contentVisibility: "auto" }}
             >
               {systemItems.map((item, idx) => (

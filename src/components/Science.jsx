@@ -27,10 +27,10 @@ const Science = () => {
 
   // 🚀 機制證明：科學邏輯完美對應版
   const mechItems = [
-    { id: "l1", showShield: false, refs: "1" }, // [1] 東革阿里 -> 對應：NO 與 PDE-5 血管擴張
-    { id: "l2", showShield: false, refs: "2" }, // [2] 達米阿那 -> 對應：抗芳香化 (雄激素防護)
-    { id: "l3", showShield: false, refs: "3, 4" }, // [3, 4] 瑪卡+冬蟲夏草 -> 對應：睪酮促生與性慾喚醒
-    { id: "l4", showShield: true, refs: "" }, // HPLC 是檢驗技術，留空不加文獻標籤，只保留綠色盾牌
+    { id: "l1", showShield: false }, // [1] 東革阿里 -> 對應：NO 與 PDE-5 血管擴張
+    { id: "l2", showShield: false }, // [2] 達米阿那 -> 對應：抗芳香化 (雄激素防護)
+    { id: "l3", showShield: false }, // [3, 4] 瑪卡+冬蟲夏草 -> 對應：睪酮促生與性慾喚醒
+    { id: "l4", showShield: true }, // HPLC 是檢驗技術，留空不加文獻標籤，只保留綠色盾牌
   ];
 
   const references = [
@@ -161,6 +161,7 @@ const Science = () => {
                       </span>
                     </div>
 
+                    {/* 4張小圖網格 */}
                     <div className="grid grid-cols-4 gap-3">
                       {references.map((ref) => (
                         <div
@@ -185,6 +186,54 @@ const Science = () => {
                           </div>
                         </div>
                       ))}
+                    </div>
+
+                    {/* 🚀 完美整合：下方大張認證圖展示區（i18n 多語系動態版） */}
+                    <div
+                      onClick={() =>
+                        setSelectedRef({
+                          id: "cert",
+                          imgUrl: "/st-certifications.jpg",
+                          title: t("scienceCmp.cert.lightboxTitle"), // 💡 動態讀取彈窗標題
+                        })
+                      }
+                      className="group cursor-pointer mt-4 relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-white/10 bg-[#121212] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-white/20"
+                    >
+                      {/* 奢華遮罩層 */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent group-hover:bg-black/10 transition-colors duration-300 z-10" />
+
+                      {/* 認證大圖主體 */}
+                      <img
+                        src="/st-certifications.jpg"
+                        alt="STEMPIRES Safety Certifications"
+                        className="w-full h-full object-cover brightness-95 object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                      />
+
+                      {/* 左下角高奢品牌文字點綴 */}
+                      <div className="absolute bottom-4 left-5 z-20 pointer-events-none text-left space-y-0.5">
+                        <span className="text-[8px] tracking-[0.2em] text-white/40 uppercase font-mono block">
+                          {t("scienceCmp.cert.tag")}
+                        </span>
+                        <p className="text-white font-bold text-[11px] sm:text-[12px] tracking-wider uppercase italic leading-tight">
+                          {t("scienceCmp.cert.title")}
+                        </p>
+                        <p className="text-neutral-400 text-[9px] tracking-wide font-medium leading-normal">
+                          {t("scienceCmp.cert.desc")}
+                        </p>
+                      </div>
+
+                      {/* 懸浮放大提示 */}
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300">
+                        <div className="bg-black/75 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 shadow-lg text-white flex flex-col items-center gap-1 text-center">
+                          <div className="flex items-center gap-2 text-xs font-semibold tracking-wide">
+                            <ZoomIn size={14} className="animate-pulse" />
+                            <span>{t("cert.hoverTitle")}</span>
+                          </div>
+                          <span className="text-[9px] text-neutral-400 font-medium">
+                            {t("cert.hoverSub")}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
