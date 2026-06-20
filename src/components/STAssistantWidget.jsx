@@ -150,6 +150,48 @@ const STAssistantWidget = () => {
       return part;
     });
   };
+
+  // ==========================================
+  // 🚀 新增：30秒閒置自動跟進機制 (Idle Follow-up)
+  // ==========================================
+  useEffect(() => {
+    let idleTimer;
+
+    // 取得對話陣列的最後一則訊息
+    const lastMessage = messages[messages.length - 1];
+
+    // 判斷條件：
+    // 1. 對話框要是打開的
+    // 2. 必須要有對話紀錄
+    // 3. 最後一句話必須是 AI (assistant) 說的，代表現在正在等客人回覆
+    // 4. AI 不能正在思考中 (isLoading 必須是 false)
+    const isWaitingForUser =
+      isOpen && lastMessage && lastMessage.role === "assistant" && !isLoading;
+
+    // 避免 AI 無限跳針：如果最後一句話已經是「轉接人工」的提示，就不要再重複倒數了
+    const isAlreadyAsked =
+      lastMessage && lastMessage.content.includes("轉接人工");
+
+    if (isWaitingForUser && !isAlreadyAsked) {
+      // 設定 30 秒 (30000 毫秒) 的計時器
+      idleTimer = setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content:
+              "注意到您有一陣子沒回覆了，請問剛剛的說明有幫助到您嗎？\n\n如果需要更深入的個人化建議或報價，需要我直接為您轉接人工專屬顧問嗎？\n👉 點擊直接聯繫專屬顧問：https://wa.me/60169404939?text=您好%2C我想轉接人工服務",
+          },
+        ]);
+      }, 30000);
+    }
+
+    // 🧹 核心防呆機制：
+    // 只要客人一打字送出新訊息（messages 陣列改變），或者關掉對話框，
+    // React 就會觸發這個 return，把計時器強制取消，這樣 AI 就不會在客人講話講到一半時突然插嘴！
+    return () => clearTimeout(idleTimer);
+  }, [messages, isOpen, isLoading]);
+  // ==========================================
   // ==========================================
 
   return (
