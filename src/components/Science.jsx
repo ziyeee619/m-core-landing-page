@@ -227,10 +227,10 @@ const Science = () => {
                         <div className="bg-black/75 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 shadow-lg text-white flex flex-col items-center gap-1 text-center">
                           <div className="flex items-center gap-2 text-xs font-semibold tracking-wide">
                             <ZoomIn size={14} className="animate-pulse" />
-                            <span>{t("cert.hoverTitle")}</span>
+                            <span>{t("scienceCmp.cert.hoverTitle")}</span>
                           </div>
                           <span className="text-[9px] text-neutral-400 font-medium">
-                            {t("cert.hoverSub")}
+                            {t("scienceCmp.cert.hoverSub")}
                           </span>
                         </div>
                       </div>
@@ -278,12 +278,21 @@ const Science = () => {
               />
 
               {/* 🚀 關鍵修改 3：在這裡精準呼叫 JSON 裡的文獻標題 */}
+              {/* 🚀 修正後的文獻/認證標題與敘述容器 */}
               <div className="text-center px-4">
                 <p className="text-amber-500 font-bold text-sm lg:text-base mb-1 tracking-widest uppercase">
-                  Reference [{selectedRef.id}]
+                  {/* 如果是 cert 就顯示 CERTIFICATION，否則顯示 Reference [1] */}
+                  {selectedRef.id === "cert"
+                    ? "Safety Certification"
+                    : `Reference [${selectedRef.id}]`}
                 </p>
+
                 <p className="text-neutral-300 text-sm lg:text-lg font-medium leading-relaxed max-w-2xl">
-                  {t(`scienceCmp.references.ref${selectedRef.id}`)}
+                  {/* 💡 這裡做分流判斷 */}
+                  {selectedRef.id === "cert"
+                    ? selectedRef.title || t("scienceCmp.cert.title") // 👈 如果是 cert，直接抓大圖標題
+                    : t(`scienceCmp.references.ref${selectedRef.id}`)}{" "}
+                  {/* 👈 小圖則維持原本的 ref1~ref4 */}
                 </p>
               </div>
             </motion.div>

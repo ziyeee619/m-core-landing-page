@@ -1,27 +1,19 @@
 // src/components/STAssistantWidget.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Loader2, Mail } from "lucide-react";
+import { MessageSquare, X, Send, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 const STAssistantWidget = () => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // 預設歡迎語與對話紀錄
-  const [messages, setMessages] = useState([
-    {
-      role: "assistant",
-      content:
-        "Hello! Welcome to ST EMPIRES. I'm your M-CORE AI Consultant. How can I assist you today? / 您好！我是您的專屬健康顧問，有什麼我可以幫您的嗎？",
-    },
-  ]);
-
-  // 真人聯絡管道資料
   const contactMethods = [
+    // ... (你的聯絡方式陣列保持不變)
     {
       name: "WhatsApp",
       href: "https://wa.me/60169404939",
@@ -89,37 +81,76 @@ const STAssistantWidget = () => {
     },
   ];
 
-  // 自動滾動到最新訊息
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
   useEffect(() => {
-    if (isOpen) scrollToBottom();
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isOpen, isLoading]);
 
-  // 🚀 預留給後續串接 AI 的發送函式
   const handleSend = async () => {
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return;
 
     const userMsg = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMsg]);
+    const newMessages = [...messages, userMsg];
+
+    setMessages(newMessages);
     setInput("");
     setIsLoading(true);
 
-    // 模擬 AI 思考延遲 (後續這裡替換成 fetch Vercel API 的代碼)
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: data.reply },
+        ]);
+      } else {
+        setMessages((prev) => [
+          ...prev,
+          { role: "assistant", content: t("assistant.errorBusy") },
+        ]);
+      }
+    } catch (error) {
       setMessages((prev) => [
         ...prev,
-        {
-          role: "assistant",
-          content:
-            "This is a demo response. AI backend is ready to be connected! / 系統已收到您的訊息，AI 模組準備就緒後即可回覆。",
-        },
+        { role: "assistant", content: t("assistant.errorConnection") },
       ]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
+
+  // ==========================================
+  // 👇 新增：轉換網址為可點擊連結的函數 👇
+  // ==========================================
+  const renderMessageWithLinks = (text) => {
+    if (!text) return "";
+
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.split(urlRegex).map((part, index) => {
+      if (urlRegex.test(part)) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+            // 配合你們的黑金風格，我把連結設定為高質感的琥珀金色
+            className="text-amber-500 hover:text-amber-400 hover:underline break-all font-semibold mx-1 transition-colors"
+          >
+            {part}
+          </a>
+        );
+      }
+      return part;
+    });
+  };
+  // ==========================================
 
   return (
     <div className="fixed bottom-6 right-6 lg:right-10 z-[9999] flex flex-col items-end font-sans">
@@ -132,7 +163,7 @@ const STAssistantWidget = () => {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="mb-4 w-[360px] max-w-[calc(100vw-3rem)] h-[550px] max-h-[75vh] bg-[#0d0d0d] border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden relative"
           >
-            {/* ================= 頂部 Header ================= */}
+            {/* Header */}
             <div className="bg-[#161616] border-b border-white/5 p-4 flex justify-between items-center z-10 shadow-sm">
               <div className="flex items-center space-x-3">
                 <div className="w-9 h-9 bg-gradient-to-br from-white to-neutral-400 text-black rounded-full flex items-center justify-center font-black text-xs shadow-inner">
@@ -144,7 +175,7 @@ const STAssistantWidget = () => {
                   </h4>
                   <p className="text-[#86868b] text-[10px] flex items-center mt-0.5 tracking-wider font-medium">
                     <span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5 animate-pulse shadow-[0_0_5px_#22c55e]"></span>
-                    AI Concierge
+                    {t("assistant.liveSupport")}
                   </p>
                 </div>
               </div>
@@ -156,10 +187,10 @@ const STAssistantWidget = () => {
               </button>
             </div>
 
-            {/* ================= 快捷聯絡列 (整合真人客服) ================= */}
+            {/* 快捷聯絡列 */}
             <div className="bg-[#0a0a0a] px-4 py-3 border-b border-white/5 flex items-center justify-between z-10">
               <span className="text-[10px] text-neutral-500 font-bold uppercase tracking-widest">
-                Connect human:
+                {t("assistant.connect")}
               </span>
               <div className="flex space-x-2">
                 {contactMethods.map((method) => (
@@ -168,7 +199,6 @@ const STAssistantWidget = () => {
                     href={method.href}
                     target={method.name !== "Email" ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    title={method.name}
                     className={`w-7 h-7 ${method.bg} text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform`}
                   >
                     {method.icon}
@@ -177,45 +207,58 @@ const STAssistantWidget = () => {
               </div>
             </div>
 
-            {/* ================= 對話紀錄區 ================= */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+            {/* 對話紀錄區 */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent bg-[#080808]">
+              {/* 預設歡迎語 */}
+              <div className="flex justify-start">
+                <div className="whitespace-pre-line max-w-[85%] p-3.5 rounded-2xl text-sm leading-relaxed bg-[#1f1f1f] text-neutral-200 rounded-bl-sm border border-white/5 shadow-inner">
+                  {t("assistant.greeting")}
+                </div>
+              </div>
+
+              {/* 使用者與 AI 歷史對話 */}
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[85%] p-3.5 rounded-2xl text-sm leading-relaxed ${
+                    // 👇 新增：加上 whitespace-pre-line，確保 AI 的分段排版會正確顯示換行
+                    className={`whitespace-pre-line max-w-[85%] p-3.5 rounded-2xl text-sm leading-relaxed ${
                       msg.role === "user"
                         ? "bg-white text-black rounded-br-sm font-semibold shadow-md"
                         : "bg-[#1f1f1f] text-neutral-200 rounded-bl-sm border border-white/5 shadow-inner"
                     }`}
                   >
-                    {msg.content}
+                    {/* 👇 新增：在這裡套用轉換函數，如果是 AI 說的話就處理網址 */}
+                    {msg.role === "assistant"
+                      ? renderMessageWithLinks(msg.content)
+                      : msg.content}
                   </div>
                 </div>
               ))}
 
-              {/* 打字指示器 (Loading 狀態) */}
+              {/* AI 思考中的高奢打字動畫 */}
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="bg-[#1f1f1f] border border-white/5 p-4 rounded-2xl rounded-bl-sm flex items-center space-x-1.5">
+                  <div className="max-w-[85%] p-3.5 rounded-2xl bg-[#1f1f1f] border border-white/5 shadow-inner flex space-x-1.5 items-center rounded-bl-sm h-[44px]">
                     <span className="w-1.5 h-1.5 bg-neutral-400 rounded-full animate-bounce"></span>
                     <span
                       className="w-1.5 h-1.5 bg-neutral-400 rounded-full animate-bounce"
-                      style={{ animationDelay: "0.15s" }}
+                      style={{ animationDelay: "0.2s" }}
                     ></span>
                     <span
                       className="w-1.5 h-1.5 bg-neutral-400 rounded-full animate-bounce"
-                      style={{ animationDelay: "0.3s" }}
+                      style={{ animationDelay: "0.4s" }}
                     ></span>
                   </div>
                 </div>
               )}
+
               <div ref={messagesEndRef} />
             </div>
 
-            {/* ================= 輸入區 ================= */}
+            {/* 輸入區 */}
             <div className="p-3 bg-[#161616] border-t border-white/5">
               <div className="flex items-center bg-[#050505] border border-white/10 rounded-xl overflow-hidden px-2 shadow-inner focus-within:border-white/30 transition-colors">
                 <input
@@ -223,24 +266,27 @@ const STAssistantWidget = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                  placeholder="Ask anything..."
-                  className="flex-1 bg-transparent text-white text-sm py-3.5 px-3 outline-none placeholder:text-neutral-600 font-medium"
+                  placeholder={t("assistant.placeholder")}
+                  disabled={isLoading}
+                  className="flex-1 bg-transparent text-white text-sm py-3.5 px-3 outline-none placeholder:text-neutral-600 font-medium disabled:opacity-50"
                 />
                 <button
                   onClick={handleSend}
                   disabled={!input.trim() || isLoading}
-                  className="p-2 mr-1 text-black bg-white rounded-lg hover:bg-neutral-200 disabled:opacity-50 disabled:bg-neutral-800 disabled:text-neutral-500 transition-all cursor-pointer"
+                  className="p-2 mr-1 text-black bg-white rounded-lg hover:bg-neutral-200 disabled:opacity-50 disabled:bg-neutral-800 disabled:text-neutral-500 transition-all cursor-pointer flex items-center justify-center"
                 >
-                  {isLoading ? (
-                    <Loader2 size={16} className="animate-spin" />
-                  ) : (
-                    <Send size={16} />
+                  <Send
+                    size={16}
+                    className={isLoading ? "opacity-0" : "opacity-100"}
+                  />
+                  {isLoading && (
+                    <span className="absolute w-3 h-3 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
                   )}
                 </button>
               </div>
               <div className="text-center mt-2">
                 <span className="text-[9px] text-neutral-600 font-mono tracking-widest uppercase">
-                  Powered by ST Empires AI Core
+                  {t("assistant.securedBy")}
                 </span>
               </div>
             </div>
@@ -248,7 +294,7 @@ const STAssistantWidget = () => {
         )}
       </AnimatePresence>
 
-      {/* ================= 懸浮主按鈕 ================= */}
+      {/* 懸浮主按鈕 */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
@@ -256,7 +302,6 @@ const STAssistantWidget = () => {
         className="w-14 h-14 bg-white text-black rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(255,255,255,0.2)] cursor-pointer relative z-50 overflow-hidden group"
       >
         <div className="absolute inset-0 bg-neutral-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
         <AnimatePresence mode="wait">
           {isOpen ? (
             <motion.div

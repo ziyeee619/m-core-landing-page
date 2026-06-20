@@ -1,4 +1,14 @@
 {
+  "assistant": {
+    "liveSupport": "Live Support",
+    "connect": "Connect:",
+    "greeting": "Hello! Welcome to ST EMPIRES. Choose a contact method above, or ask our AI assistant below.",
+    "placeholder": "Type a message...",
+    "errorBusy": "Sorry, the system is currently busy. Please try again later or contact us via WhatsApp.",
+    "errorConnection": "Sorry, a connection error occurred. Please contact us via WhatsApp.",
+    "securedBy": "ST EMPIRES AI ASSISTANT"
+  },
+
   "nav": {
     "home": "Home",
     "product": "Product",

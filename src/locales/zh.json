@@ -1,4 +1,14 @@
 {
+  "assistant": {
+    "liveSupport": "专属顾问",
+    "connect": "快捷联系:",
+    "greeting": "您好！欢迎来到 ST EMPIRES。您可以点击上方快速联系我们，或在下方直接向我们的 AI 专属顾问提问。",
+    "placeholder": "输入您的信息...",
+    "errorBusy": "抱歉，系统目前繁忙，请稍后再试或使用 WhatsApp 联系我们。",
+    "errorConnection": "抱歉，网络连接发生错误，请点击上方 WhatsApp 联系我们。",
+    "securedBy": "ST EMPIRES AI ASSISTANT"
+  },
+
   "nav": {
     "home": "首页",
     "product": "产品",

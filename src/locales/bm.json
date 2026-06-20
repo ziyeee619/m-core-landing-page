@@ -1,4 +1,14 @@
 {
+  "assistant": {
+    "liveSupport": "Sokongan Langsung",
+    "connect": "Hubungi:",
+    "greeting": "Helo! Selamat datang ke ST EMPIRES. Pilih kaedah hubungan di atas, atau tanya pembantu AI kami di bawah.",
+    "placeholder": "Taip mesej anda...",
+    "errorBusy": "Maaf, sistem sedang sibuk. Sila cuba lagi atau hubungi kami melalui WhatsApp.",
+    "errorConnection": "Maaf, ralat sambungan berlaku. Sila hubungi kami melalui WhatsApp.",
+    "securedBy": "ST EMPIRES AI ASSISTANT"
+  },
+
   "nav": {
     "home": "Utama",
     "product": "Produk",
