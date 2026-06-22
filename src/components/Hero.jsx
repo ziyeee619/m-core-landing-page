@@ -10,8 +10,13 @@ const Hero = ({ heroOpacity, heroScale }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-28 lg:pt-20 bg-gradient-to-br from-[#050505] via-[#1a1a1a] to-[#050505] overflow-hidden px-6 lg:px-8">
       {/* 背景紋理 */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]"></div>
+      {/* ===================== 高奢隱約植物背景 ===================== */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* 1. 專屬葉子圖 (使用 mix-blend-screen 過濾掉圖片的死黑，只保留銀色葉脈，opacity 控制隱約程度) */}
+        <div className="absolute inset-0 w-full h-full bg-[url('/hero-leaves-bg.png')] bg-cover bg-center bg-no-repeat opacity-25 mix-blend-screen"></div>
+
+        {/* 2. (可選) 保留原本的金屬拉絲質感，疊加在一起層次感會更豐富 */}
+        <div className="absolute inset-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-5"></div>
       </div>
 
       {/* 視差淡出與縮放特效 */}
@@ -27,11 +32,12 @@ const Hero = ({ heroOpacity, heroScale }) => {
             <Reveal y={20} delay={0.1}>
               <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-8">
                 {/* ST Logo 圖片空間 */}
-                <div className="w-25 h-25 lg:w-30 lg:h-30 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl flex items-center justify-center p-2 mb-3 shadow-2xl group hover:border-white/30 transition-all duration-500">
+                {/* ST Logo 圖片空間 (已取消背景框) */}
+                <div className="w-25 h-25 lg:w-30 lg:h-30 flex items-center justify-center mb-3 group transition-all duration-500">
                   <img
                     src="/STLogo.png"
                     alt="ST Empires Wellness Malaysia Official Logo - Premium Men's Health Brand"
-                    className="w-full h-full object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+                    className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] lg:group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 {/* STEMPIRES 品牌字 */}

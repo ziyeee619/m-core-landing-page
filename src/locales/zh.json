@@ -86,7 +86,7 @@
       "f3": "严选多国顶级进口专利成分"
     },
     "save": "现省 RM {{amount}}",
-    "shipping": "💡 运费将于结帐时计算",
+    "shipping": "💡 限时免运 | 全马限时免运费（运费将于结账时自动减免）",
     "cartTitle": "您的购物车",
     "checkoutBtn": "前往结帐 (FPX / 信用卡)",
     "volumeDiscount": "🔥 多件优惠：买 2 件以上，享尊荣特价 RM 255.00 / 件 (立省 15%)"
@@ -269,12 +269,12 @@
       "ref4": "冬虫夏草 (Cordyceps sinensis) 刺激体内睾酮生成之活体实验研究 (2004)"
     },
     "cert": {
-      "lightboxTitle": "安全与质量认证",
-      "tag": "严格质量保证",
-      "title": "SGS Certified & GMP Standards Compliant",
-      "desc": "通过 SGS 检验与 GMP 生产标准",
-      "hoverTitle": "点击检视完整认证",
-      "hoverSub": "查看高清大图"
+      "lightboxTitle": "Liboost™ 臨床實驗與分子機制證明",
+      "tag": "科學實證臨床數據",
+      "title": "Comprehensive Mechanism of Action for Liboost™",
+      "desc": "臨床證實：有效促進一氧化氮释放、阻斷 PDE-5 並抑制芳香化酶",
+      "hoverTitle": "點擊檢視分子機制看板",
+      "hoverSub": "查看高清大圖與臨床文獻"
     }
   },
 

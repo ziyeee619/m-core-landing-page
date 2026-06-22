@@ -28,8 +28,8 @@ const Navbar = () => {
   const navLinks = [
     { name: t("nav.home") || "Home", path: "/" },
     { name: t("nav.product") || "The M-CORE", path: "/product" },
-    { name: t("nav.shop") || "Store", path: "/shop" },
     { name: t("nav.science") || "Science", path: "/science" },
+    { name: t("nav.shop") || "Store", path: "/shop" },
     { name: t("nav.support") || "Support", path: "/support" },
   ];
 

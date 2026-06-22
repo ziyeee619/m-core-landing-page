@@ -128,7 +128,7 @@
       "f3": "Bahan Import Premium"
     },
     "save": "JIMAT RM {{amount}}",
-    "shipping": "💡 Kos penghantaran dikira semasa pembayaran",
+    "shipping": "💡 TAWARAN TERHAD | Penghantaran Percuma ke Seluruh Malaysia",
     "cartTitle": "Troli Membeli-belah Anda",
     "checkoutBtn": "Teruskan ke Pembayaran (FPX / Kad Kredit)",
     "volumeDiscount": "🔥 Diskaun Pukal: Beli 2 atau lebih, nikmati harga istimewa premium pada RM 255.00 / PCS (Jimat 15%)"
@@ -264,12 +264,12 @@
       "ref4": "Kesan rangsangan in vivo Cordyceps sinensis ke atas penghasilan testosteron. (2004)"
     },
     "cert": {
-      "lightboxTitle": "Pengesahan Keselamatan & Kualiti",
-      "tag": "Jaminan Kualiti",
-      "title": "SGS Certified & GMP Standards Compliant",
-      "desc": "Siri Ujian SGS & Piawaian GMP",
-      "hoverTitle": "Klik untuk paparan penuh",
-      "hoverSub": "Lihat sijil penuh"
+      "lightboxTitle": "Bukti Klinikal & Laluan Molekul Liboost™",
+      "tag": "BUKTI SAINTIFIK KLIEN",
+      "title": "Mekanisme Tindakan Komprehensif untuk Liboost™",
+      "desc": "Terbukti secara klinikal merangsang pembebasan Nitrik Oksida, menyekat PDE-5, dan mengawal aktiviti enzim aromatase.",
+      "hoverTitle": "Klik untuk melihat carta mekanisme",
+      "hoverSub": "Lihat carta sains resolusi tinggi"
     }
   },
   "store": {

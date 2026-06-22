@@ -115,7 +115,7 @@
       "f3": "Premium Imported Ingredients"
     },
     "save": "SAVE RM {{amount}}",
-    "shipping": "💡 Shipping calculated at checkout",
+    "shipping": "💡 LIMITED TIME | Free Shipping Across Malaysia (Applied automatically at checkout)",
     "cartTitle": "Your Cart",
     "checkoutBtn": "Checkout (FPX / Credit Card)",
     "volumeDiscount": "🔥 Bulk Discount: Buy 2 or more, enjoy premium special price at RM 255.00 / pc (Save 15%)"
@@ -262,12 +262,12 @@
       "ref4": "In vivo stimulatory effect of Cordyceps sinensis and its fractions on testosterone production. (2004)"
     },
     "cert": {
-      "lightboxTitle": "Safety & Quality Certifications",
-      "tag": "Quality Assurance",
-      "title": "SGS Certified & GMP Standards Compliant",
-      "desc": "Passed SGS Testing & GMP Production Standards",
-      "hoverTitle": "Click to view full certifications",
-      "hoverSub": "View high-resolution image"
+      "lightboxTitle": "Liboost™ Clinical Evidence & Molecular Pathways",
+      "tag": "SCIENTIFIC EVIDENCE",
+      "title": "Comprehensive Mechanism of Action for Liboost™",
+      "desc": "Clinically proven to promote Nitric Oxide release, induce PDE-5 inhibition, and regulate aromatase activity.",
+      "hoverTitle": "Click to view molecular pathways",
+      "hoverSub": "View high-resolution scientific chart"
     }
   },
 

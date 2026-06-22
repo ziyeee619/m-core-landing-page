@@ -83,11 +83,11 @@ const Ingredients = () => {
           <Reveal y={40}>
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#121212] via-[#0d0d0d] to-[#050505] shadow-2xl p-6 lg:p-12 group">
               {/* 背景層 (z-0)：植物大圖 */}
-              <div className="absolute inset-0 z-0 opacity-35 group-hover:opacity-55 group-hover:scale-105 transition-all duration-1000">
+              <div className="absolute inset-0 z-0 opacity-55 group-hover:scale-105 transition-all duration-1000">
                 <img
                   src="/assets/liboost-turnera-diffusa-extract-spain.png"
                   alt="Spain Patent Liboost Extract Premium Selection"
-                  className="w-full h-full object-cover max-md:object-contain max-md:object-right-top md:grayscale group-hover:grayscale-0 transition-all duration-1000"
+                  className="w-full h-full object-cover max-md:object-contain max-md:object-right-top transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#080808]/90 via-[#080808]/40 to-transparent"></div>
               </div>
@@ -208,7 +208,7 @@ const Ingredients = () => {
                     <img
                       src={item.img}
                       alt={`${item.title} M-CORE Premium Selection`}
-                      className="w-full h-full object-cover transition-all duration-700 lg:grayscale lg:opacity-40 lg:group-hover:grayscale-0 lg:group-hover:opacity-100 lg:group-hover:scale-105"
+                      className="w-full h-full object-cover transition-all duration-700 lg:group-hover:scale-105"
                     />
                   </div>
 
