@@ -8,14 +8,11 @@ const Support = () => {
   const { t } = useTranslation();
   const [activeFaq, setActiveFaq] = useState(null);
 
-  // 🚀 動態抽離的 FAQ 陣列：完美對齊 i18n
-  const faqs = [
-    { question: t("support.faq1Q"), answer: t("support.faq1A") },
-    { question: t("support.faq2Q"), answer: t("support.faq2A") },
-    { question: t("support.faq3Q"), answer: t("support.faq3A") },
-    { question: t("support.faq4Q"), answer: t("support.faq4A") },
-    { question: t("support.faq5Q"), answer: t("support.faq5A") },
-  ];
+  // 🚀 动态抽离的 FAQ 阵列：利用 Array.from 自动循环读取 1~20 题
+  const faqs = Array.from({ length: 20 }, (_, i) => ({
+    question: t(`support.faq${i + 1}Q`),
+    answer: t(`support.faq${i + 1}A`),
+  }));
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -24,7 +21,7 @@ const Support = () => {
   return (
     <div className="bg-[#0a0a0a] text-white font-sans selection:bg-white selection:text-black overflow-x-hidden min-h-screen pt-32 pb-20 lg:pt-40">
       <div className="container mx-auto px-6 lg:px-8 max-w-4xl flex flex-col space-y-12">
-        {/* 頂部標頭 */}
+        {/* 顶部标头 */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,7 +45,7 @@ const Support = () => {
           </p>
         </motion.div>
 
-        {/* 信任標章小展示區 */}
+        {/* 信任标章小展示区 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-left">
           <div className="bg-neutral-900/40 border border-white/5 p-5 rounded-2xl flex items-start space-x-4">
             <Beaker className="text-amber-500 shrink-0 mt-0.5" size={18} />
@@ -74,7 +71,7 @@ const Support = () => {
           </div>
         </div>
 
-        {/* FAQ 橫向撐滿折疊選單列表 */}
+        {/* FAQ 横向撑满折叠选单列表 */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -99,7 +96,7 @@ const Support = () => {
                   </span>
                   <ChevronDown
                     size={18}
-                    className={`text-neutral-500 transition-transform duration-300 ${isOpen ? "rotate-180 text-amber-500" : ""}`}
+                    className={`text-neutral-500 transition-transform duration-300 shrink-0 ml-4 ${isOpen ? "rotate-180 text-amber-500" : ""}`}
                   />
                 </button>
 
@@ -112,7 +109,7 @@ const Support = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="text-xs lg:text-sm text-neutral-400 leading-relaxed pt-2 pb-2 font-medium tracking-wide max-w-3xl">
+                      <p className="text-xs lg:text-sm text-neutral-400 leading-relaxed pt-2 pb-2 font-medium tracking-wide max-w-3xl whitespace-pre-wrap">
                         {faq.answer}
                       </p>
                     </motion.div>
@@ -123,7 +120,7 @@ const Support = () => {
           })}
         </motion.div>
 
-        {/* 底部聯絡資訊導引 */}
+        {/* 底部联络资讯导引 */}
         <div className="text-center pt-8 border-t border-white/5 text-[11px] lg:text-xs text-neutral-500 font-medium tracking-wide flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8">
           <span>{t("support.footerHint")}</span>
           <div className="flex space-x-6 text-neutral-400">

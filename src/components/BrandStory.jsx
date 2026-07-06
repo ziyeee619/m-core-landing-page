@@ -57,6 +57,7 @@ const BrandStory = () => {
             <div className="space-y-6 text-[#CCCCCC] text-sm lg:text-base leading-relaxed tracking-wide font-medium drop-shadow-lg">
               <p>{t("home.aboutDesc1")}</p>
               <p>{t("home.aboutDesc2")}</p>
+              <p>{t("home.aboutDesc3")}</p>
             </div>
           </motion.div>
         </div>

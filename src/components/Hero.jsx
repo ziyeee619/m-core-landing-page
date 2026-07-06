@@ -55,8 +55,14 @@ const Hero = ({ heroOpacity, heroScale }) => {
 
             {/* 2. M-CORE 產品大字標題 (手機版在 Logo 下面) */}
             <Reveal y={30} delay={0.2}>
-              <h1 className="text-6xl md:text-8xl lg:text-[120px] font-black leading-[0.85] lg:leading-[0.8] mb-6 lg:mb-10 tracking-tighter italic drop-shadow-2xl text-white uppercase font-sans">
+              <h1 className="text-6xl md:text-8xl lg:text-[120px] font-black leading-[0.85] lg:leading-[0.8] mb-6 lg:mb-10 tracking-tighter italic drop-shadow-2xl text-white uppercase font-sans flex flex-wrap items-baseline justify-center lg:justify-start gap-x-4">
                 M-CORE
+                {/* 🌟 當語系切換到中文 (zh) 時，優雅地在後面補上「核元」 */}
+                {t("hero.titleSuffix") && (
+                  <span className="text-3xl md:text-5xl lg:text-6xl font-normal not-italic tracking-wide text-neutral-400 font-sans">
+                    {t("hero.titleSuffix")}
+                  </span>
+                )}
               </h1>
             </Reveal>
 
