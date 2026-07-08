@@ -1,0 +1,363 @@
+{
+  "assistant": {
+    "liveSupport": "Sokongan Langsung",
+    "connect": "Hubungi:",
+    "greeting": "Helo! Selamat datang ke ST EMPIRES. Pilih kaedah hubungan di atas, atau tanya pembantu AI kami di bawah.",
+    "placeholder": "Taip mesej anda...",
+    "errorBusy": "Maaf, sistem sedang sibuk. Sila cuba lagi atau hubungi kami melalui WhatsApp.",
+    "errorConnection": "Maaf, ralat sambungan berlaku. Sila hubungi kami melalui WhatsApp.",
+    "securedBy": "ST EMPIRES AI ASSISTANT"
+  },
+
+  "nav": {
+    "home": "Utama",
+    "product": "Produk",
+    "science": "Sains",
+    "support": "Sokongan"
+  },
+  "hero": {
+    "title": "M-CORE",
+    "titleSuffix": "",
+    "edition": "Edisi Titanium ・ 2026",
+    "sub": "Kuasa Teras Lelaki.",
+    "desc": "Melangkaui sempadan dengan teknologi # paten Sepanyol.",
+
+    "cta": "AKTIFKAN"
+  },
+  "vision": {
+    "label": "Visi Jenama",
+    "p1": "Apabila rentak hidup tidak terkawal,",
+    "p2": "KEHILANGAN TENAGA",
+    "p3": "adalah lebih pantas daripada yang anda bayangkan.",
+    "p4": "Kami menolak suplemen biasa,",
+    "p5": "Kami dilahirkan untuk",
+    "p6": "KECEMERLANGAN",
+    "p7": ""
+  },
+
+  "home": {
+    "heroTitle": "Bukan Diformulasi untuk Kesan Singkat",
+    "heroSubtitle": "Tetapi Dibina untuk Keseimbangan Sejati & Jangka Panjang.",
+    "insightText1": "Setengah keletihan tidak hilang hanya dengan tidur.",
+    "insightText2": "Kerana penyusutan tenaga tubuh terkumpul diam-diam dari masa ke masa.",
+    "aboutTag": "TERAS JENAMA",
+    "aboutTitle": "Menolak stimulasi singkat, membina keseimbangan berpanjangan.\nMeningkatkan bukan sekadar prestasi, tetapi kepuasan dalam setiap momen keintiman.",
+    "aboutDesc1": "Dalam kehidupan moden bertekanan tinggi, kesibukan tempat kerja dan tabiat tidak teratur diam-diam memakan asas tubuh, menjadikan tenaga tidak stabil norma baharu. Namun, banyak produk hanya fokus pada stimulasi fisiologi singkat, cuba menyembunyikan keletihan dengan guna tenaga berlebihan. Kami percaya ini tidak dapat menyelesaikan masalah akar!",
+    "aboutDesc2": "ST EMPIRES lebih prihatin dengan pengalaman komprehensif. Kami bertegas pada 'pengawalseliaan jangka panjang' sebagai teras kami, bergantung pada kepakaran R&D dan formulasi profesional untuk membantu tubuh memulihkan keseimbangan secara perlahan melalui cara saintifik, selamat dan dipercayai.",
+    "aboutDesc3": "Bahan berpaten kami terbukti secara kajian membantu meningkatkan Kepuasan Seksual (Sexual Satisfaction) dan Kepuasan Global (Global Satisfaction). Apa yang benar-benar berbaloi dikejar bukan sekadar momen tunggal, tetapi pengalaman lebih stabil, semula jadi, dan memuaskan yang merangkumi psikologi, keyakinan, dan interaksi antara pasangan.",
+    "scienceTag": "Sains Peneraju",
+    "scienceTitle": "Pengekstrakan Saintifik, Pembuatan Tegas",
+    "scienceDesc": "Berdasarkan formula tumbuhan digabungkan dengan sikap tegas sains moden, memberikan kestabilan jangka panjang dan selamat untuk sistem tubuh.",
+    "discoverBtn": "Terokai M-CORE Premium"
+  },
+
+  "preview": {
+    "sec1": {
+      "sub": "JEJAKAN KLINIKAL BERDASARKAN 4 MINGGU",
+      "title": "TERBUKTI SECARA SAINTIFIK. PRESTASI MAKSIMUM.",
+      "card1": {
+        "title": "Mekanisme Pelepasan NO",
+        "desc": "Merangsang pelepasan nitrik oksida endotelial dengan ketara, merehatkan otot licin vaskular untuk ketegangan maksimum."
+      },
+      "card2": {
+        "title": "Kepuasan Wanita (FSFI)",
+        "desc": "Terbukti secara klinikal oleh paten Sepanyol Liboost™ untuk meningkatkan keinginan, pelinciran, dan kepuasan keseluruhan."
+      },
+      "card3": {
+        "title": "Prestasi Lelaki (IIEF)",
+        "desc": "Menghalang aktiviti PDE-5 secara berkesan, menstabilkan ketahanan dan penunjuk fungsi erektil secara menyeluruh."
+      }
+    },
+    "sec2": {
+      "imgHover": "Terokai Formula",
+      "sub": "FORMULA PRESTASI UTAMA",
+      "title1": "M-CORE Premium",
+      "title2": "Formula Tenaga",
+      "desc": "Gabungan paten Sepanyol Liboost™, Tongkat Ali Malaysia, dan Cordyceps dataran tinggi, direka untuk golongan elit yang mencari prestasi puncak. 100% semula jadi, selamat, dan sokongan endogenus tanpa kebergantungan.",
+      "check1": "100% Bebas Sildenafil",
+      "check2": "Penggalak Tenaga ATP",
+      "btn": "Terokai M-CORE Sekarang",
+      "buyBtn": "BELI SEKARANG"
+    }
+  },
+  "usage": {
+    "label": "PROTOKOL HARIAN",
+    "usage": "DOS OPTIMUM",
+    "guide": "PANDUAN SIFAT SAINTIFIK",
+    "doseTitle": "Protokol Harian",
+    "dose": "Ambil Setiap Hari",
+    "doseNum": "2 TABLET",
+    "doseDesc": "Mengikut spesifikasi produk, ambil 2 tablet setiap hari. Simpan di tempat kering pada suhu bilik (< 25°C). Elakkan produk daripada sinaran matahari langsung, kelembapan, atau sumber haba.",
+    "pkgTitle": "Pakej Premium",
+    "pkgSub": "PROTOKOL 30 HARI",
+    "pkgDesc": "Setiap botol mengandungi 60 tablet premium 1g, dihasilkan secara teliti di bawah parameter klinikal Malaysia yang ketat untuk memastikan kitaran prestasi lelaki 30 hari yang tepat.",
+    "certTitle": "Pengiktirafan Makmal & Pengeluaran",
+    "certs": {
+      "gmp": {
+        "name": "GMP MALAYSIA",
+        "desc": "Amalan Pengilangan Baik KKM"
+      },
+      "haccp": {
+        "name": "DIKTIRAF HACCP",
+        "desc": "Sistem Jaminan Keselamatan Makanan"
+      },
+      "mesti": {
+        "name": "SKIM MeSTI",
+        "desc": "Makanan Selamat Tanggungjawab Industri"
+      }
+    }
+  },
+  "productInfo": {
+    "ctaTitle": "Bersedia untuk Mengunci Prestasi Puncak?",
+    "ctaDesc": "Aktifkan fokus mutlak sepanjang hari dan tenaga bertenaga tinggi tanpa had sekarang.",
+    "ctaBtn": "Beli Sekarang"
+  },
+
+  "nav": {
+    "home": "Utama",
+    "product": "Eksplorasi M-CORE",
+    "shop": "Kedai Rasmi",
+    "science": "Sains",
+    "support": "Sokongan"
+  },
+
+  "purchase": {
+    "addCartBtn": "TAMBAH KE TROLI",
+    "tagline": "PRESTASI PUNCAK",
+    "name": "Formula Tenaga Premium M-CORE",
+    "features": {
+      "f1": "100% Formulasi Saintifik",
+      "f2": "Tenaga Berterusan Tanpa Lesu",
+      "f3": "Bahan Import Premium"
+    },
+    "save": "JIMAT RM {{amount}}",
+    "shipping": "💡 TAWARAN TERHAD | Penghantaran Percuma ke Seluruh Malaysia",
+    "cartTitle": "Troli Membeli-belah Anda",
+    "checkoutBtn": "Teruskan ke Pembayaran (FPX / Kad Kredit)",
+    "volumeDiscount": "🔥 Diskaun Pukal: Beli 2 atau lebih, nikmati harga istimewa premium pada RM 255.00 / PCS (Jimat 15%)"
+  },
+
+  "ingredients": {
+    "headerSub": "Formula Gred Klinikal",
+    "headerTitle": "Bahan Teras",
+    "desc1": "Memilih secara ketat ramuan herba berpaten global dan nadir, disahkan melalui ",
+    "descHighlight": "Pengesahan Ketulenan Kromatografi HPLC",
+    "desc2": " untuk memberikan pati berkesan tinggi, 100% bebas daripada ubat kimia haram.",
+    "liboost": {
+      "badge1": "SPAIN PATENT Raw From Mexico",
+      "badge2": "100% SILDENAFIL-FREE",
+      "btn": "Semak Laporan Pengesahan HPLC",
+      "title1": "Liboost™",
+      "title2": "Ekstrak Daun Damiana Berpaten",
+      "desc": "Bersumberkan daripada daun Turnera diffusa tulen di Mexico dan diekstrak secara paten di kilang farmaseutikal GMP Sepanyol. Kaya dengan jumlah bioflavonoid (pemangkin sintesis dopamin), ia memberikan kesan anti-aromatase yang sangat baik, menyekat penyusutan hormon lelaki dengan kuat untuk membangkitkan tenaga lelaki sejati.",
+      "card1Title": "Pelepasan NO & Pengaliran Darah",
+      "card1Desc": "Merangsang pelepasan Nitrik Oksida (NO) dalam tisu endotelial secara aktif, melonggarkan otot licin vaskular untuk mencapai tahap ketegangan puncak. Klik untuk data klinikal.",
+      "card2Title": "Sekatan PDE-5 Jangka Panjang",
+      "card2Desc": "Menyekat aktiviti enzim PDE-5 yang menyebabkan kelembutan vaskular secara fizikal, berkesan menghalang hidrolisis faktor ketegangan untuk memanjangkan tempoh tempur. Klik untuk carta.",
+      "card3Title": "Lonjakan Indeks Keinginan Seksual",
+      "card3Desc": "Terbukti secara klinikal melalui Sexual Desire Inventory, suplemen berterusan meningkatkan keinginan intim dan ghairah dengan ketara.",
+      "card4Title": "Lonjakan Kepuasan Seksual",
+      "card4Desc": "Terbukti secara klinikal meningkatkan kepuasan intim, mencapai kejayaan bersejarah dalam interaksi pasangan.",
+
+      "lightbox": {
+        "card1": {
+          "title": "Data Ujian Klinikal Pelepasan Nitrik Oksida (NO)",
+          "desc": "Terbukti secara klinikal bahawa suplemen Liboost™ meningkatkan kepekatan Nitrik Oksida selular dalam masa 24 jam dengan ketara untuk melancarkan peredaran darah."
+        },
+        "card2": {
+          "title": "Data Ujian Klinikal Sekatan Aktiviti PDE-5",
+          "desc": "Disahkan secara klinikal berkesan menyekat aktiviti PDE-5, membantu otot licin berehat dan mengekalkan keadaan pengembangan vaskular yang berpanjangan."
+        },
+        "card3": {
+          "title": "Laporan Klinikal Sexual Desire Inventory (SDI)",
+          "desc": "Pengambilan berterusan selama 4 minggu menunjukkan subjek mencapai lonjakan ketara dalam keinginan intim, sama ada dalam interaksi pasangan mahupun kehidupan peribadi."
+        },
+        "card4": {
+          "title": "Laporan Klinikal Lonjakan Kepuasan Seksual (Sexual Satisfaction)",
+          "desc": "Disahkan melalui standard antarabangsa IIEF, penggunaan berterusan selama 4 minggu melonjakkan kepuasan hubungan seksual sebanyak +49.37%."
+        },
+        "common": {
+          "hoverTitle": "Klik untuk Lihat Carta Bukti Klinikal Penuh",
+          "hoverSub": "Lihat Laporan Resolusi Tinggi",
+          "closeHint": "(Klik di mana-mana ruang kosong untuk menutup paparan)"
+        }
+      }
+    }
+  },
+  "items": {
+    "tongkat": {
+      "title": "Ekstrak Tongkat Ali",
+      "sub": "TONGKAT ALI (1:100)",
+      "text": "Khazanah negara Malaysia. Berkepekatan tinggi 1:100, ia mengurangkan pengikatan SHBG dan merangsang sel testis untuk merembeskan testosteron bebas secara autonomi, meningkatkan hormon endogenus lelaki."
+    },
+    "maca": {
+      "title": "Maca Hitam Peru",
+      "sub": "EKSTRAK MACA",
+      "text": "Pati Amerika Selatan. Menggunakan mekanisme penyesuaian bukan hormon untuk membangkitkan keinginan primitif, membantu badan mengatasi keletihan kronik dan disfungsi erektil (ED) sementara."
+    },
+    "cordyceps": {
+      "title": "Cordyceps Sinensis",
+      "sub": "CORDYCEPS SINENSIS",
+      "text": "Ekstrak nadir Tibet. Terbukti secara saintifik meningkatkan kadar sintesis ATP dalam mitokondria sel dengan ketara, memberikan kuasa letupan dan ketahanan anti-lesu sepanjang hari."
+    },
+    "guarana": {
+      "title": "Ekstrak Guarana",
+      "sub": "EKSTRAK GUARANA",
+      "text": "Mengandungi kafein semula jadi yang lembut pada perut, meningkatkan tumpuan otak dengan pantas, mengelakkan degupan jantung laju akibat kafein tradisional."
+    },
+    "bilberry": {
+      "title": "Ekstrak Bilberi",
+      "sub": "EKSTRAK BILBERRY",
+      "text": "Antioksidan Nordik yang kuat. Menstabilkan struktur mikrovaskular, menggalakkan peredaran mikro yang sihat, dan membantu menjamin ereksi yang tahan lama dan keras."
+    }
+  },
+
+  "sciencePage": {
+    "bannerSub": "MAKMAL INOVASI R&D",
+    "bannerTitle1": "SAINS",
+    "bannerTitle2": "KLINIKAL",
+    "bannerDesc": "M-CORE menolak sebarang formula yang tidak terbukti. Semua bahan kami melalui ujian klinikal dan pengesahan saintifik yang ketat, direka untuk memberikan sokongan tenaga endogenus yang paling tulen dan stabil untuk golongan elit.",
+    "pledge1Title": "100% BEBAS SILDENAFIL",
+    "pledge1Desc": "Mematuhi piawaian keselamatan antarabangsa yang ketat, bebas daripada ubat sintetik, dijamin selamat tanpa kebergantungan.",
+    "pledge2Title": "BIOKETERSEDIAAN DIPERTINGKATKAN",
+    "pledge2Desc": "Teknologi penyerapan kecekapan tinggi eksklusif untuk meningkatkan kadar penukaran nutrien badan secara menyeluruh.",
+    "pledge3Title": "SUMBER PREMIUM",
+    "pledge3Desc": "Semua bahan mentah berpaten teras diimport dari makmal global teratas untuk memastikan ketulenan dan potensi yang maksimum."
+  },
+
+  "sevenR": {
+    "titleSystem": "SISTEM",
+    "dashboardTitle": "METRIK SAINTIFIK",
+    "dashboardDesc1": "Melangkaui tenaga biasa, ",
+    "dashboardHighlight": "Sistem Saintifik M-CORE 7R",
+    "dashboardDesc2": " membina semula puncak fizikal dan mental lelaki dari tahap selular.",
+    "items": {
+      "r1Title": "Restore",
+      "r1": "Pulihkan Tenaga",
+      "r2Title": "Relieve",
+      "r2": "Melegakan Stres",
+      "r3Title": "Rebuild",
+      "r3": "Bina Semula Kesihatan",
+      "r4Title": "Reignite",
+      "r4": "Semarakkan Puncak",
+      "r5Title": "Revitalize",
+      "r5": "Revitalisasi Ketahanan",
+      "r6Title": "Reinforce",
+      "r6": "Perisai Imun",
+      "r7Title": "Refocus",
+      "r7": "Kembalikan Fokus",
+      "details": {
+        "r1Text": "Diterajui oleh Liboost™, digabungkan dengan Tongkat Ali, Maca, dan Cordyceps untuk merangsang sintesis ATP secara lembut tanpa keletihan susulan.",
+        "r2Text": "Menggabungkan Tongkat Ali dan Vitamin B6 untuk mengurangkan kortisol, menghapuskan penurunan libido akibat tekanan mental.",
+        "r3Text": "Didorong oleh Liboost™ dan Zink untuk merangsang rembesan testosteron endogenus secara semula jadi, menyokong kesihatan reproduktif lelaki.",
+        "r4Text": "Memanfaatkan pengaktifan nitrik oksida Liboost™ untuk menyekat PDE-5 dan meningkatkan keanjalan mikrovaskular, membina keyakinan intim.",
+        "r5Text": "Meningkatkan had ketahanan fizikal dan memendekkan tempoh pemulihan, mengatasi segala halangan prestasi dengan berkesan.",
+        "r6Text": "Diformulasikan dengan Zink dan Bilberi untuk melindungi sel sperma daripada tekanan oksidatif dan memperkukuh sistem pertahanan prostat.",
+        "r7Text": "Menggunakan ekstrak Guarana premium untuk rangsangan otak yang bersih tanpa gementar, meningkatkan kejelasan kognitif dengan mendadak."
+      }
+    }
+  },
+
+  "scienceCmp": {
+    "badge": "DATA MAKMAL KLINIKAL SEPANYOL",
+    "title1": "KLINIKAL",
+    "title2": "TERBUKTI",
+    "metrics": {
+      "m1": {
+        "label": "Kadar Pelepasan NO (Nitrik Oksida)",
+        "sub": "Kadar Pelepasan Pemangkin Autonomi NO Endotelial Vaskular"
+      },
+      "m2": {
+        "label": "Aktiviti Perencatan Enzim PDE-5",
+        "sub": "Kadar Sekatan Fizikal Enzim Pemangkin Kelemahan Kavernosum"
+      },
+      "m3": {
+        "label": "Tahap Perlindungan Testosteron Bebas",
+        "sub": "Kadar Keseimbangan Anti-Aromatase Testosteron Bebas"
+      }
+    },
+    "mechTitle": "Bukti Mekanisme",
+    "mechSub": "Evidence of Mechanism",
+    "mechList": {
+      "l1": { "label": "Vasodilatasi Pelepasan NO", "value": "Signifikan" },
+      "l2": { "label": "Perencatan PDE-5", "value": "Kecekapan Tinggi" },
+      "l3": {
+        "label": "Perlindungan Anti-Aromatase",
+        "value": "Keseimbangan Ideal"
+      },
+      "l4": { "label": "Ketulenan Kromatografi HPLC", "value": "100% Disahkan" }
+    },
+    "references": {
+      "ref1": "Keberkesanan ekstrak Tongkat Ali (Eurycoma longifolia) dalam peningkatan fungsi erektil. (2015)",
+      "ref2": "Turnera diffusa memulihkan kerosakan dalam steroidogenesis testis dan spermatogenesis. Journal of Ethnopharmacology.",
+      "ref3": "Kajian klinikal rawak, dua-buta dan terkawal plasebo 12 minggu ke atas kesan Maca terhadap keinginan seksual.",
+      "ref4": "Kesan rangsangan in vivo Cordyceps sinensis ke atas penghasilan testosteron. (2004)"
+    },
+    "cert": {
+      "lightboxTitle": "Bukti Klinikal & Laluan Molekul Liboost™",
+      "tag": "BUKTI SAINTIFIK KLIEN",
+      "title": "Mekanisme Tindakan Komprehensif untuk Liboost™",
+      "desc": "Terbukti secara klinikal merangsang pembebasan Nitrik Oksida, menyekat PDE-5, dan mengawal aktiviti enzim aromatase.",
+      "hoverTitle": "Klik untuk melihat carta mekanisme",
+      "hoverSub": "Lihat carta sains resolusi tinggi"
+    }
+  },
+  "store": {
+    "title": "KEDAI STEMPIRES",
+    "badge": "Ketulenan Rasmi Dijamin · Penghantaran Pantas"
+  },
+
+  "support": {
+    "badge": "Panduan Pengesahan & Keselamatan Produk",
+    "title1": "Penyelidikan Teknikal & Saintifik",
+    "title2": "Pusat Sokongan Pelanggan",
+    "desc": "Semua data klinikal, sumber bahan, dan panduan penggunaan diekstrak terus daripada spesifikasi makmal rasmi dan laporan paten Sepanyol. Tiada tuntutan palsu.",
+    "trust1Title": "Pengesahan Ketulenan Kromatografi HPLC 100%",
+    "trust1Desc": "Memastikan ketulenan mutlak ekstrak botani aktif dengan ketat melalui Kromatografi Cecair Berprestasi Tinggi (HPLC). Sifar bahan tambahan kimia haram.",
+    "trust2Title": "Label Bersih & Anti-Doping",
+    "trust2Desc": "Bebas daripada bahan ubat preskripsi seperti Sildenafil, perangsang kimia yang kuat, dan sebarang bahan yang diharamkan dalam sukan profesional.",
+    "faq1Q": "Adakah bahan-bahan dalam M-Core selamat? Adakah ia mengandungi bahan terlarang?",
+    "faq1A": "Sangat selamat. M-Core dibangunkan dengan mematuhi piawaian keselamatan makanan yang ketat. Bahan aktif produk ini semuanya adalah ekstrak tumbuhan semula jadi atau nutrien penting yang diperlukan oleh tubuh manusia, dan ia tidak mengandungi sebarang perangsang kimia atau hormon yang diharamkan oleh Agensi Anti-Doping Dunia (WADA). Sama ada anda atlet profesional, amatur, atau orang awam, ia benar-benar selamat untuk penggunaan jangka panjang.",
+    "faq2Q": "Adakah produk ini mempunyai pensijilan tempatan yang berkaitan?",
+    "faq2A": "Kemudahan pengeluaran dan pembangunan produk kami mematuhi piawaian keselamatan makanan Kementerian Kesihatan Malaysia (KKM) dengan ketat dan mempunyai pensijilan pematuhan yang berkaitan (seperti pensijilan MESTI, ISO22000, HACCP, dan GMP) untuk memastikan keselamatan dan kualiti tinggi setiap pek. Sementara itu, kami juga sedang aktif memajukan pensijilan Halal JAKIM.",
+    "faq3Q": "Bagaimanakah cara untuk mengambil M-Core bagi mendapatkan hasil terbaik?",
+    "faq3A": "Untuk penjagaan harian, anda boleh mengambil 1 hidangan (2 Tablet) pada waktu pagi atau selepas makan tengah hari untuk mengekalkan tenaga sepanjang hari dan mengawal selia keadaan badan. Jika anda mempunyai keperluan yang lebih tinggi, disyorkan untuk mengambil 1 hidangan 30-45 minit sebelum 'aktiviti', ini membolehkan bahan teras mencapai kepekatan darah puncak pada waktu anda memerlukannya. Nota: Dos harian maksimum yang disyorkan ialah 2 hidangan (4 Tablet). Pengambilan berlebihan tidak semestinya membawa faedah tambahan.",
+    "faq4Q": "Bolehkah saya mengambilnya semasa perut kosong? Bagaimana jika saya mempunyai perut yang sensitif?",
+    "faq4A": "Formula M-Core adalah lembut dan secara amnya boleh diambil semasa perut kosong. Walau bagaimanapun, jika perut anda agak sensitif, kami mengesyorkan mengambilnya selepas makan, yang juga boleh membantu menggalakkan penghadaman dan penyerapan bahan-bahan.",
+    "faq5Q": "Berapa lamakah masa yang diambil untuk melihat kesan selepas pengambilannya?",
+    "faq5A": "Tindak balas individu berbeza-beza, tetapi biasanya dalam masa 30-60 minit (kesan serta-merta) selepas mengambilnya, anda akan merasakan peningkatan fokus, tenaga tambahan, dan kelegaan keletihan. Dengan penggunaan berterusan selama 3-4 minggu (kesan jangka panjang), stamina keseluruhan, kuasa letupan, dan keupayaan anti-keletihan harian anda akan bertambah baik. Semasa aktiviti malam, keinginan, prestasi, dan kepuasan bersama akan mengalami perubahan positif. Sesetengah pengguna mungkin merasakan perubahan positif dalam 1 hingga 2 minggu.",
+    "faq6Q": "M-Core sesuai untuk siapa? Bolehkah wanita mengambilnya?",
+    "faq6A": "M-Core ialah produk penyaman kesihatan yang direka khusus untuk lelaki, sesuai untuk lelaki dari semua peringkat umur antara 20 hingga 65 tahun, terutamanya golongan elit tempat kerja dan peminat kecergasan yang mengalami tekanan kerja dan keletihan harian yang tinggi. Produk ini tidak sesuai untuk wanita.",
+    "faq7Q": "Bolehkah M-Core digunakan dengan suplemen lain (seperti protein whey, creatine, minyak ikan, dll.)?",
+    "faq7A": "Boleh. M-Core tidak bercanggah dengan suplemen asas. Jika anda sedang mengambil produk fungsi lain, ubat-ubatan, atau produk yang mengandungi bahan perangsang, kami mengesyorkan selang 2 jam untuk mengelakkan gangguan dengan penyerapan.",
+    "faq8Q": "Adakah M-Core mengandungi kafein? Adakah mengambilnya sebelum latihan malam akan menjejaskan tidur?",
+    "faq8A": "M-Core mengandungi jumlah kafein semula jadi yang diekstrak daripada tumbuhan yang sesuai untuk meningkatkan fokus dan melegakan keletihan. Jika anda sensitif terhadap kafein, kami mencadangkan elakkan pengambilannya dalam tempoh 4-6 jam sebelum waktu tidur, atau cuba separuh dos dahulu sebelum beransur-ansur kembali kepada dos biasa.",
+    "faq9Q": "Bolehkah mereka yang mempunyai 'Tiga Serangkai' (tekanan darah tinggi, gula darah tinggi, kolesterol tinggi) atau jantung sensitif mengambilnya?",
+    "faq9A": "Walaupun bahan-bahan M-Core diperoleh secara semula jadi, kerana ia secara ketara mengoptimumkan peredaran darah, merangsang daya hidup fizikal, dan mempercepatkan metabolisme, kami amat mengesyorkan mereka yang mempunyai penyakit kardiovaskular yang teruk, tekanan darah tinggi, atau mereka yang mengambil ubat preskripsi berkaitan untuk berunding dengan doktor profesional sebelum mengambilnya. Keselamatan sentiasa menjadi keutamaan kami.",
+    "faq10Q": "Bolehkah wanita yang merancang kehamilan, hamil, atau menyusu mengambilnya?",
+    "faq10A": "Wanita yang sedang merancang kehamilan, sedang hamil, atau menyusu berada pada peringkat fisiologi yang istimewa. Kami tidak mengesyorkan pengambilan sebarang suplemen jenis ini yang mengoptimumkan peredaran darah, merangsang tenaga, dan mempercepatkan metabolisme dengan ketara.",
+    "faq11Q": "Bolehkah golongan vegan menggunakan M-Core?",
+    "faq11A": "Boleh. Bahan teras M-Core terutamanya diasingkan daripada tumbuhan semula jadi, dan pembawa serbuk yang digunakan tidak mengandungi sebarang bahan yang berasal dari haiwan, menjadikannya sangat sesuai untuk golongan vegetarian dan vegan.",
+    "faq12Q": "Adakah penggunaan jangka panjang M-Core akan menyebabkan kebergantungan? Adakah badan saya akan merosot selepas berhenti?",
+    "faq12A": "Tidak. M-Core memberikan sokongan pemakanan eksogen dan pengoptimuman daya hidup selular untuk tubuh, dan tidak mengandungi sebarang bahan ketagihan atau hormon. Selepas berhenti, badan anda secara beransur-ansur akan kembali kepada tahap metabolisme dan kapasiti asalnya, dan sama sekali tidak akan menyebabkan sebarang kebergantungan.",
+    "faq13Q": "Apakah yang perlu saya lakukan jika pembungkusan didapati rosak semasa menerima barangan?",
+    "faq13A": "Kami mempunyai keperluan yang sangat ketat untuk pembungkusan pengangkutan produk. Jika pembungkusan luar produk yang anda terima rosak disebabkan oleh logistik, sila ambil gambar dan hubungi perkhidmatan pelanggan dalam masa 48 jam selepas menerima bungkusan, dan kami akan segera menguruskan perkhidmatan selepas jualan untuk anda.",
+    "faq14Q": "Berapa cepatkah saya boleh menerima barangan selepas membuat pesanan? Adakah anda menyokong penghantaran ke Semenanjung Malaysia dan Sabah/Sarawak?",
+    "faq14A": "Kami menyokong penghantaran ke seluruh Malaysia. Selepas pesanan dibuat, ia biasanya dihantar dari gudang kami dalam masa 24-48 jam. Penghantaran ke Semenanjung Malaysia (West Malaysia) dianggarkan 2-4 hari bekerja, dan Sabah & Sarawak (East Malaysia) dianggarkan 5-7 hari bekerja.",
+    "faq15Q": "Adakah terdapat sebarang kesan sampingan daripada mengambil M-Core?",
+    "faq15A": "M-Core ialah suplemen pemakanan gred makanan berkualiti tinggi yang tidak mengandungi ubat, hormon, atau bahan terlarang. Bagi individu yang sihat, penggunaan jangka panjang pada dos yang disyorkan tidak mempunyai kesan sampingan. Walau bagaimanapun, kerana perlembagaan dan toleransi setiap orang terhadap bahan aktif semula jadi berbeza-beza, sesetengah pengguna mungkin mengalami tindak balas fisiologi normal yang singkat ini semasa penggunaan awal, yang bukan kesan sampingan:\n1. Rasa panas sedikit (paling biasa): Ini adalah bahan aktif yang menggalakkan sintesis nitrik oksida dan mempercepatkan peredaran mikrovaskular. Ia biasanya muncul dalam masa 15-30 minit selepas pengambilannya dan hilang secara semula jadi. Apabila badan menyesuaikan diri selama beberapa hari, sensasi ini akan berkurangan.\n2. Kehangatan perut yang ringan: Segelintir orang yang mempunyai perut sensitif mungkin merasainya apabila mengambilnya semasa perut kosong. Mengambilnya selepas makan akan mengelakkan perkara ini.\nNota: Jika terdapat sebarang reaksi alahan atau ketidakselesaan, sila berhenti mengambilnya dengan serta-merta dan berunding dengan doktor profesional. Keselamatan anda adalah keutamaan kami!",
+    "faq16Q": "Saya mempunyai tabiat minum kopi hitam/minuman tenaga setiap pagi. Adakah ini akan bercanggah dengan M-Core?",
+    "faq16A": "M-Core mempunyai mekanisme yang berbeza daripada kafein; ia memberi tumpuan kepada mengoptimumkan peredaran darah dan tenaga dalaman badan (selular dan androgen). Anda boleh minum kopi seperti biasa, tetapi untuk mengelakkan penyerapan terjejas, kami mencadangkan anda menjarakkan pengambilan kopi dan M-Core selama 1 jam atau lebih.",
+    "faq17Q": "Bolehkah saya minum alkohol semasa mengambil M-Core?",
+    "faq17A": "Kami amat menasihatkan agar tidak mengambil M-Core serentak dengan alkohol. M-Core secara ketara menggalakkan vasodilatasi dan peredaran darah. Minum alkohol dalam jumlah yang banyak dalam masa yang singkat sebelum atau selepas pengambilannya akan mempercepatkan penyerapan alkohol ke dalam darah, berpotensi menjadikan anda lebih cepat mabuk atau menyebabkan turun naik kadar denyutan jantung yang drastik, dan kemungkinan besar menjejaskan prestasi intim anda. Jika anda merancang untuk minum sedikit untuk menaikkan suasana pada malam itu, ia tidak akan memberi impak yang besar.",
+    "faq18Q": "Adakah penggunaan jangka panjang M-Core membebankan hati atau buah pinggang?",
+    "faq18A": "Selagi anda mengikuti dos yang disyorkan, sama sekali tidak. Beban hati dan buah pinggang biasanya disebabkan oleh ubat sintesis kimia berdos tinggi, logam berat, atau bahan tambahan buatan yang berlebihan. M-Core menggunakan bahan ekstrak semula jadi berketulenan tinggi dan bioavailabiliti tinggi yang boleh dimetabolismekan dan digunakan secara cekap oleh tubuh manusia tanpa mengumpul toksin yang tidak boleh merosot.",
+    "faq19Q": "Saya dengar banyak suplemen tenaga boleh menyebabkan rambut gugur. Adakah M-Core akan menyebabkan rambut gugur?",
+    "faq19A": "Sama sekali tidak. Khabar angin di internet mengenai 'suplemen yang menyebabkan rambut gugur' biasanya menyasarkan bahan terlarang tertentu atau prekursor hormon yang mengubah tahap hormon Dihydrotestosterone (DHT) badan secara drastik. Mekanisme M-Core secara semula jadi mengawal selia androgen, mengoptimumkan peredaran mikro darah, dan tenaga selular. Ia tidak melibatkan sebarang perubahan paksa hormon endokrin dan oleh itu tidak akan menyebabkan keguguran rambut.",
+    "faq20Q": "Bagaimanakah saya boleh memastikan saya membeli M-Core yang asli?",
+    "faq20A": "Untuk melindungi hak pengguna anda, pastikan anda membelinya melalui laman web rasmi kami, kedai utama Shopee/Lazada yang disahkan rasmi, atau saluran ejen yang sah.",
+    "footerHint": "💡 Perlukan bantuan segera? Klik ikon sembang di bahagian bawah kanan untuk menghubungi pasukan kami.",
+    "footerEmail": "support@m-core.com",
+    "footerHours": "Isn - Jum: 9AM - 6PM"
+  }
+}

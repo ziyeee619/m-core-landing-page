@@ -1,0 +1,362 @@
+{
+  "assistant": {
+    "liveSupport": "Live Support",
+    "connect": "Connect:",
+    "greeting": "Hello! Welcome to ST EMPIRES. Choose a contact method above, or ask our AI assistant below.",
+    "placeholder": "Type a message...",
+    "errorBusy": "Sorry, the system is currently busy. Please try again later or contact us via WhatsApp.",
+    "errorConnection": "Sorry, a connection error occurred. Please contact us via WhatsApp.",
+    "securedBy": "ST EMPIRES AI ASSISTANT"
+  },
+
+  "nav": {
+    "home": "Home",
+    "product": "Product",
+    "science": "Science",
+    "support": "Support"
+  },
+  "hero": {
+    "title": "M-CORE",
+    "titleSuffix": "",
+    "edition": "Titanium Edition ・ 2026",
+    "sub": "Titanium Silver, Man's Core Power.",
+    "desc": "Redefining limits with Spanish patented # technology.",
+
+    "cta": "ACTIVATE PEAK"
+  },
+  "vision": {
+    "label": "Brand Vision",
+    "p1": "When life's pace spins out of control,",
+    "p2": "ENERGY DRAIN",
+    "p3": "is faster than you imagine.",
+    "p4": "We refuse mediocre supplements,",
+    "p5": "We are born for",
+    "p6": "EXCELLENCE",
+    "p7": ""
+  },
+
+  "home": {
+    "heroTitle": "Not Formulated for Transient Effects",
+    "heroSubtitle": "But Built for True, Long-term Balance.",
+    "insightText1": "Some exhaustion doesn't just vanish after sleep.",
+    "insightText2": "Because bodily depletion accumulates silently over time.",
+    "aboutTag": "BRAND CORE",
+    "aboutTitle": "Rejecting transient stimulation, building lasting balance.\nElevating not just performance, but the satisfaction of every intimate moment.",
+    "aboutDesc1": "In modern, high-pressure life, workplace hustles and irregular habits silently consume the body's foundation, making inconsistent energy the new norm. However, many products focus only on transient physiological stimulation, attempting to mask fatigue with overdraft. We believe this cannot solve the root problem!",
+    "aboutDesc2": "ST EMPIRES is more concerned with the comprehensive experience. We insist on 'long-term regulation' as our core, relying on professional R&D and formulation expertise to help the body slowly restore balance through scientific, safe, and reliable means.",
+    "aboutDesc3": "Our patented ingredients are research-proven to help enhance Sexual Satisfaction and Global Satisfaction. What is truly worth pursuing is not just a single moment, but a more stable, natural, and gratifying experience spanning psychology, confidence, and interaction between partners.",
+    "scienceTag": "SCIENCE LEAD",
+    "scienceTitle": "Scientific Extraction, Rigorous Manufacturing",
+    "scienceDesc": "Based on plant formulas combined with the rigorous attitude of modern science, providing long-term and safe stability for body systems.",
+    "discoverBtn": "Explore M-CORE Premium"
+  },
+
+  "preview": {
+    "sec1": {
+      "sub": "CLINICAL TRACING BASED ON 4-WEEK FOLLOW-UP",
+      "title": "PROVEN BY SCIENCE. DRIVEN BY PERFORMANCE.",
+      "card1": {
+        "title": "NO Release Mechanism",
+        "desc": "Significantly stimulates endothelial nitric oxide release, relaxing vascular smooth muscle for peak engorgement."
+      },
+      "card2": {
+        "title": "Female Satisfaction (FSFI)",
+        "desc": "Clinically proven by Spanish patent Liboost™ to comprehensively enhance desire, lubrication, and overall satisfaction."
+      },
+      "card3": {
+        "title": "Male Performance (IIEF)",
+        "desc": "Effectively blocks PDE-5 activity, fully stabilizing endurance and erectile function indicators."
+      }
+    },
+    "sec2": {
+      "imgHover": "Explore Formula",
+      "sub": "FLAGSHIP PERFORMANCE FORMULA",
+      "title1": "M-CORE Premium",
+      "title2": "Energy Formula",
+      "desc": "Combining Spanish patented Liboost™, Malaysian Tongkat Ali, and high-altitude Cordyceps, designed for elites seeking peak performance. Breaking away from chemical stimulants to provide 100% natural, safe, and dependency-free endogenous support.",
+      "check1": "100% Sildenafil-Free",
+      "check2": "ATP Energy Booster",
+      "btn": "Discover M-CORE Now",
+      "buyBtn": "SHOP NOW"
+    }
+  },
+  "usage": {
+    "label": "DAILY PROTOCOL",
+    "usage": "OPTIMAL DOSAGE",
+    "guide": "SCIENTIFIC GUIDE",
+    "doseTitle": "Daily Protocol",
+    "dose": "Take Daily",
+    "doseNum": "2 TABLETS",
+    "doseDesc": "According to product specifications, consume 2 tablets per day. Store M-CORE at room temperature (< 25°C) in a dry place. Keep the product sheltered from direct sunlight, moisture, or heat sources.",
+    "pkgTitle": "Premium Package",
+    "pkgSub": "30-DAY PROTOCOL",
+    "pkgDesc": "Each bottle contains 60 premium 1g tablets, precision-manufactured under rigid Malaysian clinical parameters to ensure an exact 30-day male performance cycle.",
+    "certTitle": "Laboratory & Production Certifications",
+    "certs": {
+      "gmp": {
+        "name": "GMP MALAYSIA",
+        "desc": "Good Manufacturing Practice Certified"
+      },
+      "haccp": {
+        "name": "HACCP CERTIFIED",
+        "desc": "Food Safety Assurance Standard"
+      },
+      "mesti": {
+        "name": "MeSTI PROGRAM",
+        "desc": "Food Safety Responsibility Industry"
+      }
+    }
+  },
+
+  "purchase": {
+    "addCartBtn": "ADD TO CART",
+    "tagline": "PEAK PERFORMANCE",
+    "name": "M-CORE Premium Energy Formula",
+    "features": {
+      "f1": "100% Scientific Formulation",
+      "f2": "Sustained Energy Without Crash",
+      "f3": "Premium Imported Ingredients"
+    },
+    "save": "SAVE RM {{amount}}",
+    "shipping": "💡 LIMITED TIME | Free Shipping Across Malaysia (Applied automatically at checkout)",
+    "cartTitle": "Your Cart",
+    "checkoutBtn": "Checkout (FPX / Credit Card)",
+    "volumeDiscount": "🔥 Bulk Discount: Buy 2 or more, enjoy premium special price at RM 255.00 / pc (Save 15%)"
+  },
+
+  "ingredients": {
+    "headerSub": "Clinical-Grade Formula",
+    "headerTitle": "Core Ingredients",
+    "desc1": "Rigigorously selecting global patented and rare botanicals, verified through ",
+    "descHighlight": "HPLC Chromatographic Purity Verification",
+    "desc2": " to deliver highly effective essences, 100% free from illicit chemical drugs.",
+    "liboost": {
+      "badge1": "SPAIN PATENT Raw From Mexico",
+      "badge2": "100% SILDENAFIL-FREE",
+      "btn": "View HPLC Verification Report",
+      "title1": "Liboost™",
+      "title2": "Patented Damiana Leaf Extract",
+      "desc": "Sourced from pure Turnera diffusa leaves in Mexico and patented-extracted in a Spanish GMP pharmaceutical plant. Rich in total bioflavonoids (dopamine synthesis catalysts), it exerts excellent anti-aromatase effects, powerfully inhibiting the degradation of male hormones to fully awaken primal male energy.",
+      "card1Title": "NO Release & Vascular Congestion",
+      "card1Desc": "Actively triggers the release of Nitric Oxide (NO) in cavernous endothelial tissues, relaxing vascular smooth muscles to achieve peak erection and congestion. Click to view clinical data.",
+      "card2Title": "PDE-5 Inhibition & Lasting Blockade",
+      "card2Desc": "Physically blocks the PDE-5 enzyme responsible for vascular flaccidity, effectively preventing the hydrolysis of congestion factors to maximize combat duration. Click to view charts.",
+      "card3Title": "Sexual Desire Index Boost",
+      "card3Desc": "Clinically proven by the Sexual Desire Inventory, continuous supplementation significantly elevates intimate desire and passion.",
+      "card4Title": "Sexual Satisfaction Leap",
+      "card4Desc": "Clinically proven to boost intimate gratification, achieving a historic breakthrough in partner interactions.",
+
+      "lightbox": {
+        "card1": {
+          "title": "Nitric Oxide (NO) Release Clinical Trial Data",
+          "desc": "Clinically proven that Liboost™ supplementation significantly increases cellular Nitric Oxide concentration within 24 hours to promote blood circulation."
+        },
+        "card2": {
+          "title": "PDE-5 Activity Inhibition Clinical Trial Data",
+          "desc": "Clinically verified to effectively block PDE-5 activity, helping smooth muscles relax and maintaining a prolonged vascular expansion state."
+        },
+        "card3": {
+          "title": "Sexual Desire Inventory (SDI) Clinical Report",
+          "desc": "With 4 weeks of continuous supplementation, subjects achieved a monumental leap in intimate desire and passion in both partner interactions and personal life."
+        },
+        "card4": {
+          "title": "Sexual Satisfaction Clinical Breakthrough Report",
+          "desc": "Verified by IIEF international standards, 4 weeks of continuous use surges sexual intercourse satisfaction by +49.37%, redefining ultimate confidence."
+        },
+        "common": {
+          "hoverTitle": "Click to View Full Clinical Evidence Charts",
+          "hoverSub": "View High-Resolution Report",
+          "closeHint": "(Click anywhere in the blank space to close preview)"
+        }
+      }
+    },
+    "items": {
+      "tongkat": {
+        "title": "Tongkat Ali Extract",
+        "sub": "TONGKAT ALI (1:100)",
+        "text": "Malaysia's national treasure. Concentrated at 1:100 high purity, it reduces SHBG binding and stimulates testicular cells to autonomously secrete free testosterone, fundamentally improving endogenous male hormones, sperm quality, and motility."
+      },
+      "maca": {
+        "title": "Peruvian Black Maca",
+        "sub": "MACA EXTRACT",
+        "text": "South American essence. Uses a non-hormonal conditioning mechanism to awaken primal desire, helping the body cope with daily chronic fatigue, significantly reducing mental anxiety and temporary erectile dysfunction (ED)."
+      },
+      "cordyceps": {
+        "title": "Cordyceps Sinensis",
+        "sub": "CORDYCEPS SINENSIS",
+        "text": "Rare Tibetan plateau extract. Scientifically proven to significantly increase the synthesis rate of ATP in cell mitochondria, providing endless explosive power and all-day anti-fatigue endurance."
+      },
+      "guarana": {
+        "title": "Guarana Extract",
+        "sub": "GUARANA EXTRACT",
+        "text": "Amazonian natural awakening vine. Contains mild, stomach-friendly natural caffeine that rapidly enhances brain focus and sharpness, avoiding palpitations and crashes caused by traditional caffeine."
+      },
+      "bilberry": {
+        "title": "Bilberry Extract",
+        "sub": "BILBERRY EXTRACT",
+        "text": "Potent Nordic antioxidant. Highly stabilizes microvascular structures, maintains vascular integrity, promotes healthy microcirculation in the corpus cavernosum, and helps secure long-lasting, high-hardness erections."
+      }
+    }
+  },
+
+  "productInfo": {
+    "ctaTitle": "Ready to Unlock Peak Performance?",
+    "ctaDesc": "Activate all-day ultimate focus and an endless stream of premium vital energy.",
+    "ctaBtn": "Shop Now"
+  },
+
+  "nav": {
+    "home": "Home",
+    "product": "The M-CORE",
+    "shop": "Store",
+    "science": "Science",
+    "support": "Support"
+  },
+
+  "sciencePage": {
+    "bannerSub": "R&D INNOVATION LAB",
+    "bannerTitle1": "THE CLINICAL",
+    "bannerTitle2": "SCIENCE",
+    "bannerDesc": "M-CORE rejects any unproven formulas. All our ingredients undergo rigorous clinical trials and scientific validation, designed to provide elites with the purest and most stable endogenous energy support.",
+    "pledge1Title": "100% SILDENAFIL-FREE",
+    "pledge1Desc": "Complies with strict international safety standards, free from synthetic drugs, ensuring peace of mind without dependency.",
+    "pledge2Title": "BIOAVAILABILITY ENHANCED",
+    "pledge2Desc": "Exclusive high-efficiency absorption technology to comprehensively increase the body's conversion rate of nutrients.",
+    "pledge3Title": "PREMIUM SOURCED",
+    "pledge3Desc": "All core patented raw materials are imported from top global laboratories to ensure ultimate purity and potency."
+  },
+
+  "sevenR": {
+    "titleSystem": "SYSTEM",
+    "dashboardTitle": "SCIENTIFIC METRICS",
+    "dashboardDesc1": "Beyond traditional energy, ",
+    "dashboardHighlight": "M-CORE 7R Scientific System",
+    "dashboardDesc2": " reconstructs male physical and mental peaks from the cellular level.",
+    "items": {
+      "r1Title": "Restore",
+      "r1": "Energy Recovery",
+      "r2Title": "Relieve",
+      "r2": "Stress Relief",
+      "r3Title": "Rebuild",
+      "r3": "Rebuild Health",
+      "r4Title": "Reignite",
+      "r4": "Reignite Peak",
+      "r5Title": "Revitalize",
+      "r5": "Revitalize Endurance",
+      "r6Title": "Reinforce",
+      "r6": "Immune Shield",
+      "r7Title": "Refocus",
+      "r7": "Restore Focus",
+      "details": {
+        "r1Text": "Led by Liboost™, blended with Tongkat Ali, Maca, and Cordyceps to gently boost ATP synthesis without crashes, wiping out long-term fatigue.",
+        "r2Text": "Combines Tongkat Ali and Vitamin B6 to reduce cortisol, eliminating stress-induced low libido and maintaining emotional balance.",
+        "r3Text": "Driven by Liboost™ and Zinc to stimulate endogenous testosterone secretion naturally, supporting fundamental male reproductive health.",
+        "r4Text": "Leverages Liboost™'s nitric oxide activation to block PDE-5 and improve microvascular elasticity, safely rebuilding absolute intimacy confidence.",
+        "r5Text": "Enhances physical endurance limits and shortens refractory periods, completely overcoming performance bottlenecks.",
+        "r6Text": "Formulated with Zinc and Bilberry to shield sperm cells from oxidative stress and reinforce the prostate's natural antibacterial defense line.",
+        "r7Text": "Utilizes premium Guarana extract for a clean, non-jittery brain boost, sharply upgrading cognitive clarity and filtering out daily distractions."
+      }
+    }
+  },
+
+  "scienceCmp": {
+    "badge": "SPAIN CLINICAL LABORATORY DATA",
+    "title1": "CLINICAL",
+    "title2": "PROVEN",
+    "metrics": {
+      "m1": {
+        "label": "NO (Nitric Oxide) Release Rate",
+        "sub": "Vascular Endothelial NO Autonomous Catalytic Release Rate"
+      },
+      "m2": {
+        "label": "PDE-5 Enzyme Inhibition Activity",
+        "sub": "Cavernosal Flaccidity Enzyme Physical Blockage Rate"
+      },
+      "m3": {
+        "label": "Free Testosterone Protection Level",
+        "sub": "Free Testosterone Anti-Aromatase Balance Rate"
+      }
+    },
+    "mechTitle": "Mechanism Evidence",
+    "mechSub": "Evidence of Mechanism",
+    "mechList": {
+      "l1": { "label": "NO Release Vasodilation", "value": "Significant" },
+      "l2": { "label": "PDE-5 Inhibition", "value": "High Efficiency" },
+      "l3": { "label": "Anti-Aromatase Protection", "value": "Ideal Balance" },
+      "l4": { "label": "HPLC Chromatography Purity", "value": "100% Certified" }
+    },
+    "references": {
+      "ref1": "Efficacy of Tongkat Ali (Eurycoma longifolia) extract on erectile function improvement: A systematic review and meta-analysis. (2015)",
+      "ref2": "Turnera diffusa ameliorates the impairment in testicular steroidogenesis and spermatogenesis. Journal of Ethnopharmacology.",
+      "ref3": "A 12-week double-blind placebo-controlled, randomized trial of Maca Gelatinizada on subjective report of sexual desire.",
+      "ref4": "In vivo stimulatory effect of Cordyceps sinensis and its fractions on testosterone production. (2004)"
+    },
+    "cert": {
+      "lightboxTitle": "Liboost™ Clinical Evidence & Molecular Pathways",
+      "tag": "SCIENTIFIC EVIDENCE",
+      "title": "Comprehensive Mechanism of Action for Liboost™",
+      "desc": "Clinically proven to promote Nitric Oxide release, induce PDE-5 inhibition, and regulate aromatase activity.",
+      "hoverTitle": "Click to view molecular pathways",
+      "hoverSub": "View high-resolution scientific chart"
+    }
+  },
+
+  "store": {
+    "title": "STEMPIRES STORE",
+    "badge": "Official Authenticity Guaranteed · Fast Shipping"
+  },
+
+  "support": {
+    "badge": "Product Verification & Safety Guide",
+    "title1": "Technical & Scientific Research",
+    "title2": "Customer Support Center",
+    "desc": "All clinical data, ingredient sourcing, and usage guidelines are directly extracted from official laboratory specifications and Spanish patent reports. No false claims.",
+    "trust1Title": "100% HPLC Purity Verification",
+    "trust1Desc": "Strictly ensuring the absolute purity of active botanical extracts via High-Performance Liquid Chromatography (HPLC). Zero illicit chemical additives.",
+    "trust2Title": "Clean Label & Anti-Doping",
+    "trust2Desc": "Free from prescription drug ingredients like Sildenafil, harsh chemical stimulants, and any substances banned in professional sports.",
+    "faq1Q": "Are the ingredients in M-Core safe? Does it contain any banned substances?",
+    "faq1A": "Absolutely safe. M-Core is developed in strict compliance with food safety standards. The product's active ingredients are all natural botanical extracts or essential nutrients required by the human body, containing no chemical stimulants or hormones banned by the World Anti-Doping Agency (WADA). Whether you are a professional athlete, an amateur, or the general public, it is completely safe for long-term use.",
+    "faq2Q": "Does the product have relevant local certifications?",
+    "faq2A": "Our production facilities and product development strictly adhere to the food safety standards of the Malaysian Ministry of Health (KKM) and possess relevant compliance certifications (such as MESTI, ISO22000, HACCP, and GMP standards) to ensure the safety and high quality of every pack. Meanwhile, we are also actively advancing the JAKIM Halal certification.",
+    "faq3Q": "How should I take M-Core for the best results?",
+    "faq3A": "For daily maintenance, you can take 1 serving (2 Tablets) in the morning or after lunch to maintain all-day energy and regulate your body state. If you have higher demands, it is recommended to take 1 serving 30-45 minutes before 'activity', which allows the core ingredients to reach their peak blood concentration right when you need them. Note: The maximum recommended daily dosage is 2 servings (4 Tablets). Taking more will not necessarily bring additional benefits.",
+    "faq4Q": "Can I take it on an empty stomach? What if I have a sensitive stomach?",
+    "faq4A": "M-Core's formula is gentle and can generally be taken on an empty stomach. However, if your stomach is sensitive, we recommend taking it after meals, which can also help promote the digestion and absorption of the ingredients.",
+    "faq5Q": "How long does it take to see results after taking it?",
+    "faq5A": "Individual responses vary, but typically within 30-60 minutes (immediate effect) after taking it, you will feel an increase in focus, replenished energy, and relieved fatigue. With continuous use for over 3-4 weeks (long-term effect), your overall stamina, explosive power, and daily anti-fatigue ability will improve. During nighttime activities, desire, performance, and mutual satisfaction will experience positive changes. Some users may feel positive changes within 1 to 2 weeks.",
+    "faq6Q": "Who is M-Core suitable for? Can women take it?",
+    "faq6A": "M-Core is a health conditioning product specifically designed for men, suitable for men of any age from 20 to 65, especially workplace elites and fitness enthusiasts who experience high daily work pressure and fatigue. This product is not suitable for women.",
+    "faq7Q": "Can M-Core be used with other supplements (like whey protein, creatine, fish oil, etc.)?",
+    "faq7A": "Absolutely. M-Core does not conflict with basic supplements. If you are taking other functional products, medications, or products containing stimulating ingredients, we recommend a 2-hour interval to prevent interference with absorption.",
+    "faq8Q": "Does M-Core contain caffeine? Will taking it before night training affect sleep?",
+    "faq8A": "M-Core contains an appropriate amount of natural caffeine extracted from plants to enhance focus and relieve fatigue. If you are sensitive to caffeine, we suggest avoiding it within 4-6 hours before bedtime, or trying half the dosage first before gradually returning to the normal dosage.",
+    "faq9Q": "Can people with the 'three highs' (high blood pressure, high blood sugar, high cholesterol) or sensitive hearts take it?",
+    "faq9A": "Although M-Core's ingredients are naturally sourced, because it significantly optimizes blood circulation, stimulates physical vitality, and accelerates metabolism, we strongly recommend that people with severe cardiovascular diseases, high blood pressure, or those taking related prescription drugs consult a professional physician before taking it. Safety is always our top priority.",
+    "faq10Q": "Can women who are preparing for pregnancy, pregnant, or breastfeeding take it?",
+    "faq10A": "Women preparing for pregnancy, currently pregnant, or breastfeeding are in a special physiological stage. We do not recommend taking any supplements of this type that significantly optimize blood circulation, stimulate physical vitality, and accelerate metabolism.",
+    "faq11Q": "Can vegans use M-Core?",
+    "faq11A": "Absolutely. The core ingredients of M-Core are primarily isolated from natural plants, and the powder carriers used do not contain any animal-derived ingredients, making it perfectly suitable for vegetarians and vegans.",
+    "faq12Q": "Will long-term use of M-Core cause dependency? Will my body deteriorate after stopping?",
+    "faq12A": "No. M-Core provides exogenous nutritional support and cellular vitality optimization for the body, and does not contain any addictive ingredients or hormones. After stopping, your body will simply gradually return to its original metabolic and performance levels; it will absolutely not create any dependency.",
+    "faq13Q": "What should I do if the packaging is damaged upon receiving the goods?",
+    "faq13A": "We have extremely strict requirements for the product's shipping packaging. If the outer packaging of the product you receive is damaged due to logistics, please take a photo and contact customer service within 48 hours of receiving the parcel, and we will immediately arrange after-sales service for you.",
+    "faq14Q": "How soon can I receive the goods after placing an order? Do you support delivery to West and East Malaysia?",
+    "faq14A": "We support delivery throughout Malaysia. After an order is placed, it is usually dispatched from our warehouse within 24-48 hours. Delivery to West Malaysia is estimated at 2-4 working days, and East Malaysia at 5-7 working days.",
+    "faq15Q": "Are there any side effects from taking M-Core?",
+    "faq15A": "M-Core is a high-quality, food-grade nutritional supplement containing no drugs, hormones, or banned ingredients. For healthy individuals, long-term use at the recommended dosage has no side effects. However, because everyone's constitution and tolerance to natural active ingredients vary, some users may experience the following brief, normal physiological responses upon initial use, which are not side effects:\n1. Slight warmth (most common): This is the active ingredients promoting nitric oxide synthesis and accelerating microvascular circulation. It usually appears within 15-30 minutes after ingestion and disappears naturally. As the body adapts over a few days, this sensation will diminish.\n2. Mild stomach warmth: A few people with sensitive stomachs may feel this when taking it on an empty stomach. Taking it after a meal will prevent this.\nNote: If any allergic reactions or discomfort occur, please stop taking it immediately and consult a professional doctor. Your safety is our top priority!",
+    "faq16Q": "I habitually drink black coffee/energy drinks every morning. Will this conflict with M-Core?",
+    "faq16A": "M-Core operates on a different mechanism than caffeine; it focuses on optimizing blood circulation and deep bodily (cellular and androgenic) energy. You can drink coffee as usual, but to avoid affecting absorption, we suggest spacing out your coffee and M-Core intake by 1 hour or more.",
+    "faq17Q": "Can I drink alcohol while taking M-Core?",
+    "faq17A": "We strongly advise against taking M-Core simultaneously with alcohol. M-Core significantly promotes vasodilation and blood circulation. Drinking a large amount of alcohol within a short time before or after taking it will accelerate the absorption of alcohol into the blood, potentially making you drunk faster or causing drastic heart rate fluctuations. Furthermore, alcohol will likely negatively impact your intimate performance. If you plan to have a light drink to set the mood that night, it will not have a major impact.",
+    "faq18Q": "Will long-term use of M-Core burden the liver or kidneys?",
+    "faq18A": "As long as you follow the recommended dosage, not at all. Liver and kidney burdens are typically caused by high doses of chemically synthesized drugs, heavy metals, or excessive artificial additives. M-Core utilizes high-purity, highly bioavailable natural extract ingredients that can be efficiently metabolized and utilized by the human body without accumulating non-degradable toxins.",
+    "faq19Q": "I've heard that taking too many energy supplements can cause hair loss. Will M-Core cause hair loss?",
+    "faq19A": "Absolutely not. Rumors on the internet about 'supplements causing hair loss' usually target specific banned substances or hormone precursors that drastically alter the body's Dihydrotestosterone (DHT) hormone levels. M-Core's mechanism naturally conditions androgens, optimizes blood microcirculation, and cellular energy. It does not involve any forced alteration of endocrine hormones and therefore will not cause hair loss.",
+    "faq20Q": "How can I ensure I am buying genuine M-Core?",
+    "faq20A": "To protect your consumer rights, please be sure to purchase through our official website, official certified Shopee/Lazada flagship stores, or authorized agent channels.",
+    "footerHint": "💡 Need immediate assistance? Click the chat icon at the bottom right to contact our team.",
+    "footerEmail": "support@m-core.com",
+    "footerHours": "Mon - Fri: 9AM - 6PM"
+  }
+}

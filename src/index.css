@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+/* ⚡ 終極全域補刀：強制將 Shopify 購物車的所有外層 iframe 容器拉到宇宙最高級別 */
+iframe[name^="bf-iframe"],
+iframe[id^="shopify-buy-button"] {
+  z-index: 2147483647 !important;
+}
