@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import { Mail } from "lucide-react";
 
@@ -109,36 +110,36 @@ const Footer = () => {
         {/* --- 🚀 更新：金流審查必備的 5 個政策連結區塊 --- */}
         <div className="flex flex-col items-center space-y-8">
           <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs text-[#86868b] font-sans px-4">
-            <a
-              href="/terms"
+            <Link
+              to="/terms"
               className="hover:text-white transition-colors uppercase tracking-wider"
             >
               Terms of Service
-            </a>
-            <a
-              href="/privacy"
+            </Link>
+            <Link
+              to="/privacy"
               className="hover:text-white transition-colors uppercase tracking-wider"
             >
               Privacy Policy
-            </a>
-            <a
-              href="/shipping"
+            </Link>
+            <Link
+              to="/shipping"
               className="hover:text-white transition-colors uppercase tracking-wider"
             >
               Shipping Policy
-            </a>
-            <a
-              href="/refund"
+            </Link>
+            <Link
+              to="/refund"
               className="hover:text-white transition-colors uppercase tracking-wider"
             >
               Refund Policy
-            </a>
-            <a
-              href="/support"
+            </Link>
+            <Link
+              to="/support"
               className="hover:text-white transition-colors uppercase tracking-wider"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
 
           {/* 版權與商標聲明 */}
