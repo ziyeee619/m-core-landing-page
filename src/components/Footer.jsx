@@ -12,9 +12,9 @@ const Footer = () => {
           </span>
         </div>
 
-        {/* 換成 flex-wrap 搭配 gap，確保 4 個項目在不同螢幕下都能完美適應不跑版 */}
+        {/* --- 社群與聯絡方式 --- */}
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 mb-16 text-[#86868b] font-bold uppercase font-sans">
-          {/* --- 1. Instagram --- */}
+          {/* 1. Instagram */}
           <a
             href="https://www.instagram.com/ste_wellness?igsh=MXQ1NG9kZXhocWU5dQ=="
             target="_blank"
@@ -41,7 +41,7 @@ const Footer = () => {
             </span>
           </a>
 
-          {/* --- 2. Facebook --- */}
+          {/* 2. Facebook */}
           <a
             href="https://www.facebook.com/share/1LjYnQ5sQx/?mibextid=wwXIfr"
             target="_blank"
@@ -66,7 +66,7 @@ const Footer = () => {
             </span>
           </a>
 
-          {/* --- 3. WhatsApp --- */}
+          {/* 3. WhatsApp */}
           <a
             href="https://wa.me/60169404939"
             target="_blank"
@@ -91,7 +91,7 @@ const Footer = () => {
             </span>
           </a>
 
-          {/* --- 4. Email --- */}
+          {/* 4. Email */}
           <a
             href="mailto:stempires9399@gmail.com"
             className="flex items-center space-x-3 hover:text-white transition-colors group font-sans"
@@ -106,16 +106,52 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* --- 法律聲明 & 版權 --- */}
-        <div className="flex flex-col items-center space-y-4">
-          <p className="text-[8px] lg:text-[9px] tracking-[0.15em] text-[#86868b]/70 uppercase font-semibold font-sans">
-            Liboost™️is a registered trademark of Pharmactive Biotech Products,
-            S.L.U.
-          </p>
-          <p className="text-[9px] lg:text-[10px] tracking-[0.4em] lg:tracking-[0.6em] text-[#86868b] uppercase font-black leading-relaxed font-sans">
-            © 2026 ST EMPIRES MALAYSIA. <br className="sm:hidden" /> ALL RIGHTS
-            RESERVED.
-          </p>
+        {/* --- 🚀 更新：金流審查必備的 5 個政策連結區塊 --- */}
+        <div className="flex flex-col items-center space-y-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs text-[#86868b] font-sans px-4">
+            <a
+              href="/terms"
+              className="hover:text-white transition-colors uppercase tracking-wider"
+            >
+              Terms of Service
+            </a>
+            <a
+              href="/privacy"
+              className="hover:text-white transition-colors uppercase tracking-wider"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/shipping"
+              className="hover:text-white transition-colors uppercase tracking-wider"
+            >
+              Shipping Policy
+            </a>
+            <a
+              href="/refund"
+              className="hover:text-white transition-colors uppercase tracking-wider"
+            >
+              Refund Policy
+            </a>
+            <a
+              href="/support"
+              className="hover:text-white transition-colors uppercase tracking-wider"
+            >
+              Contact Us
+            </a>
+          </div>
+
+          {/* 版權與商標聲明 */}
+          <div className="space-y-4">
+            <p className="text-[8px] lg:text-[9px] tracking-[0.15em] text-[#86868b]/70 uppercase font-semibold font-sans">
+              Liboost™️is a registered trademark of Pharmactive Biotech
+              Products, S.L.U.
+            </p>
+            <p className="text-[9px] lg:text-[10px] tracking-[0.4em] lg:tracking-[0.6em] text-[#86868b] uppercase font-black leading-relaxed font-sans">
+              © 2026 ST EMPIRES MALAYSIA. <br className="sm:hidden" /> ALL
+              RIGHTS RESERVED.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
