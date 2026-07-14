@@ -124,7 +124,12 @@ const Support = () => {
         <div className="text-center pt-8 border-t border-white/5 text-[11px] lg:text-xs text-neutral-500 font-medium tracking-wide flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8">
           <span>{t("support.footerHint")}</span>
           <div className="flex space-x-6 text-neutral-400">
-            <span>{t("support.footerEmail")}</span>
+            <a
+              href="mailto:stempires9399@gmail.com"
+              className="hover:text-white transition-colors"
+            >
+              stempires9399@gmail.com
+            </a>
             <span>{t("support.footerHours")}</span>
           </div>
         </div>

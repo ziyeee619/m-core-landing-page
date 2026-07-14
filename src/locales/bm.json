@@ -92,6 +92,8 @@
     "pkgSub": "PROTOKOL 30 HARI",
     "pkgDesc": "Setiap botol mengandungi 60 tablet premium 1g, dihasilkan secara teliti di bawah parameter klinikal Malaysia yang ketat untuk memastikan kitaran prestasi lelaki 30 hari yang tepat.",
     "certTitle": "Pengiktirafan Makmal & Pengeluaran",
+    "officialDoc": "Dokumen Pensijilan Rasmi",
+    "openOrDownload": "Buka di Tab Baru / Muat Turun Sijil",
     "certs": {
       "gmp": {
         "name": "GMP MALAYSIA",
@@ -104,6 +106,10 @@
       "mesti": {
         "name": "SKIM MeSTI",
         "desc": "Makanan Selamat Tanggungjawab Industri"
+      },
+      "iso2000": {
+        "name": "ISO 2000",
+        "desc": "Pensijilan Pertubuhan Standardisasi Antarabangsa"
       }
     }
   },

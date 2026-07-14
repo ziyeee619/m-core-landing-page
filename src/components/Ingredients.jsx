@@ -130,7 +130,7 @@ const Ingredients = () => {
                       t("ingredients.descHighlight"),
                     );
                   }}
-                  className="flex items-center gap-1.5 text-[11px] text-[#86868b] hover:text-white transition-colors bg-white/5 border border-white/5 hover:border-white/20 px-3 py-1.5 rounded-full font-bold cursor-pointer"
+                  className="flex items-center gap-1.5 text-[12px] text-[#070707] hover:text-white transition-colors bg-white/25 order border-white/5 hover:border-white/20 px-3 py-1.5 rounded-full font-bold cursor-pointer"
                 >
                   <FileText size={12} /> {t("ingredients.liboost.btn")}{" "}
                   <Maximize2 size={10} />

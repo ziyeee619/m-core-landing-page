@@ -182,6 +182,8 @@
     "pkgSub": "PREMIUM PACKAGE",
     "pkgDesc": "每瓶含 60 片 1g 的顶级机能复方。在马来西亚严格的品管参数下精密制造，确保精准满足 30 天的男士巅峰动能周期所需。",
     "certTitle": "生产与实验室官方认证",
+    "officialDoc": "官方认证文件",
+    "openOrDownload": "在新分页打开 / 下载证书",
     "certs": {
       "gmp": {
         "name": "马来西亚 GMP 认证",
@@ -194,6 +196,10 @@
       "mesti": {
         "name": "MeSTI 卫生认证",
         "desc": "食品安全工业责任在地标准"
+      },
+      "iso2000": {
+        "name": "ISO 2000",
+        "desc": "國際標準化組織認證"
       }
     }
   },

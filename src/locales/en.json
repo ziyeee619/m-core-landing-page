@@ -92,6 +92,8 @@
     "pkgSub": "30-DAY PROTOCOL",
     "pkgDesc": "Each bottle contains 60 premium 1g tablets, precision-manufactured under rigid Malaysian clinical parameters to ensure an exact 30-day male performance cycle.",
     "certTitle": "Laboratory & Production Certifications",
+    "officialDoc": "Official Certification Document",
+    "openOrDownload": "Open in New Tab / Download Certificate",
     "certs": {
       "gmp": {
         "name": "GMP MALAYSIA",
@@ -104,6 +106,10 @@
       "mesti": {
         "name": "MeSTI PROGRAM",
         "desc": "Food Safety Responsibility Industry"
+      },
+      "iso2000": {
+        "name": "ISO 2000",
+        "desc": "International Organization for Standardization Certification"
       }
     }
   },

@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Battery,
+  BatteryFull,
   Wind,
   Dna,
   Flame,
@@ -57,7 +57,7 @@ const SevenRSystem = () => {
       r: t("sevenR.items.r1Title"),
       sub: t("sevenR.items.r1"),
       fullText: t("sevenR.items.details.r1Text"),
-      icon: <Battery />,
+      icon: <BatteryFull />,
     },
     {
       id: "02",
@@ -163,8 +163,53 @@ const SevenRSystem = () => {
               <Reveal x={30} delay={0.1}>
                 <div className="relative p-6 lg:p-10 border border-white/10 bg-gradient-to-br from-[#161616] to-[#0a0a0a] backdrop-blur-md rounded-2xl lg:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden">
                   <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 relative z-10">
-                    <div className="w-14 h-14 bg-white text-black flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] shrink-0">
-                      <Activity size={28} strokeWidth={2} />
+                    {/* 外框：保持你原有的完美樣式不變 */}
+                    <div className="w-14 h-14 bg-white text-black flex items-center justify-center rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.2)] shrink-0 relative">
+                      {/* 內嵌自訂心電圖 SVG：改用 SVG 虛線偏移原理，打造真正完美的橫向心律動態 */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-black"
+                      >
+                        {/* 這條是完美的 Lucide Activity 原始路徑 */}
+                        <path
+                          d="M2 12h4l3-9L15 21l3-9h4"
+                          style={{
+                            strokeDasharray: 60, // 設定線條長度
+                            animation: "ecgPulse 3.5s linear infinite", // 套用原生心電圖脈衝動畫
+                          }}
+                        />
+                      </svg>
+
+                      {/* 🚀 直接利用內嵌 style 注入動畫，100% 不怕被 Tailwind 快取卡住 */}
+                      <style>{`
+    @keyframes ecgPulse {
+      0% {
+        stroke-dashoffset: 60; /* 起點：整條線被推到右邊隱藏 */
+      }
+      40% {
+        stroke-dashoffset: 0;  /* 畫出線條：從左到右完整連起 */
+      }
+      70% {
+        stroke-dashoffset: 0;  /* 稍微停頓，模擬心跳間歇 */
+        opacity: 1;
+      }
+      85% {
+        opacity: 0;            /* 慢慢淡出準備下一次心跳循環 */
+      }
+      100% {
+        stroke-dashoffset: -60; /* 終點 */
+        opacity: 0;
+      }
+    }
+  `}</style>
                     </div>
 
                     <div>
@@ -189,7 +234,7 @@ const SevenRSystem = () => {
           {/* ===================== 7R 卡片列表 ===================== */}
           <div className="relative mt-8 lg:mt-0">
             {/* 🚀 新增：手機版專屬滑動提示 */}
-            <div className="flex items-center justify-end mb-4 pr-2 lg:hidden">
+            <div className="flex items-center justify-center mb-4 lg:hidden">
               <motion.div
                 animate={{ x: [0, 6, 0] }}
                 transition={{
@@ -199,10 +244,10 @@ const SevenRSystem = () => {
                 }}
                 className="flex items-center gap-1.5 text-[#86868b]/80"
               >
-                <span className="text-[9px] font-black tracking-[0.2em] uppercase">
+                <span className="text-[12px] font-black tracking-[0.2em] uppercase">
                   Swipe
                 </span>
-                <MoveRight size={12} strokeWidth={2.5} />
+                <MoveRight size={13} strokeWidth={2.5} />
               </motion.div>
             </div>
 
