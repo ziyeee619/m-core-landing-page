@@ -9,12 +9,6 @@
     "securedBy": "ST EMPIRES AI ASSISTANT"
   },
 
-  "nav": {
-    "home": "首页",
-    "product": "产品",
-    "science": "科学机制",
-    "support": "客户支援"
-  },
   "hero": {
     "title": "M-CORE",
     "titleSuffix": "核元",
@@ -215,7 +209,7 @@
     "product": "探索 M-CORE核元",
     "shop": "官方商城",
     "science": "科学原理",
-    "support": "客户服务"
+    "support": "帮助中心"
   },
 
   "sciencePage": {
@@ -236,6 +230,7 @@
     "dashboardDesc1": "超越传统的能量补给，",
     "dashboardHighlight": "M-CORE核元 7R 科学细胞修复系统",
     "dashboardDesc2": "從根本重塑男性的體能與精力巔峰。",
+    "tap_for_details": "点击查看详情",
     "items": {
       "r1Title": "Restore",
       "r1": "能量回血",
@@ -323,7 +318,7 @@
   "support": {
     "badge": "产品验证与安全指南",
     "title1": "技术与科学专研",
-    "title2": "客户服务支援中心",
+    "title2": "帮助中心",
     "desc": "所有临床数据、成分来源与产品服用指南，皆直接取自官方实验室规格书与西班牙专利报告，绝无虚假宣传。",
     "trust1Title": "100% HPLC 色谱纯度验证",
     "trust1Desc": "透过高效液相色谱法（HPLC）严格确保植物活性精华的绝对纯度。零非法化学添加。",

@@ -9,12 +9,6 @@
     "securedBy": "ST EMPIRES AI ASSISTANT"
   },
 
-  "nav": {
-    "home": "Home",
-    "product": "Product",
-    "science": "Science",
-    "support": "Support"
-  },
   "hero": {
     "title": "M-CORE",
     "titleSuffix": "",
@@ -238,6 +232,7 @@
     "dashboardDesc1": "Beyond traditional energy, ",
     "dashboardHighlight": "M-CORE 7R Scientific System",
     "dashboardDesc2": " reconstructs male physical and mental peaks from the cellular level.",
+    "tap_for_details": "TAP FOR DETAILS",
     "items": {
       "r1Title": "Restore",
       "r1": "Energy Recovery",
@@ -315,7 +310,7 @@
   "support": {
     "badge": "Product Verification & Safety Guide",
     "title1": "Technical & Scientific Research",
-    "title2": "Customer Support Center",
+    "title2": "Help Center",
     "desc": "All clinical data, ingredient sourcing, and usage guidelines are directly extracted from official laboratory specifications and Spanish patent reports. No false claims.",
     "trust1Title": "100% HPLC Purity Verification",
     "trust1Desc": "Strictly ensuring the absolute purity of active botanical extracts via High-Performance Liquid Chromatography (HPLC). Zero illicit chemical additives.",

@@ -288,6 +288,7 @@ const SevenRSystem = () => {
                         </div>
                       </div>
 
+                      {/* 在卡片的最後面（motion.div 的最底下）加上這行 */}
                       <div>
                         <h4 className="text-xl lg:text-2xl font-black uppercase italic tracking-tighter text-white group-hover:text-black transition-colors leading-tight">
                           {item.r}
@@ -295,6 +296,12 @@ const SevenRSystem = () => {
                         <p className="text-[#86868b] text-[10px] font-bold tracking-[0.15em] group-hover:text-black/70 transition-colors mt-1 whitespace-nowrap">
                           {item.sub}
                         </p>
+
+                        {/* 🚀 新增：實驗室 Terminal 風格的點擊文字提示 (僅手機顯示) */}
+                        <div className="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between text-[9px] font-mono tracking-widest text-amber-500/80 group-hover:text-black/80 lg:hidden">
+                          <span>[ {t("sevenR.tap_for_details")} ]</span>
+                          <span className="font-bold">＋</span>
+                        </div>
                       </div>
                     </motion.div>
                   </Reveal>
