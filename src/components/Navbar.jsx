@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import AccountButton from "../components/AccountButton"; // 🚀 成功引入元件
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -58,7 +59,6 @@ const Navbar = () => {
           </Link>
 
           {/* ==================== 2. 桌面端主選單 (完美置中) ==================== */}
-          {/* 🚀 使用 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 確保不管兩側內容多寬，選單永遠在正中間 */}
           <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-x-12 text-[14px] tracking-[0.3em] uppercase font-bold text-[#86868b] font-sans">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
@@ -77,8 +77,13 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* ==================== 3. 語言切換與漢堡選單 (靠右) ==================== */}
-          <div className="flex items-center">
+          {/* ==================== 3. 語言切換、登入按鈕與漢堡選單 (靠右) ==================== */}
+          <div className="flex items-center space-x-4 lg:space-x-6">
+            {/* 🚀 桌面端：會員中心登入按鈕 (僅在 desktop 及筆電大螢幕顯示) */}
+            <div className="hidden sm:block">
+              <AccountButton currentLang={i18n.language} />
+            </div>
+
             {/* 桌面端語言切換 */}
             <div className="hidden lg:flex items-center space-x-5">
               {langs.map((l) => (
@@ -125,6 +130,7 @@ const Navbar = () => {
             >
               <X size={32} />
             </button>
+
             <div className="flex flex-col space-y-8 text-center font-sans">
               {navLinks.map((link, i) => {
                 const isActive = location.pathname === link.path;
@@ -151,8 +157,20 @@ const Navbar = () => {
                 );
               })}
 
+              {/* 🚀 手機版：把登入按鈕放在行動選單正中央 (帶有滑入動畫) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.05 }}
+                className="pt-4 flex justify-center"
+              >
+                <div onClick={() => setIsOpen(false)}>
+                  <AccountButton currentLang={i18n.language} />
+                </div>
+              </motion.div>
+
               {/* 手機版語言切換 */}
-              <div className="flex space-x-6 pt-10 justify-center">
+              <div className="flex space-x-6 pt-6 justify-center">
                 {langs.map((l) => (
                   <button
                     key={l.code}
