@@ -43,12 +43,12 @@ const Navbar = () => {
             : "bg-transparent py-6 lg:py-8"
         }`}
       >
-        {/* 🚀 加入 relative 讓內部的選單可以絕對置中 */}
-        <div className="container mx-auto px-6 lg:px-8 flex justify-between items-center relative">
-          {/* ==================== 1. Logo 區域 (靠左) ==================== */}
+        {/* 🚀 移除 relative，直接使用正統 Flexbox 彈性排版 */}
+        <div className="container mx-auto px-6 lg:px-8 flex justify-between items-center">
+          {/* ==================== 1. Logo 區域 (加上 shrink-0 防止被擠壓) ==================== */}
           <Link
             to="/"
-            className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
+            className="shrink-0 flex items-center space-x-2 hover:opacity-90 transition-opacity"
           >
             <div className="text-xl font-bold tracking-[0.2em] text-white uppercase italic font-sans">
               ST{" "}
@@ -58,11 +58,12 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* ==================== 2. 桌面端主選單 (完美置中) ==================== */}
-          <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-x-12 text-[14px] tracking-[0.3em] uppercase font-bold text-[#86868b] font-sans">
+          {/* ==================== 2. 桌面端主選單 (🔥 終極改法：移除 absolute！) ==================== */}
+          {/* 🚀 改用 flex-1 justify-center：它會自動佔滿左右剩餘的空隙，並在中間優雅置中，但絕不侵犯左右鄰居！ */}
+          {/* 🚀 將顯示斷點提高到 xl:flex (1280px)，間距調整為響應式縮放 */}
+          <div className="hidden xl:flex flex-1 justify-center items-center px-4 space-x-6 2xl:space-x-10 text-[13px] 2xl:text-[14px] tracking-[0.15em] 2xl:tracking-[0.2em] uppercase font-bold text-[#86868b] font-sans whitespace-nowrap">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
-
               return (
                 <Link
                   key={link.path}
@@ -77,15 +78,15 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* ==================== 3. 語言切換、登入按鈕與漢堡選單 (靠右) ==================== */}
-          <div className="flex items-center space-x-4 lg:space-x-6">
-            {/* 🚀 桌面端：會員中心登入按鈕 (僅在 desktop 及筆電大螢幕顯示) */}
+          {/* ==================== 3. 右側按鈕與語言切換 (加上 shrink-0 防止變形) ==================== */}
+          <div className="flex items-center space-x-4 lg:space-x-6 shrink-0">
+            {/* 桌面端：會員中心登入按鈕 */}
             <div className="hidden sm:block">
               <AccountButton currentLang={i18n.language} />
             </div>
 
-            {/* 桌面端語言切換 */}
-            <div className="hidden lg:flex items-center space-x-5">
+            {/* 桌面端語言切換 (提高到 xl:flex 才顯示，小於 1280px 時自動收到漢堡選單裡) */}
+            <div className="hidden xl:flex items-center space-x-5">
               {langs.map((l) => (
                 <button
                   key={l.code}
@@ -101,8 +102,8 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* 手機版漢堡選單按鈕 */}
-            <div className="flex items-center lg:hidden">
+            {/* 手機與中型筆電版：漢堡選單按鈕 (小於 1280px 時自動出現) */}
+            <div className="flex items-center xl:hidden">
               <button
                 className="text-white p-2 cursor-pointer flex items-center justify-center"
                 onClick={() => setIsOpen(!isOpen)}
@@ -165,7 +166,7 @@ const Navbar = () => {
                 className="pt-4 flex justify-center"
               >
                 <div onClick={() => setIsOpen(false)}>
-                  <AccountButton currentLang={i18n.language} />
+                  <AccountButton currentLang={i18n.language} isMobile={true} />
                 </div>
               </motion.div>
 

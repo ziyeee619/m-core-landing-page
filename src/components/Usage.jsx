@@ -1,19 +1,15 @@
 // src/components/Usage.jsx
-import React, { useState } from "react"; // 🚀 修正：記得引入 useState
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-// 🚀 修正：將 Clock 換成 Pill (膠囊)，並引入彈窗會用到的 X 與 ExternalLink
 import { Pill, ShieldCheck, X, ExternalLink } from "lucide-react";
 import Reveal from "./Reveal";
 
 const Usage = () => {
   const { t } = useTranslation();
 
-  // 用來記錄當前點擊了哪一個認證的圖片/PDF 網址
   const [certUrl, setCertUrl] = useState(null);
-  const [certType, setCertType] = useState(null); // 'image' 或 'pdf'
+  const [certType, setCertType] = useState(null);
 
-  // 靜態資產路徑與 i18n 鍵值對應保持一致
-  // 🚀 新增：為每一個認證補上 fileUrl 與 fileType，並多加 ISO2000（無圖片，採純文字呈現）
   const certList = [
     {
       key: "gmp",
@@ -35,17 +31,19 @@ const Usage = () => {
     },
     {
       key: "iso2000",
-      img: null, // 🚀 不需要 logo，設為 null
-      fileUrl: "/certs/iso2000.pdf", // 請確保 public/certs/ 下有這個 pdf 檔案
+      img: null,
+      fileUrl: "/certs/iso2000.pdf",
       fileType: "pdf",
-      textLogo: "ISO", // 用來代替圖片 logo 的顯示文字
+      textLogo: "ISO",
     },
   ];
 
   return (
     <section
       id="usage"
-      className="py-40 lg:py-64 bg-[#050505] border-t border-white/5 overflow-hidden px-6 lg:px-8 font-sans relative"
+      /* 🚀 將 py-40 lg:py-64 改為 pt-16 lg:pt-24 pb-28 lg:pb-40
+     這樣頂部空白會瞬間減少超過一半（從 256px 縮減為 96px），標題立即大幅上移！ */
+      className="pt-16 lg:pt-24 pb-28 lg:pb-40 bg-[#050505] border-t border-white/5 overflow-hidden px-6 lg:px-8 font-sans relative"
     >
       <div className="container mx-auto font-sans">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center font-sans">
@@ -68,7 +66,6 @@ const Usage = () => {
                 {/* 服用劑量卡片 */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left space-y-6 lg:space-y-0 lg:space-x-8 group font-sans">
                   <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-2xl flex items-center justify-center shrink-0">
-                    {/* 🚀 這裡將原本的 Clock 換成了 Pill (膠囊圖示) */}
                     <Pill className="text-white w-6 h-6 lg:w-8 lg:h-8" />
                   </div>
                   <div>
@@ -87,17 +84,19 @@ const Usage = () => {
                   </div>
                 </div>
 
-                {/* 認證標章渲染區：保留右側文字與樣式，只加上點擊打開彈窗 */}
-                <div className="pt-8 lg:pt-10 border-t border-white/5 space-y-4">
-                  <div className="text-[10px] font-black tracking-widest text-neutral-500 uppercase flex items-center gap-2 mb-2 justify-center lg:justify-start">
-                    <ShieldCheck size={12} className="text-green-500" />
-                    {t("usage.certTitle")}
+                {/* ===================== 🔥 巨無霸 2x2 旗艦版：官方認證證書 ===================== */}
+                <div className="pt-10 lg:pt-12 border-t border-white/10 space-y-5">
+                  <div className="text-xs font-black tracking-[0.25em] text-neutral-400 uppercase flex items-center gap-2.5 mb-4 justify-center lg:justify-start">
+                    <ShieldCheck size={16} className="text-emerald-400" />
+                    <span>
+                      {t("usage.certTitle") || "生产与实验室官方认证"}
+                    </span>
                   </div>
 
-                  {/* 🚀 RWD 修改：將 sm:grid-cols-3 改為 sm:grid-cols-2 lg:grid-cols-4，完美排列 4 個項目 */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-sans">
+                  {/* 🚀 核心升級：永遠鎖定 1~2 列 (grid-cols-1 sm:grid-cols-2)，徹底廢除 3和4 列！
+                      讓每個卡片擁有充裕的大空間，不再隨著視窗縮放產生怪異排版 */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 font-sans">
                     {certList.map((cert) => {
-                      // 安全取得名稱與描述 (優先使用自訂文字，其次使用 i18n 翻譯)
                       const displayName =
                         cert.name || t(`usage.certs.${cert.key}.name`);
                       const displayDesc =
@@ -106,41 +105,46 @@ const Usage = () => {
                       return (
                         <div
                           key={cert.key}
-                          /* 🚀 在這層加上 onClick 觸發彈窗與 cursor-pointer，外觀完全不改 */
                           onClick={() => {
                             setCertUrl(cert.fileUrl);
                             setCertType(cert.fileType);
                           }}
-                          className="p-3.5 bg-[#111] border border-white/5 rounded-xl flex items-center space-x-3.5 hover:border-white/10 transition-colors group overflow-hidden cursor-pointer"
+                          /* 🚀 體積全面加大：p-6 內距、加深框線與懸停光影，大氣磅礡 */
+                          className="p-6 bg-[#0e0e10] border border-white/10 rounded-2xl flex items-center space-x-5 hover:bg-[#141417] hover:border-white/20 transition-all duration-300 group cursor-pointer select-none shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
                         >
-                          {/* 左側徽章方塊 */}
-                          <div className="w-11 h-11 bg-white/5 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center p-1.5 shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-900">
+                          {/* 左側徽章方塊：🚀 從原本的 w-14 升級為 w-18 h-18 (72px 巨型方塊) */}
+                          <div className="w-16 h-16 sm:w-18 sm:h-18 bg-black/60 border border-white/10 rounded-xl overflow-hidden flex items-center justify-center p-3 shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-950 shadow-inner group-hover:border-emerald-500/30 transition-colors">
                             {cert.img ? (
-                              /* 有 Logo 圖片時：渲染原本的 Img */
                               <img
                                 src={cert.img}
                                 alt={displayName}
-                                className="w-full h-full object-contain filter brightness-90 group-hover:brightness-100 transition-all duration-300"
+                                className="w-full h-full object-contain filter brightness-95 group-hover:brightness-110 group-hover:scale-105 transition-all duration-300"
                                 onError={(e) => {
                                   e.target.style.display = "none";
                                 }}
                               />
                             ) : (
-                              /* 🚀 沒有 Logo 圖片時：渲染極簡質感的純文字標章 (例如: ISO) */
-                              <span className="text-[10px] font-black tracking-widest text-neutral-400 group-hover:text-amber-500 transition-colors">
+                              <span className="text-sm font-black tracking-widest text-neutral-300 group-hover:text-emerald-400 transition-colors font-mono">
                                 {cert.textLogo || "ISO"}
                               </span>
                             )}
                           </div>
 
-                          {/* 右側說明文字 (完整保留) */}
-                          <div className="flex-1 min-w-0 flex flex-col text-left">
-                            <span className="text-[10px] lg:text-[11px] font-black tracking-wider text-white uppercase group-hover:text-amber-500 transition-colors truncate">
+                          {/* 右側說明文字：🚀 字體大升級！不再顯得小氣 */}
+                          <div className="flex-1 min-w-0 flex flex-col text-left py-1">
+                            {/* 標題放大至 text-sm sm:text-base (約 16px)，加粗顯著 */}
+                            <span className="text-sm sm:text-base font-black tracking-wide text-white uppercase group-hover:text-emerald-400 transition-colors break-words leading-tight mb-1.5">
                               {displayName}
                             </span>
-                            <span className="text-[9px] text-neutral-500 font-medium mt-0.5 leading-tight break-words">
+                            {/* 描述字體提升至 text-xs (約 12px)，顏色調亮，提升閱讀清晰度 */}
+                            <span className="text-[11px] sm:text-xs text-neutral-400 font-normal leading-relaxed break-words">
                               {displayDesc}
                             </span>
+                          </div>
+
+                          {/* 右側隱藏的小箭頭，滑鼠移入時優雅出現，提示可點擊 */}
+                          <div className="text-neutral-600 group-hover:text-white transition-colors pl-1 font-bold">
+                            ↗
                           </div>
                         </div>
                       );
@@ -177,50 +181,49 @@ const Usage = () => {
         </div>
       </div>
 
-      {/* ===================== 🚀 新增：證書展示彈窗 (Modal) ===================== */}
+      {/* ===================== 完美放大版：證書展示彈窗 (Modal) ===================== */}
       {certUrl && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-opacity">
-          <div className="relative w-full max-w-4xl bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh]">
-            {/* 頂部關閉按鈕列 */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#111]">
-              <span className="text-xs font-black tracking-widest text-white uppercase">
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center p-2 sm:p-4 bg-black/85 backdrop-blur-md transition-opacity">
+          <div className="relative w-full max-w-6xl bg-[#0a0a0a] border border-white/10 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh]">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#111] shrink-0">
+              <span className="text-sm font-black tracking-widest text-white uppercase font-sans">
                 {t("usage.officialDoc")}
               </span>
               <button
-                onClick={() => setCertUrl(null)} // 點擊清空狀態，關閉彈窗
+                onClick={() => setCertUrl(null)}
                 className="p-2 text-neutral-400 hover:text-white hover:bg-white/10 rounded-lg transition"
               >
-                <X size={20} />
+                <X size={22} />
               </button>
             </div>
 
-            {/* 檔案顯示區塊 (自動支援 PDF / 圖片) */}
-            <div className="p-4 md:p-6 overflow-y-auto flex-grow flex items-center justify-center bg-black/50 min-h-[50vh]">
+            <div className="p-2 md:p-4 overflow-y-auto flex-grow flex items-center justify-center bg-black/40">
               {certType === "pdf" ? (
                 <iframe
                   src={`${certUrl}#toolbar=0`}
                   title="Certification Document"
-                  className="w-full h-[65vh] rounded border border-white/10 bg-[#111]"
+                  className="w-full h-[72vh] rounded border border-white/10 bg-[#111]"
                 />
               ) : (
                 <img
                   src={certUrl}
                   alt="Certification"
-                  className="max-w-full max-h-[65vh] object-contain rounded border border-white/10"
+                  className="max-w-full max-h-[72vh] object-contain rounded border border-white/10 shadow-inner"
                 />
               )}
             </div>
 
-            {/* 底部按鈕：支援新分頁開啟 / 下載 */}
-            <div className="px-6 py-4 border-t border-white/10 bg-[#111] flex justify-end">
+            <div className="px-6 py-4 border-t border-white/10 bg-[#111] flex justify-end shrink-0">
               <a
                 href={certUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs bg-white text-black font-black px-5 py-2.5 rounded hover:bg-neutral-200 transition flex items-center space-x-2 shadow-lg"
+                className="text-xs bg-white text-black font-black px-6 py-3 rounded hover:bg-neutral-200 transition flex items-center space-x-2 shadow-xl hover:scale-[1.02] active:scale-[0.98] duration-200"
               >
-                <span>{t("usage.openOrDownload")}</span>
-                <ExternalLink size={14} />
+                <span className="tracking-wider">
+                  {t("usage.openOrDownload")}
+                </span>
+                <ExternalLink size={15} />
               </a>
             </div>
           </div>
