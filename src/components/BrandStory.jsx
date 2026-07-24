@@ -132,12 +132,12 @@ const BrandStory = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ delay: 0.1 }}
-                className="relative h-[80vh] lg:h-[90vh] aspect-[9/16] bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+                className="relative h-[80vh] lg:h-[90vh] max-w-full aspect-[9/16] mx-auto bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex-shrink-0"
               >
                 <iframe
                   src={videoUrl}
                   title="ST EMPIRES Philosophy"
-                  className="w-full h-full absolute inset-0"
+                  className="w-full h-full block"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
