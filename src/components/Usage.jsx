@@ -30,9 +30,9 @@ const Usage = () => {
       fileType: "pdf",
     },
     {
-      key: "iso2000",
+      key: "iso22000",
       img: null,
-      fileUrl: "/certs/iso2000.pdf",
+      fileUrl: "/certs/iso22000.pdf",
       fileType: "pdf",
       textLogo: "ISO",
     },

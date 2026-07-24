@@ -107,8 +107,8 @@
         "name": "MeSTI PROGRAM",
         "desc": "Food Safety Responsibility Industry"
       },
-      "iso2000": {
-        "name": "ISO 2000",
+      "iso22000": {
+        "name": "ISO 22000",
         "desc": "International Organization for Standardization Certification"
       }
     }

@@ -113,8 +113,8 @@
         "name": "SKIM MeSTI",
         "desc": "Makanan Selamat Tanggungjawab Industri"
       },
-      "iso2000": {
-        "name": "ISO 2000",
+      "iso22000": {
+        "name": "ISO 22000",
         "desc": "Pensijilan Pertubuhan Standardisasi Antarabangsa"
       }
     }

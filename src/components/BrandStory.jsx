@@ -8,6 +8,8 @@ const BrandStory = () => {
   const { t } = useTranslation();
 
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoUrl =
+    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1784881156/BrandCore_1_inleph.mp4";
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -132,12 +134,13 @@ const BrandStory = () => {
                 transition={{ delay: 0.1 }}
                 className="relative h-[80vh] lg:h-[90vh] aspect-[9/16] bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
               >
-                <video
-                  src=""
-                  controls
-                  autoPlay
-                  className="w-full h-full object-cover"
-                ></video>
+                <iframe
+                  src={videoUrl}
+                  title="ST EMPIRES Philosophy"
+                  className="w-full h-full absolute inset-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
               </motion.div>
             </motion.div>
           )}
