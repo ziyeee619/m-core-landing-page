@@ -111,7 +111,7 @@ const BrandStory = () => {
           </div>
         </div>
 
-        {/* ===================== 劇院模式彈窗 (Modal) 維持不變 ===================== */}
+        {/* ===================== 劇院模式彈窗 (Modal) ===================== */}
         <AnimatePresence>
           {isVideoOpen && (
             <motion.div
@@ -132,15 +132,17 @@ const BrandStory = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.95, opacity: 0 }}
                 transition={{ delay: 0.1 }}
-                className="relative h-[80vh] lg:h-[90vh] max-w-full aspect-[9/16] mx-auto bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex-shrink-0"
+                // 🚀 關鍵修改 1：拔掉 aspect-[9/16]，讓容器變成自適應包覆 (w-fit)
+                className="relative bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center w-fit"
               >
-                <iframe
+                {/* 🚀 關鍵修改 2：把 object-cover 改成 object-contain，並把高度控制寫在 video 本身 */}
+                <video
                   src={videoUrl}
-                  title="ST EMPIRES Philosophy"
-                  className="w-full h-full block"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                  controls
+                  autoPlay
+                  playsInline // Safari/iOS 必備防跳出全螢幕
+                  className="w-auto h-auto max-w-[90vw] max-h-[80vh] lg:max-h-[90vh] object-contain outline-none rounded-xl lg:rounded-2xl"
+                ></video>
               </motion.div>
             </motion.div>
           )}

@@ -7,7 +7,7 @@ import { Zap } from "lucide-react";
 const ProductPurchase = () => {
   const { t, i18n } = useTranslation();
 
-  // 🚀 資管動態狀態：實時響應數量折扣
+  // 🚀 實時響應數量折扣
   const [currentPrice, setCurrentPrice] = useState("RM 288.00");
   const [compareAtPrice, setCompareAtPrice] = useState("RM 300.00");
   const [savedAmount, setSavedAmount] = useState(12);
@@ -22,6 +22,7 @@ const ProductPurchase = () => {
 
   useEffect(() => {
     let isMounted = true;
+    let modelObserverInterval;
     const scriptId = "shopify-buy-button-script-global";
 
     const freshContainer = document.createElement("div");
@@ -176,6 +177,12 @@ const ProductPurchase = () => {
               title: t("purchase.cartTitle"),
               buttonText: t("purchase.checkoutBtn"),
               popup: true,
+              contents: {
+                note: true,
+              },
+              text: {
+                noteDescription: "Tax Identify Number (Optional)",
+              },
               styles: {
                 cart: {
                   "z-index": "2147483647 !important",
@@ -192,20 +199,20 @@ const ProductPurchase = () => {
 
             // 1. 核心價格演算法
             const updateUIPrice = (qty) => {
-              const selectedVariant = component.model.selectedVariant;
-              if (!selectedVariant) return;
+              const variant =
+                component.model.selectedVariant || component.model.variants[0];
+              if (!variant) return;
 
-              // 1 件 = 288 RM，2 件以上 = 每件 255 RM
-              const basePrice =
-                qty >= 2 ? 255.0 : parseFloat(selectedVariant.price.amount);
+              // 安全解析 Shopify 價格
+              const rawPrice = variant.price.amount || variant.price;
+              const rawComparePrice = variant.compareAtPrice
+                ? variant.compareAtPrice.amount || variant.compareAtPrice
+                : "300.00";
 
-              // 假設原價固定為每件 300 RM
-              const baseComparePrice = selectedVariant.compareAtPrice
-                ? parseFloat(selectedVariant.compareAtPrice.amount)
-                : 300.0;
+              // 🚀 關鍵邏輯：2件以上自動變 255
+              const basePrice = qty >= 2 ? 255.0 : parseFloat(rawPrice);
+              const baseComparePrice = parseFloat(rawComparePrice);
 
-              // 這裡要乘上數量（qty），這樣客人按到 3 件時，畫面才會顯示總價！
-              // 或者是顯示單件特價（看你的設計，這邊先改成顯示總價，最符合買多變便宜的直覺）
               const totalCurrentPrice = basePrice * qty;
               const totalComparePrice = baseComparePrice * qty;
 
@@ -215,20 +222,29 @@ const ProductPurchase = () => {
             };
 
             // 2. 初始化先同步一次
-            updateUIPrice(component.model.quantity);
+            const initialQty = component.model.quantity || 1;
+            updateUIPrice(initialQty);
 
-            // 3. 🛸【核心修復】主動出擊！每 200 毫秒死死盯着 SDK 內部的真實數量模型
-            let lastQty = component.model.quantity;
+            let lastQty = initialQty;
 
-            const modelObserverInterval = setInterval(() => {
+            // 3. Shopify 原生事件監聽 (客人一按 + 號立刻觸發)
+            component.on("updateQuantity", (info) => {
+              if (info && info.quantity) {
+                lastQty = info.quantity; // 同步最新數量
+                updateUIPrice(info.quantity);
+              }
+            });
+
+            // 4. 輪詢小助手防漏接 (每0.2秒盯著 Shopify 的底層數據)
+            modelObserverInterval = setInterval(() => {
               if (!isMounted) {
                 clearInterval(modelObserverInterval);
                 return;
               }
 
               if (component && component.model) {
-                const currentQty = component.model.quantity;
-                // 只要發現 SDK 模型裡的數量跟上一次記錄的不一樣，立刻強制刷面板價格！
+                // 🚀 修正：正確讀取 Shopify 底層的 quantity
+                const currentQty = component.model.quantity || 1;
                 if (currentQty !== lastQty) {
                   lastQty = currentQty;
                   updateUIPrice(currentQty);
@@ -247,6 +263,7 @@ const ProductPurchase = () => {
 
     return () => {
       isMounted = false;
+      clearInterval(modelObserverInterval); // 🚀 確實清除計時器
       if (wrapperRef.current && wrapperRef.current.contains(freshContainer)) {
         wrapperRef.current.removeChild(freshContainer);
       }
@@ -291,13 +308,13 @@ const ProductPurchase = () => {
           {/* 原價與特價 */}
           <div className="flex items-baseline justify-center lg:justify-start space-x-4">
             <span className="text-3xl font-black tracking-widest text-white">
-              RM 288.00
+              {currentPrice}
             </span>
-            <span className="text-sm font-medium tracking-wide text-neutral-500 line-through decoration-neutral-600">
-              RM 300.00
+            <span className="text-sm font-medium tracking-wide text-neutral-500 line-through decoration-neutral-600 transition-all duration-300">
+              {compareAtPrice}
             </span>
             <span className="text-[10px] font-bold tracking-widest text-amber-500 border border-amber-500/20 bg-amber-500/5 px-2 py-1 rounded-md uppercase">
-              {t("purchase.save", { amount: 12 })}
+              {t("purchase.save", { amount: savedAmount })}
             </span>
           </div>
 
