@@ -314,10 +314,10 @@ const ProductPurchase = () => {
         </span>
 
         {/* 產品特點清單 */}
-        <ul className="space-y-3 text-sm text-neutral-400 font-medium tracking-wide flex flex-col items-center lg:items-start">
+        <ul className="space-y-3 text-md text-neutral-400 font-medium tracking-wide flex flex-col items-center lg:items-start">
           {productFeatures.map((feature, i) => (
             <li key={i} className="flex items-center space-x-3">
-              <Zap size={14} className="text-amber-500" />
+              <Zap size={17} className="text-amber-500" />
               <span>{feature}</span>
             </li>
           ))}

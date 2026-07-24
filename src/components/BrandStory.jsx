@@ -1,10 +1,13 @@
 // src/components/BrandStory.jsx
-import React from "react";
+import React, { useState } from "react";
+import { Play, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
 
 const BrandStory = () => {
   const { t } = useTranslation();
+
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -17,29 +20,19 @@ const BrandStory = () => {
 
   return (
     <div className="bg-[#0a0a0a] text-white overflow-hidden">
-      {/* 1. 我們的理念 (About Us) - 🚀 新增底部融合漸層 & 文字置中對齊 */}
-      {/* 修改點：改用 justify-center 讓內部元素自然垂直置中，微調高度 */}
+      {/* 1. 我們的理念 (About Us) */}
       <section className="relative w-full min-h-[85vh] lg:min-h-[75vh] flex flex-col justify-center border-t border-white/5 overflow-hidden">
-        {/* --- 背景圖層 --- */}
         <div className="absolute inset-0 z-0 pointer-events-none bg-[#0a0a0a]">
           <img
-            src="/brand-pills-tray.png" // 記得換成你的圖片
+            src="/brand-pills-tray.png"
             alt="ST EMPIRES Core Belief"
             className="absolute inset-0 w-full h-full object-cover object-[70%_bottom] lg:w-[60%] lg:left-auto lg:right-0 lg:object-center opacity-80 lg:opacity-100"
           />
-
-          {/* 📱 手機版專屬：頂部漸層 (保護文字) */}
           <div className="absolute inset-x-0 top-0 h-[60%] bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent lg:hidden z-10"></div>
-
-          {/* 💻 電腦版專屬：左側漸層 (融合文字區) */}
           <div className="hidden lg:block absolute inset-0 left-auto right-0 w-[60%] bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent z-10"></div>
-
-          {/* 🚀 全端通用：底部漸層 (消除生硬邊界，完美過渡到下一區塊) */}
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent z-20"></div>
         </div>
 
-        {/* --- 文字圖層 --- */}
-        {/* 修改點：移除了 pt-28，改用 py-16 配合父層的 justify-center，讓文字塊更居中 */}
         <div className="relative z-30 container mx-auto px-6 lg:px-8 max-w-7xl py-16 lg:py-0 mt-[-5vh] lg:mt-0">
           <motion.div
             initial="hidden"
@@ -63,7 +56,95 @@ const BrandStory = () => {
         </div>
       </section>
 
-      {/* 2. 科學與製造 (Formulation & Manufacturing) - 維持不變 */}
+      {/* ===================== 理念影片區塊 (🚀 電腦版左右排版優化) ===================== */}
+      <section className="py-24 lg:py-32 bg-[#050505] relative overflow-hidden font-sans">
+        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+          {/* 🚀 改用 Grid 左右排版，解決電腦版空洞的問題 */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* 左側：文字標題與敘述 (電腦版靠左，手機版置中) */}
+            <div className="text-center lg:text-left space-y-6">
+              <div>
+                <h3 className="text-[10px] lg:text-xs font-black tracking-[0.3em] text-[#86868b] uppercase mb-4">
+                  {t("philosophy.tag") || "Our Philosophy"}
+                </h3>
+                <h2 className="text-3xl lg:text-5xl font-black italic text-white uppercase tracking-tighter leading-tight">
+                  {t("philosophy.title") || "超越極限的科學理念"}
+                </h2>
+              </div>
+              {/* 🚀 新增一段簡短的描述，用來填補左側空間，增加視覺重量與質感 */}
+              <p className="text-neutral-400 text-sm lg:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
+                {t("philosophy.desc") ||
+                  "探索 M-CORE 核心配方的誕生歷程。我們如何透過嚴謹的科學數據與頂級植物萃取，為您打造出無可取代的極致體驗。"}
+              </p>
+            </div>
+
+            {/* 右側：直式影片封面 (電腦版靠右，手機版置中) */}
+            <div className="flex justify-center lg:justify-end">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                // 寬度微調，讓它在右邊看起來精緻且不突兀
+                className="relative aspect-[9/16] w-full max-w-[260px] lg:max-w-[300px] rounded-2xl lg:rounded-[32px] overflow-hidden group cursor-pointer border border-white/10 shadow-2xl"
+                onClick={() => setIsVideoOpen(true)}
+              >
+                {/* 封面 */}
+                <img
+                  src="/BrandCore.png"
+                  alt="Philosophy Video Cover"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                {/* 🚀 極簡微縮版按鈕：縮小尺寸並提升透明度 */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                    <Play
+                      className="text-white w-4 h-4 lg:w-5 lg:h-5 ml-0.5"
+                      fill="currentColor"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===================== 劇院模式彈窗 (Modal) 維持不變 ===================== */}
+        <AnimatePresence>
+          {isVideoOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 lg:p-12"
+            >
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute top-6 right-6 lg:top-8 lg:right-8 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-200 z-50"
+              >
+                <X size={24} />
+              </button>
+
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ delay: 0.1 }}
+                className="relative h-[80vh] lg:h-[90vh] aspect-[9/16] bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl"
+              >
+                <video
+                  src=""
+                  controls
+                  autoPlay
+                  className="w-full h-full object-cover"
+                ></video>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </section>
+
+      {/* 2. 科學與製造 (Formulation & Manufacturing) */}
       <section className="py-20 lg:py-32 bg-[#0a0a0a]">
         <div className="container mx-auto px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -75,20 +156,20 @@ const BrandStory = () => {
               className="grid grid-cols-2 gap-4 order-2 lg:order-1"
             >
               <div className="space-y-4">
-                <div className="aspect-[4/5] bg-neutral-900 rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <div className="aspect-[9/16] bg-neutral-900 rounded-2xl overflow-hidden shadow-lg border border-white/5">
                   <img
                     src="/manufacturing-1.jpg"
                     alt="Botanical Ingredients"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   />
                 </div>
               </div>
               <div className="space-y-4 pt-12">
-                <div className="aspect-[4/5] bg-neutral-900 rounded-2xl overflow-hidden shadow-lg border border-white/5">
+                <div className="aspect-[9/16] bg-neutral-900 rounded-2xl overflow-hidden shadow-lg border border-white/5">
                   <img
-                    src="/manufacturing-2.jpg"
+                    src="/manufacturing-2.png"
                     alt="Lab Support"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover transition-all duration-700 hover:scale-105"
                   />
                 </div>
               </div>

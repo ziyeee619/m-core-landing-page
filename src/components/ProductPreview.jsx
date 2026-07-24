@@ -180,14 +180,14 @@ const ProductPreview = () => {
             {/* 快速規格勾選 */}
             <motion.div
               variants={textItemVariants}
-              className="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-wider text-neutral-300 py-2 border-t border-b border-white/5"
+              className="grid grid-cols-2 gap-4 text-md font-bold uppercase tracking-wider text-neutral-300 py-2 border-t border-b border-white/5"
             >
               <div className="flex items-center space-x-2">
-                <ShieldCheck size={14} className="text-green-500" />
+                <ShieldCheck size={20} className="text-green-500" />
                 <span>{t("preview.sec2.check1")}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Zap size={14} className="text-amber-500" />
+                <Zap size={20} className="text-amber-500" />
                 <span>{t("preview.sec2.check2")}</span>
               </div>
             </motion.div>
