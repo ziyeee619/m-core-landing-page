@@ -108,7 +108,7 @@ const Hero = ({ heroOpacity, heroScale }) => {
             <Reveal scale={0.9} rotate={-3} delay={0.3}>
               <div className="relative z-10 group px-10 lg:px-0 text-center mb-8 lg:mb-0">
                 <img
-                  src="/m-core-liboost-supplement-bottle.webp"
+                  src="/m-core-liboost-bottle.webp"
                   alt="M-CORE Male Energy Supplement - Premium Liboost Tonkat Ali Formula by ST Empires Malaysia"
                   className="w-full max-w-[260px] md:max-w-[300px] lg:max-w-lg mx-auto drop-shadow-[0_0_80px_rgba(255,255,255,0.06)] group-hover:scale-105 transition-transform duration-1000 font-sans"
                 />

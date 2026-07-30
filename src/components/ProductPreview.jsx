@@ -138,7 +138,7 @@ const ProductPreview = () => {
               onClick={() => navigate("/product")}
               className="w-full aspect-square bg-gradient-to-br from-neutral-900 to-neutral-950 border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl cursor-pointer group relative overflow-hidden"
             >
-              <div className="w-4/5 h-4/5 bg-gradient-to-tr from-neutral-800 to-neutral-700 rounded-xl flex items-center justify-center italic text-neutral-500 font-bold tracking-widest text-center shadow-inner group-hover:scale-[1.03] transition-transform duration-700">
+              <div className="w-4/5 h-/5 bg-gradient-to-tr from-neutral-800 to-neutral-700 rounded-xl flex items-center justify-center italic text-neutral-500 font-bold tracking-widest text-center shadow-inner group-hover:scale-[1.03] transition-transform duration-700">
                 <img
                   src="/m-core-liboost-supplement-bottle.webp"
                   alt="M-CORE Male Energy Supplement - Premium Liboost Tonkat Ali Formula by ST Empires Malaysia"
