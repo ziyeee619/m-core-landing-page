@@ -115,6 +115,8 @@
   },
 
   "purchase": {
+    "preorderInfo": "Pre-order (Ships within 7-14 days)",
+    "preorderNotice": "Pre-order items will be shipped in sequence within 7-14 days.",
     "addCartBtn": "ADD TO CART",
     "tagline": "PEAK PERFORMANCE",
     "name": "M-CORE Premium Energy Formula",

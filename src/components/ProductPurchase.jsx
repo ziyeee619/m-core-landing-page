@@ -301,6 +301,17 @@ const ProductPurchase = () => {
           <h1 className="text-3xl lg:text-4xl font-extrabold italic tracking-wider uppercase">
             {t("purchase.name")}
           </h1>
+
+          {/* 🚀 新增 1：標題下方的預購 Badge (帶有呼吸燈特效) */}
+          <div className="inline-flex items-center justify-center lg:justify-start space-x-2 bg-amber-500/10 border border-amber-500/20 px-4 py-2 rounded-lg">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+            </span>
+            <span className="text-sm font-bold text-amber-500 tracking-wider">
+              {t("purchase.preorderInfo")}
+            </span>
+          </div>
         </div>
 
         {/* 靜態價格與明示促銷區塊 */}
@@ -343,6 +354,11 @@ const ProductPurchase = () => {
         {/* Shopify 按鈕容器 */}
         <div className="pt-4 border-t border-white/5 w-full">
           <div ref={wrapperRef}></div>
+
+          {/* 按鈕下方的預購免責聲明 */}
+          <p className="mt-3 text-[11px] text-[#86868b] tracking-wider text-center lg:text-left">
+            * {t("purchase.preorderNotice")}
+          </p>
         </div>
       </motion.div>
     </section>

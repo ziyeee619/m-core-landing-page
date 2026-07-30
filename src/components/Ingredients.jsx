@@ -9,6 +9,7 @@ import {
   Maximize2,
   Award,
   X,
+  ZoomIn,
 } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -170,12 +171,15 @@ const Ingredients = () => {
                         t("ingredients.liboost.lightbox.card1.desc"),
                       );
                     }}
-                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative cursor-pointer"
+                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-amber-500/30 rounded-2xl shadow-inner group/card transition-all duration-300 relative cursor-pointer hover:-translate-y-1"
                   >
-                    <BarChart3
-                      size={14}
-                      className="absolute top-4 right-4 text-[#444] group-hover/card:text-white transition-colors"
-                    />
+                    {/* 「點擊放大」按鈕 */}
+                    <div className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white/5 group-hover/card:bg-amber-500/20 transition-all duration-300">
+                      <ZoomIn
+                        size={16}
+                        className="text-[#666] group-hover/card:text-amber-400 group-hover/card:scale-110 transition-all duration-300"
+                      />
+                    </div>
                     <div className="text-3xl lg:text-4xl font-black text-white italic tracking-tighter bg-clip-text bg-gradient-to-b from-white to-gray-400">
                       +15.13%
                     </div>
@@ -197,12 +201,15 @@ const Ingredients = () => {
                         t("ingredients.liboost.lightbox.card2.desc"),
                       );
                     }}
-                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative cursor-pointer"
+                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-amber-500/30 rounded-2xl shadow-inner group/card transition-all duration-300 relative cursor-pointer hover:-translate-y-1"
                   >
-                    <BarChart3
-                      size={14}
-                      className="absolute top-4 right-4 text-[#444] group-hover/card:text-white transition-colors"
-                    />
+                    {/* 「點擊放大」按鈕 */}
+                    <div className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white/5 group-hover/card:bg-amber-500/20 transition-all duration-300">
+                      <ZoomIn
+                        size={16}
+                        className="text-[#666] group-hover/card:text-amber-400 group-hover/card:scale-110 transition-all duration-300"
+                      />
+                    </div>
                     <div className="text-3xl lg:text-4xl font-black text-white italic tracking-tighter bg-clip-text bg-gradient-to-b from-white to-gray-400">
                       -42.41%
                     </div>
@@ -224,12 +231,14 @@ const Ingredients = () => {
                         t("ingredients.liboost.lightbox.card3.desc"),
                       );
                     }}
-                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative cursor-pointer"
+                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-amber-500/30 rounded-2xl shadow-inner group/card transition-all duration-300 relative cursor-pointer hover:-translate-y-1"
                   >
-                    <BarChart3
-                      size={14}
-                      className="absolute top-4 right-4 text-[#444] group-hover/card:text-white transition-colors"
-                    />
+                    <div className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white/5 group-hover/card:bg-amber-500/20 transition-all duration-300">
+                      <ZoomIn
+                        size={16}
+                        className="text-[#666] group-hover/card:text-amber-400 group-hover/card:scale-110 transition-all duration-300"
+                      />
+                    </div>
                     <div className="text-3xl lg:text-4xl font-black text-white italic tracking-tighter bg-clip-text bg-gradient-to-b from-white to-gray-400">
                       +45.00%
                     </div>
@@ -251,12 +260,14 @@ const Ingredients = () => {
                         t("ingredients.liboost.lightbox.card4.desc"),
                       );
                     }}
-                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-white/20 rounded-2xl shadow-inner group/card transition-all relative cursor-pointer"
+                    className="p-6 bg-[#181818]/80 backdrop-blur-sm border border-white/5 hover:border-amber-500/30 rounded-2xl shadow-inner group/card transition-all duration-300 relative cursor-pointer hover:-translate-y-1"
                   >
-                    <BarChart3
-                      size={14}
-                      className="absolute top-4 right-4 text-[#444] group-hover/card:text-white transition-colors"
-                    />
+                    <div className="absolute top-4 right-4 flex items-center justify-center w-8 h-8 rounded-full bg-white/5 group-hover/card:bg-amber-500/20 transition-all duration-300">
+                      <ZoomIn
+                        size={16}
+                        className="text-[#666] group-hover/card:text-amber-400 group-hover/card:scale-110 transition-all duration-300"
+                      />
+                    </div>
                     {/* 🌟 修正：大數字改為親密滿意度爆發值 */}
                     <div className="text-3xl lg:text-4xl font-black text-white italic tracking-tighter bg-clip-text bg-gradient-to-b from-white to-gray-400">
                       +49.37%

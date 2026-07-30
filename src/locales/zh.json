@@ -80,6 +80,8 @@
     }
   },
   "purchase": {
+    "preorderInfo": "预购 (将会在 7-14 天内发货)",
+    "preorderNotice": "预购商品，预计于 7-14 天内按订单顺序发货",
     "addCartBtn": "加入购物车",
     "tagline": "PEAK PERFORMANCE · 巅峰动能",
     "name": "M-CORE核元 尊荣版极致配方",

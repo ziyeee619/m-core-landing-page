@@ -134,6 +134,8 @@
   },
 
   "purchase": {
+    "preorderInfo": "Pra-pesanan (Dihantar dalam 7-14 hari)",
+    "preorderNotice": "Barangan pra-pesanan akan dihantar mengikut urutan dalam masa 7-14 hari.",
     "addCartBtn": "TAMBAH KE TROLI",
     "tagline": "PRESTASI PUNCAK",
     "name": "Formula Tenaga Premium M-CORE",

@@ -166,7 +166,7 @@ const Science = () => {
                       {references.map((ref) => (
                         <div
                           key={ref.id}
-                          onClick={() => setSelectedRef(ref)} // 🚀 關鍵修改 2：傳入整個 ref 物件
+                          onClick={() => setSelectedRef(ref)} // 🚀 傳入整個 ref 物件
                           className="group cursor-pointer relative aspect-[3/4] rounded-lg overflow-hidden border border-white/10 bg-white/5"
                         >
                           <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-300 z-10" />
@@ -178,7 +178,14 @@ const Science = () => {
                           <div className="absolute top-1.5 left-1.5 bg-black/80 backdrop-blur-md text-[#CCCCCC] text-[8px] font-bold px-1.5 py-0.5 rounded z-20">
                             [{ref.id}]
                           </div>
-                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300">
+
+                          {/* 🚀 優化 1：手機版常駐的右下角小放大鏡 (電腦版隱藏) */}
+                          <div className="absolute bottom-1.5 right-1.5 bg-black/70 backdrop-blur-sm p-1 rounded-full z-20 md:hidden flex items-center justify-center">
+                            <ZoomIn size={12} className="text-white/80" />
+                          </div>
+
+                          {/* 電腦版 Hover 顯示的置中大圖示 */}
+                          <div className="absolute inset-0 hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300">
                             <ZoomIn
                               size={16}
                               className="text-white drop-shadow-md"
@@ -194,7 +201,7 @@ const Science = () => {
                         setSelectedRef({
                           id: "cert",
                           imgUrl: "/st-certifications.jpg",
-                          title: t("scienceCmp.cert.lightboxTitle"), // 💡 動態讀取彈窗標題
+                          title: t("scienceCmp.cert.lightboxTitle"), // 動態讀取彈窗標題
                         })
                       }
                       className="group cursor-pointer mt-4 relative w-full aspect-[21/9] rounded-xl overflow-hidden border border-white/10 bg-[#121212] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-white/20"
@@ -209,6 +216,11 @@ const Science = () => {
                         className="w-full h-full object-cover brightness-95 object-center transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                       />
 
+                      {/* 🚀 優化 2：手機版常駐的右上角「點擊放大」按鈕 (電腦版 Hover 時才出現) */}
+                      <div className="absolute top-3 right-3 z-20 flex items-center gap-1.5 bg-black/60 backdrop-blur-md border border-white/10 px-2.5 py-1.5 rounded-full md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                        <ZoomIn size={12} className="text-amber-400" />
+                      </div>
+
                       {/* 左下角高奢品牌文字點綴 */}
                       <div className="absolute bottom-4 left-5 z-20 pointer-events-none text-left space-y-0.5">
                         <span className="text-[8px] tracking-[0.2em] text-white/40 uppercase font-mono block">
@@ -222,8 +234,8 @@ const Science = () => {
                         </p>
                       </div>
 
-                      {/* 懸浮放大提示 */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300">
+                      {/* 電腦版專用的懸浮放大提示 (黑盒子) */}
+                      <div className="absolute inset-0 hidden md:flex items-center justify-center opacity-0 group-hover:opacity-100 z-20 transition-opacity duration-300">
                         <div className="bg-black/75 backdrop-blur-md px-4 py-2.5 rounded-xl border border-white/10 shadow-lg text-white flex flex-col items-center gap-1 text-center">
                           <div className="flex items-center gap-2 text-xs font-semibold tracking-wide">
                             <ZoomIn size={14} className="animate-pulse" />
