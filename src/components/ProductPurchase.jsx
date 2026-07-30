@@ -317,14 +317,16 @@ const ProductPurchase = () => {
         {/* 靜態價格與明示促銷區塊 */}
         <div className="border-t border-b border-white/5 py-6 flex flex-col space-y-3">
           {/* 原價與特價 */}
-          <div className="flex items-baseline justify-center lg:justify-start space-x-4">
+          {/* 🚀 優化 1：手機版間距縮小為 space-x-2，平板以上保持 space-x-4 */}
+          <div className="flex flex-wrap items-baseline justify-center lg:justify-start gap-y-2 space-x-2 sm:space-x-4">
             <span className="text-3xl font-black tracking-widest text-white">
               {currentPrice}
             </span>
             <span className="text-sm font-medium tracking-wide text-neutral-500 line-through decoration-neutral-600 transition-all duration-300">
               {compareAtPrice}
             </span>
-            <span className="text-[10px] font-bold tracking-widest text-amber-500 border border-amber-500/20 bg-amber-500/5 px-2 py-1 rounded-md uppercase">
+            {/* 🚀 優化 2：加入 whitespace-nowrap (強制不換行) 與 shrink-0 (防止擠壓) */}
+            <span className="text-[10px] font-bold tracking-widest text-amber-500 border border-amber-500/20 bg-amber-500/5 px-2 py-1 rounded-md uppercase whitespace-nowrap shrink-0">
               {t("purchase.save", { amount: savedAmount })}
             </span>
           </div>
