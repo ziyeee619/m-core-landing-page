@@ -1,11 +1,16 @@
 // src/components/Usage.jsx
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Pill, ShieldCheck, X, ExternalLink } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Pill, ShieldCheck, X, ExternalLink, Play } from "lucide-react";
 import Reveal from "./Reveal";
 
 const Usage = () => {
   const { t } = useTranslation();
+
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoUrl =
+    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1785913157/Certification_eg9chk.mp4";
 
   const [certUrl, setCertUrl] = useState(null);
   const [certType, setCertType] = useState(null);
@@ -180,6 +185,96 @@ const Usage = () => {
           </div>
         </div>
       </div>
+      {/* ===================== 影片區塊 (🚀 電腦版左右排版優化) ===================== */}
+      <section className="py-12 lg:py-16 bg-[#050505] relative overflow-hidden font-sans">
+        <div className="container mx-auto px-6 lg:px-8 max-w-6xl">
+          {/* 🚀 改用 Grid 左右排版，解決電腦版空洞的問題 */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* 左側：文字標題與敘述 (電腦版靠左，手機版置中) */}
+            <div className="text-center lg:text-left space-y-6">
+              <div>
+                <h3 className="text-[10px] lg:text-xs font-black tracking-[0.3em] text-[#86868b] uppercase mb-4">
+                  {t("certifications.tag")}
+                </h3>
+                <h2 className="text-3xl lg:text-5xl font-black italic text-white uppercase tracking-tighter leading-tight">
+                  {t("certifications.title")}
+                </h2>
+              </div>
+              {/* 🚀 新增一段簡短的描述，用來填補左側空間，增加視覺重量與質感 */}
+              <p className="text-neutral-400 text-sm lg:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
+                {t("certifications.desc")}
+              </p>
+            </div>
+
+            {/* 右側：直式影片封面 (電腦版靠右，手機版置中) */}
+            <div className="flex justify-center lg:justify-end">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                // 寬度微調，讓它在右邊看起來精緻且不突兀
+                className="relative aspect-[9/16] w-full max-w-[260px] lg:max-w-[300px] rounded-2xl lg:rounded-[32px] overflow-hidden group cursor-pointer border border-white/10 shadow-2xl"
+                onClick={() => setIsVideoOpen(true)}
+              >
+                {/* 封面 */}
+                <img
+                  src="/CertifiedSafe.png"
+                  alt="Philosophy Video Cover"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+
+                {/* 🚀 極簡微縮版按鈕：縮小尺寸並提升透明度 */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-black/30 backdrop-blur-sm border border-white/20 flex items-center justify-center group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
+                    <Play
+                      className="text-white w-4 h-4 lg:w-5 lg:h-5 ml-0.5"
+                      fill="currentColor"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* ===================== 劇院模式彈窗 (Modal) ===================== */}
+        <AnimatePresence>
+          {isVideoOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 lg:p-12"
+            >
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute top-6 right-6 lg:top-8 lg:right-8 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-200 z-50"
+              >
+                <X size={24} />
+              </button>
+
+              <motion.div
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+                transition={{ delay: 0.1 }}
+                // 🚀 關鍵修改 1：拔掉 aspect-[9/16]，讓容器變成自適應包覆 (w-fit)
+                className="relative bg-black rounded-xl lg:rounded-2xl overflow-hidden border border-white/10 shadow-2xl flex items-center justify-center w-fit"
+              >
+                {/* 🚀 關鍵修改 2：把 object-cover 改成 object-contain，並把高度控制寫在 video 本身 */}
+                <video
+                  src={videoUrl}
+                  controls
+                  autoPlay
+                  playsInline // Safari/iOS 必備防跳出全螢幕
+                  className="w-auto h-auto max-w-[90vw] max-h-[80vh] lg:max-h-[90vh] object-contain outline-none rounded-xl lg:rounded-2xl"
+                ></video>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </section>
 
       {/* ===================== 完美放大版：證書展示彈窗 (Modal) ===================== */}
       {certUrl && (

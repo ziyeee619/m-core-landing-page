@@ -53,8 +53,18 @@
 
   "philosophy": {
     "tag": "FALSAFAH KAMI",
-    "title": "KESEIMBANGAN JANGKA PANJANG",
-    "desc": "M-CORE tidak mengejar kesan rangsangan sementara. Menerusi Mekanisme 7R yang terbukti secara saintifik, kami memulihkan kesihatan lelaki dari asas demi kestabilan dan tenaga optimum yang berpanjangan."
+    "title": "Menolak stimulasi singkat, membina keseimbangan berpanjangan",
+    "desc": "Memulihkan dari dalam untuk prestasi puncak yang kukuh dan stabil."
+  },
+  "materials": {
+    "tag": "RAMUAN DIPATENKAN",
+    "title": "EKSTRAK PREMIA. FORMULA SAINS.",
+    "desc": "Menggabungkan Liboost™ untuk membebaskan tenaga teras anda."
+  },
+  "certifications": {
+    "tag": "PENGIKTIRAFAN KUALITI",
+    "title": "STANDARD ANTARABANGSA.",
+    "desc": "Dihasilkan mengikut piawaian GMP dengan jaminan keselamatan penuh."
   },
 
   "preview": {

@@ -9,7 +9,7 @@ const BrandStory = () => {
 
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const videoUrl =
-    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1784881156/BrandCore_1_inleph.mp4";
+    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1785914192/Brandcore_tg6djw.mp4";
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -67,16 +67,15 @@ const BrandStory = () => {
             <div className="text-center lg:text-left space-y-6">
               <div>
                 <h3 className="text-[10px] lg:text-xs font-black tracking-[0.3em] text-[#86868b] uppercase mb-4">
-                  {t("philosophy.tag") || "Our Philosophy"}
+                  {t("philosophy.tag")}
                 </h3>
                 <h2 className="text-3xl lg:text-5xl font-black italic text-white uppercase tracking-tighter leading-tight">
-                  {t("philosophy.title") || "超越極限的科學理念"}
+                  {t("philosophy.title")}
                 </h2>
               </div>
               {/* 🚀 新增一段簡短的描述，用來填補左側空間，增加視覺重量與質感 */}
               <p className="text-neutral-400 text-sm lg:text-base leading-relaxed max-w-md mx-auto lg:mx-0">
-                {t("philosophy.desc") ||
-                  "探索 M-CORE 核心配方的誕生歷程。我們如何透過嚴謹的科學數據與頂級植物萃取，為您打造出無可取代的極致體驗。"}
+                {t("philosophy.desc")}
               </p>
             </div>
 
