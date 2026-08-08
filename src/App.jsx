@@ -6,6 +6,7 @@ import { useScroll } from "framer-motion";
 // 引入全站共用組件
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SEO from "./components/SEO";
 
 // 引入分頁組件
 import Home from "./pages/Home";
@@ -30,6 +31,7 @@ const App = () => {
 
   return (
     <Router>
+      <SEO />
       <ScrollToTopOnNavigate />
       <ScrollToTop />
 

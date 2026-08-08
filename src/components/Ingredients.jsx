@@ -19,7 +19,7 @@ const Ingredients = () => {
 
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const videoUrl =
-    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1785914194/Ingredients_laf1gn.mp4";
+    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1786180333/Ingredients_pd0dvl.mp4";
 
   // 🌟 修正：將 activeReportImg 升級為物件，用來記錄點擊時的完整資訊
   const [lightboxData, setLightboxData] = useState({

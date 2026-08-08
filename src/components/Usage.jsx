@@ -10,7 +10,7 @@ const Usage = () => {
 
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const videoUrl =
-    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1785913157/Certification_eg9chk.mp4";
+    "https://res.cloudinary.com/f6hqjwzq/video/upload/v1786180327/Certification_qrvz7z.mp4";
 
   const [certUrl, setCertUrl] = useState(null);
   const [certType, setCertType] = useState(null);
