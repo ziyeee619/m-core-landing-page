@@ -4,7 +4,6 @@ import ProductPurchase from "../components/ProductPurchase";
 import { useTranslation } from "react-i18next";
 
 const Shop = () => {
-  // 補上翻譯宣告，確保 t 功能正常
   const { t } = useTranslation();
 
   return (
