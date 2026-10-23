@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useScroll } from "framer-motion";
 
 // 引入全站共用組件
+import TopMarquee from "./components/TopMarquee";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
@@ -36,6 +37,7 @@ const App = () => {
       <ScrollToTop />
 
       <div className="relative min-h-screen flex flex-col bg-black text-white selection:bg-white selection:text-black overflow-x-hidden">
+        <TopMarquee />
         <Navbar />
 
         <main className="flex-grow">
