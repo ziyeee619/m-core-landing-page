@@ -37,10 +37,10 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-[100] transition-all duration-700 ${
+        className={`fixed w-full z-[100] transition-all duration-700 ${
           isScrolled
-            ? "bg-[#0a0a0a]/90 backdrop-blur-xl py-4 border-b border-white/5"
-            : "bg-transparent py-6 lg:py-8"
+            ? "top-0 bg-[#0a0a0a]/90 backdrop-blur-xl py-4 border-b border-white/5"
+            : "top-[15px] bg-transparent py-6 lg:py-8"
         }`}
       >
         {/* 🚀 移除 relative，直接使用正統 Flexbox 彈性排版 */}

@@ -10,7 +10,7 @@ const Marquee = MarqueeImport.default || MarqueeImport;
 const TopMarquee = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-[#0a0a0a] text-neutral-300 py-2 text-xs md:text-sm font-medium tracking-widest border-b border-white/5 uppercase relative z-50">
+    <div className="bg-white text-neutral-900 py-2 text-xs md:text-sm font-bold tracking-widest border-b border-black/5 uppercase relative z-50">
       <Marquee speed={40} gradient={false} pauseOnHover={true}>
         <div className="flex items-center gap-12 mx-6">
           <span className="flex items-center gap-2">

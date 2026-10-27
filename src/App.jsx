@@ -37,8 +37,10 @@ const App = () => {
       <ScrollToTop />
 
       <div className="relative min-h-screen flex flex-col bg-black text-white selection:bg-white selection:text-black overflow-x-hidden">
-        <TopMarquee />
-        <Navbar />
+        <header className="sticky top-0 z-50 w-full flex flex-col">
+          <TopMarquee />
+          <Navbar />
+        </header>
 
         <main className="flex-grow">
           <Routes>
