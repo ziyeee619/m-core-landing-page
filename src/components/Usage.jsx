@@ -41,6 +41,13 @@ const Usage = () => {
       fileType: "pdf",
       textLogo: "ISO",
     },
+    {
+      key: "halal",
+      img: "/assets/halal-logo.png",
+      fileUrl: null,
+      fileType: null,
+      textLogo: "HALAL",
+    },
   ];
 
   return (
@@ -111,11 +118,18 @@ const Usage = () => {
                         <div
                           key={cert.key}
                           onClick={() => {
-                            setCertUrl(cert.fileUrl);
-                            setCertType(cert.fileType);
+                            // 🚀 加上判斷：只有當 fileUrl 存在時，才允許點擊打開彈窗
+                            if (cert.fileUrl) {
+                              setCertUrl(cert.fileUrl);
+                              setCertType(cert.fileType);
+                            }
                           }}
-                          /* 🚀 體積全面加大：p-6 內距、加深框線與懸停光影，大氣磅礡 */
-                          className="p-6 bg-[#0e0e10] border border-white/10 rounded-2xl flex items-center space-x-5 hover:bg-[#141417] hover:border-white/20 transition-all duration-300 group cursor-pointer select-none shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+                          /* 🚀 加上動態 class：如果有 fileUrl 才有游標與浮動特效 */
+                          className={`p-6 bg-[#0e0e10] border border-white/10 rounded-2xl flex items-center space-x-5 transition-all duration-300 group select-none shadow-xl ${
+                            cert.fileUrl
+                              ? "hover:bg-[#141417] hover:border-white/20 cursor-pointer hover:shadow-2xl hover:-translate-y-0.5"
+                              : "opacity-90" // 沒有檔案時稍微降低透明度，且不顯示手指游標
+                          }`}
                         >
                           {/* 左側徽章方塊：🚀 從原本的 w-14 升級為 w-18 h-18 (72px 巨型方塊) */}
                           <div className="w-16 h-16 sm:w-18 sm:h-18 bg-black/60 border border-white/10 rounded-xl overflow-hidden flex items-center justify-center p-3 shrink-0 bg-gradient-to-br from-neutral-800 to-neutral-950 shadow-inner group-hover:border-emerald-500/30 transition-colors">
@@ -147,10 +161,12 @@ const Usage = () => {
                             </span>
                           </div>
 
-                          {/* 右側隱藏的小箭頭，滑鼠移入時優雅出現，提示可點擊 */}
-                          <div className="text-neutral-600 group-hover:text-white transition-colors pl-1 font-bold">
-                            ↗
-                          </div>
+                          {/* 🚀 右側隱藏的小箭頭：只有當有檔案(可以點擊)時才渲染顯示 */}
+                          {cert.fileUrl && (
+                            <div className="text-neutral-600 group-hover:text-white transition-colors pl-1 font-bold">
+                              ↗
+                            </div>
+                          )}
                         </div>
                       );
                     })}

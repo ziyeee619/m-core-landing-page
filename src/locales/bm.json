@@ -139,6 +139,10 @@
       "iso22000": {
         "name": "ISO 22000",
         "desc": "Pensijilan Pertubuhan Standardisasi Antarabangsa"
+      },
+      "halal": {
+        "name": "Pensijilan Halal",
+        "desc": "Mematuhi hukum Syarak, dijamin selamat dan suci untuk diamalkan."
       }
     }
   },

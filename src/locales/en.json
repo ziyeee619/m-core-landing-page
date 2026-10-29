@@ -133,6 +133,10 @@
       "iso22000": {
         "name": "ISO 22000",
         "desc": "International Organization for Standardization Certification"
+      },
+      "halal": {
+        "name": "Halal Certification",
+        "desc": "Certified to meet Islamic dietary guidelines, ensuring safety and purity."
       }
     }
   },

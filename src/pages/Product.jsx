@@ -19,7 +19,7 @@ const ProductInfo = () => {
         <Usage />
       </div>
 
-      {/* 2. 網頁最底部：單獨設計的跳轉引流區 (CTA) — 🚀 已全數改為三語動態渲染 */}
+      {/* 2. 網頁最底部：單獨設計的跳轉引流區 (CTA) */}
       <section className="py-24 lg:py-32 bg-gradient-to-b from-[#0a0a0a] to-neutral-950 border-t border-white/5 text-center px-6">
         <div className="max-w-xl mx-auto space-y-6">
           <h2 className="text-3xl lg:text-4xl font-extrabold italic tracking-wider uppercase bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-500 font-sans">
