@@ -19,6 +19,15 @@ const TopMarquee = () => {
 
           <span className="flex items-center gap-2">
             <img
+              src="/logos/halal.png"
+              alt="halal"
+              className="h-5 md:h-4 opacity-80"
+            />
+            {t("marquee.halal")}
+          </span>
+
+          <span className="flex items-center gap-2">
+            <img
               src="/logos/gdex.png"
               alt="Gdex"
               className="h-5 md:h-4 opacity-80"
@@ -42,6 +51,15 @@ const TopMarquee = () => {
               className="h-5 md:h-4 opacity-80"
             />
             {t("marquee.allianz")}
+          </span>
+
+          <span className="flex items-center gap-2">
+            <img
+              src="/logos/alpro.png"
+              alt="alpro"
+              className="h-5 md:h-4 opacity-80"
+            />
+            {t("marquee.alpro")}
           </span>
 
           <span className="flex items-center gap-2">
