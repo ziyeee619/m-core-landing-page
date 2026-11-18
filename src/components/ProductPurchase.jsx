@@ -9,8 +9,8 @@ const ProductPurchase = () => {
 
   // 🚀 實時響應數量折扣
   const [currentPrice, setCurrentPrice] = useState("RM 288.00");
-  const [compareAtPrice, setCompareAtPrice] = useState("RM 300.00");
-  const [savedAmount, setSavedAmount] = useState(12);
+  const [compareAtPrice, setCompareAtPrice] = useState("RM 400.00");
+  const [savedAmount, setSavedAmount] = useState(112);
 
   const wrapperRef = useRef(null);
 
@@ -207,7 +207,7 @@ const ProductPurchase = () => {
               const rawPrice = variant.price.amount || variant.price;
               const rawComparePrice = variant.compareAtPrice
                 ? variant.compareAtPrice.amount || variant.compareAtPrice
-                : "300.00";
+                : "400.00";
 
               // 🚀 關鍵邏輯：2件以上自動變 255
               const basePrice = qty >= 2 ? 255.0 : parseFloat(rawPrice);
