@@ -190,6 +190,62 @@ const ProductPurchase = () => {
                 overlay: {
                   "z-index": "2147483646 !important",
                 },
+                title: {
+                  "font-size": "20px !important",
+                },
+                subtotalText: {
+                  "font-size": "20px !important",
+                },
+                subtotal: {
+                  "font-size": "18px !important",
+                  "font-weight": "700 !important",
+                },
+                noteDescription: {
+                  "font-size": "13px !important",
+                },
+                notice: {
+                  "font-size": "13px !important",
+                },
+                button: {
+                  "font-size": "15px !important",
+                },
+              },
+            },
+            lineItem: {
+              contents: {
+                price: true,
+                priceWithDiscounts: true,
+              },
+              templates: {
+                price: `
+                  {{^data.discounts.length}}
+                    {{#data.variant.compareAtPrice}}
+                      <div style="text-decoration: line-through; color: #86868b; font-size: 13px; font-weight: normal; line-height: 1.2; text-align: right; margin-bottom: 2px;">
+                        RM{{data.variant.compareAtPrice.amount}}0
+                      </div>
+                    {{/data.variant.compareAtPrice}}
+                  {{/data.discounts.length}}
+                `,
+              },
+              styles: {
+                variantTitle: {
+                  "font-size": "20px !important",
+                },
+                price: {
+                  "font-size": "16px !important",
+                },
+                priceWithDiscounts: {
+                  "font-size": "20px !important",
+                },
+                quantity: {
+                  "font-size": "20px !important",
+                },
+                quantityIncrement: {
+                  "font-size": "20px !important",
+                },
+                quantityDecrement: {
+                  "font-size": "20px !important",
+                },
               },
             },
           },
